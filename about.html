@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Jaxorik AI Research Group - Female Veteran-Owned AI consultancy led by Rae Chipera, PhD(c), MBA">
+    <title>About - Jaxorik AI Research Group</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #666;
+        }
+        
+        .cta-button {
+            background: #000;
+            color: white !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #333;
+        }
+        
+        /* Main Content */
+        main {
+            margin-top: 100px;
+            padding: 2rem 5%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Director Section */
+        .director-section {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .director-title {
+            font-size: 3rem;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 3rem;
+        }
+        
+        .director-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: start;
+            text-align: left;
+        }
+        
+        .director-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .director-bio h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .director-bio p {
+            margin-bottom: 1.5rem;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        /* Technical Leadership Section */
+        .leadership-section {
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+        }
+        
+        .leadership-section h2 {
+            font-size: 2.5rem;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .leadership-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .leadership-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .black-box-diagram {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .black-box-diagram img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+        }
+        
+        .bad-science {
+            color: #ff0000;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+        
+        /* Credentials Grid */
+        .credentials-section {
+            margin: 4rem 0;
+        }
+        
+        .credentials-section h2 {
+            font-size: 2.5rem;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .credential-card {
+            background: white;
+            padding: 2rem;
+            border-left: 4px solid #000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .credential-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #000;
+        }
+        
+        .credential-card ul {
+            list-style: none;
+        }
+        
+        .credential-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .credential-card li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #84C225;
+        }
+        
+        /* Military Service Section */
+        .military-section {
+            background: linear-gradient(135deg, #8B0000, #000);
+            color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+        }
+        
+        .military-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .military-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 3px solid #FFD700;
+        }
+        
+        .military-text h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #FFD700;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .military-text p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .military-achievements {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #FFD700;
+        }
+        
+        .military-achievements h4 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+        
+        .military-achievements ul {
+            list-style: none;
+        }
+        
+        .military-achievements li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .military-achievements li:before {
+            content: "★";
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+        }
+        
+        /* Cybersecurity Policy */
+        .cyber-section {
+            background: #000;
+            color: white;
+            padding: 3rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+        
+        .cyber-section h2 {
+            font-size: 2.5rem;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 2rem;
+        }
+        
+        .cyber-section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .certifications {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            color: #84C225;
+            font-weight: bold;
+        }
+        
+        /* Footer */
+        footer {
+            background: #000;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .footer-info {
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        .footer-info p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .director-content,
+            .leadership-content,
+            .military-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .director-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="logo-black.png" alt="Jaxorik AI Research Group">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="https://substack.com/@jaxorik" target="_blank">BLOG</a></li>
+                <li><a href="https://github.com/jaxorik" target="_blank">PORTFOLIO</a></li>
+                <li><a href="#contact" class="cta-button">GET CUSTOM AI ▸</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Director Section -->
+        <section class="director-section">
+            <h1 class="director-title">Director of AI Development</h1>
+            
+            <div class="director-content">
+                <div class="director-image">
+                    <img src="rae-headshot.jpg" alt="Rae Chipera, PhD(c), MBA">
+                </div>
+                <div class="director-bio">
+                    <h2>Rae Chipera, PhD(c), MBA</h2>
+                    <p>Rae Chipera is a data scientist with 10+ years of industry experience building novel AI solutions for national defense, quantitative finance, and trades. She is completing a PhD in data science and holds an MBA in quantitative finance.</p>
+                    
+                    <p>She studied machine learning at MIT and deep learning at Carnegie Mellon University.</p>
+                    
+                    <p>After graduating high school in Los Alamos, NM, Chipera enlisted in the Marines and served as a Signals Intelligence (SIGINT) Analyst.</p>
+                    
+                    <p>After completing her military service, Chipera transitioned to quantitative finance, developing predictive models that successfully navigated major market events including the 2020 COVID crisis. Her analytical approach to high-stakes decision-making under uncertainty translates directly to mission-critical AI applications.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Leadership Section -->
+        <section class="leadership-section">
+            <h2>Technical Leadership & Research</h2>
+            <div class="leadership-content">
+                <div class="leadership-text">
+                    <p>Chipera's research focuses on explainable AI systems designed for resource-constrained environments. She advocates for transparent, auditable algorithms over black-box solutions - a principle that drives Jaxorik's approach to government contracting. Her work emphasizes practical deployment in austere conditions where traditional cloud-based AI fails.</p>
+                    
+                    <p>With security clearance eligibility and deep understanding of classified environments, Chipera bridges the gap between cutting-edge AI research and operational military requirements. She has delivered multi-million dollar technical solutions to government clients and maintains active research partnerships with national laboratories.</p>
+                </div>
+                <div class="black-box-diagram">
+                    <!-- Placeholder for diagram -->
+                    <div style="background: black; color: white; padding: 2rem; border-radius: 4px;">
+                        <p>Input → Black Box → Output</p>
+                    </div>
+                    <p class="bad-science">THIS IS BAD SCIENCE</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Military Service Section -->
+        <section class="military-section">
+            <div class="military-content">
+                <div class="military-image">
+                    <img src="marine-cammies.jpg" alt="Sgt. Chipera in Iraq">
+                </div>
+                <div class="military-text">
+                    <h3>Military Service</h3>
+                    <p>Sergeant Chipera served with distinction in the United States Marine Corps as a Signals Intelligence Analyst, including deployment to Iraq in support of Operation Iraqi Freedom.</p>
+                    
+                    <p>Her military experience provides unique insight into the operational requirements and constraints faced by defense and intelligence organizations deploying AI systems in challenging environments.</p>
+                    
+                    <div class="military-achievements">
+                        <h4>Service Highlights:</h4>
+                        <ul>
+                            <li>Iraq Campaign Medal - Combat deployment</li>
+                            <li>Good Conduct Medal - Exemplary service</li>
+                            <li>Expert Rifle Badge - Perfect score (250/250)</li>
+                            <li>Expert Pistol Badge - Top marksmanship</li>
+                            <li>Security clearance eligibility maintained</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Credentials Section -->
+        <section class="credentials-section">
+            <h2>Education & Certifications</h2>
+            <div class="credentials-grid">
+                <div class="credential-card">
+                    <h3>Academic Background</h3>
+                    <ul>
+                        <li>PhD in Data Science (in progress)</li>
+                        <li>MBA in Quantitative Finance</li>
+                        <li>Machine Learning - MIT</li>
+                        <li>Deep Learning - Carnegie Mellon</li>
+                    </ul>
+                </div>
+                <div class="credential-card">
+                    <h3>Government Contracting</h3>
+                    <ul>
+                        <li>UEI: K8ENCCGZ2M13</li>
+                        <li>CAGE: 11X70</li>
+                        <li>WOSB Certification (Pending)</li>
+                        <li>SDVOSB Certification (Pending)</li>
+                        <li>Disaster Response Registry</li>
+                    </ul>
+                </div>
+                <div class="credential-card">
+                    <h3>Technical Expertise</h3>
+                    <ul>
+                        <li>Explainable AI Systems</li>
+                        <li>Edge Computing Deployment</li>
+                        <li>ITAR Compliance</li>
+                        <li>Classified Environment Operations</li>
+                        <li>Quantitative Risk Modeling</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cybersecurity Policy -->
+        <section class="cyber-section">
+            <h2>Cybersecurity Policy</h2>
+            <p>Jaxorik operates under strict ethical guidelines, maintaining ITAR awareness by default unless the client specifies otherwise.</p>
+            
+            <p>We develop solutions that prioritize national security interests. The company is registered for federal contracting and maintains comprehensive professional liability coverage.</p>
+            
+            <div class="certifications">
+                <p>UEID: K8ENCCGZ2M13 | SAM.gov Registered | SBA WOSB + SDVOSB Certification Pending</p>
+                <p>Listed in Disaster Response Registry</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p><strong>505-506-6884</strong></p>
+                <p>Copyright © 2025 JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
