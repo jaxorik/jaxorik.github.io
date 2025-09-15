@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jaxorik AI Research Group - Customized AI tools for government, businesses & research. Female Veteran-Owned Small Business specializing in reproducible, transparent, and deployable AI solutions.">
+    <title>Jaxorik AI Research Group - AI That's Reproducible, Transparent & Deployable</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 24px;
+            text-decoration: none;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #666;
+        }
+        
+        .cta-button {
+            background: #000;
+            color: white !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #333;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080"><rect fill="%23111" width="1920" height="1080"/><text fill="%23333" font-family="Courier" font-size="20" opacity="0.3"><tspan x="100" y="100">∂L/∂w = -2Σ(y - ŷ)x</tspan><tspan x="300" y="200">∇f(x) = lim[h→0] (f(x+h) - f(x))/h</tspan><tspan x="150" y="300">E[X] = ∫xf(x)dx</tspan><tspan x="400" y="400">P(A|B) = P(B|A)P(A)/P(B)</tspan></text></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+        
+        .hero .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background: white;
+            color: #000;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        }
+        
+        /* Section: Government Contractors */
+        .section {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .gov-section {
+            background: #f8f9fa;
+        }
+        
+        .section-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .section-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .section-text p {
+            margin-bottom: 2rem;
+            color: #666;
+        }
+        
+        .credentials {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .credentials h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .credentials ul {
+            list-style: none;
+        }
+        
+        .credentials li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .credentials li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Veteran Owned Section */
+        .veteran-section {
+            background: linear-gradient(135deg, #8B0000, #000);
+            color: white;
+            text-align: center;
+            padding: 3rem 5%;
+        }
+        
+        .veteran-section h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .veteran-section .highlight {
+            font-size: 3rem;
+            font-family: 'Courier New', monospace;
+            color: #FFD700;
+            margin: 1rem 0;
+        }
+        
+        /* About Section */
+        .about-section {
+            background: #000;
+            color: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .about-text ul {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .about-text li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .about-text li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+        }
+        
+        .about-image {
+            background: #333;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            color: #999;
+        }
+        
+        /* Services Grid */
+        .services-section {
+            background: #f8f9fa;
+        }
+        
+        .services-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #84C225;
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Footer */
+        footer {
+            background: #000;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            margin: 2rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        .footer-info p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-content,
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo">JX</a>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="https://substack.com/@jaxorik" target="_blank">BLOG</a></li>
+                <li><a href="https://github.com/jaxorik" target="_blank">PORTFOLIO</a></li>
+                <li><a href="#contact" class="cta-button">GET CUSTOM AI ▸</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>AI THAT'S REPRODUCIBLE, TRANSPARENT & DEPLOYABLE</h1>
+            <p class="tagline">Customized AI tools for government, businesses & research use where resources are limited</p>
+            <a href="#contact" class="hero-cta">Download Capabilities Statement</a>
+        </div>
+    </section>
+
+    <!-- Government Contractors Section -->
+    <section class="section gov-section">
+        <div class="section-content">
+            <div class="section-text">
+                <h2>We Work With US Government Prime Contractors</h2>
+                <p>We're former government & military employees and default to ITAR-level compliance.</p>
+                <a href="#contact" class="cta-button">FIND OUT MORE</a>
+            </div>
+            <div class="credentials">
+                <h3>Find us on SAM.gov:</h3>
+                <ul>
+                    <li><strong>UEI:</strong> K8ENCCGZ2M13</li>
+                    <li><strong>CAGE:</strong> 11X70</li>
+                    <li><strong>WOSB + SDVOSB</strong> Certification Pending</li>
+                    <li>Listed in <strong>Disaster Response Registry</strong></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Veteran Owned Banner -->
+    <section class="veteran-section">
+        <h2>Our business is proudly</h2>
+        <div class="highlight">Female Veteran-Owned</div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About our Leader</h2>
+                <p>Rae Chipera is a data scientist with 10+ years of industry experience building novel AI solutions. Here's why she's different:</p>
+                <ul>
+                    <li>Completing a PhD in data science</li>
+                    <li>MBA in quantitative finance</li>
+                    <li>Former SIGINT Marine</li>
+                    <li>Studied machine learning at MIT</li>
+                    <li>Studied deep learning at Carnegie Mellon University</li>
+                    <li>Grew up in Los Alamos, NM</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <!-- Placeholder for photo -->
+                <p>[Photo: Blue-haired data scientist who gets mistaken for her own AI]</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services-section">
+        <h2>We Also Help</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>ENTREPRENEURS</h3>
+                <h4>Get Back 10+ Hours a Week with AI</h4>
+                <p>Are you missing time with your family because you're catching up on that one project that's behind deadline?</p>
+                <p>Our proven system will get you back to 40 hours a week or less without the expense of hiring more employees.</p>
+            </div>
+            <div class="service-card">
+                <h3>RESEARCHERS</h3>
+                <h4>Save Your Research Budget with AI</h4>
+                <p>Research budgets are really tight right now, and you don't have the money to hire a postdoc to process your data.</p>
+                <p>Let us help you with data mining and other mundane tasks without demolishing your cramped research budget.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/jaxorik" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/company/jaxorik" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">Twitter</a>
+            </div>
+            <div class="footer-info">
+                <p><strong>505-506-6884</strong></p>
+                <p>Copyright © 2025 JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
+                <p>SAM.gov registered | UEI: K8ENCCGZ2M13 | CAGE: 11X70</p>
+                <p>Disaster Response Certification: Active</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
