@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI tools for disaster response and emergency management - rapid deployment, works offline, fits within emergency budgets and approval processes.">
+    <title>Emergency AI Tools for Disaster Response - Jaxorik AI Research Group</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+            position: relative;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            background: #000;
+            color: white !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .dropdown-toggle:hover {
+            background: #333;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #333 !important;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+        
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-menu a:hover {
+            background: #f8f9fa;
+            color: #000 !important;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #666;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, #d32f2f, #8B0000);
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 1rem;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #d32f2f !important;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        }
+        
+        /* Urgency Section */
+        .urgency-section {
+            padding: 4rem 5%;
+            background: #fff3e0;
+            border-left: 5px solid #ff9800;
+        }
+        
+        .urgency-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .urgency-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: #d32f2f;
+        }
+        
+        .urgency-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-top: 4px solid #d32f2f;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #d32f2f;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .stat-text {
+            font-size: 1.1rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        
+        /* Problems Section */
+        .problems-section {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .problems-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            text-align: center;
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .problem-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #d32f2f;
+        }
+        
+        .problem-card h3 {
+            color: #d32f2f;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .problem-card .problem {
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        .problem-card .solution {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        /* Solutions Section */
+        .solutions-section {
+            padding: 4rem 5%;
+            background: white;
+        }
+        
+        .solutions-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            text-align: center;
+        }
+        
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .solution-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 4px solid #2E7D32;
+        }
+        
+        .solution-card h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .solution-card ul {
+            list-style: none;
+        }
+        
+        .solution-card li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .solution-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2E7D32;
+            font-weight: bold;
+        }
+        
+        /* Budget Section */
+        .budget-section {
+            padding: 4rem 5%;
+            background: #2E7D32;
+            color: white;
+            text-align: center;
+        }
+        
+        .budget-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: white;
+        }
+        
+        .budget-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .budget-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .budget-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .budget-feature {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .budget-feature h3 {
+            color: #A5D6A7;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+        
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: #d32f2f;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #8B0000;
+        }
+        
+        .emergency-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .emergency-info h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: #d32f2f;
+        }
+        
+        .emergency-contact {
+            background: #fff3e0;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #ff9800;
+            margin-bottom: 2rem;
+        }
+        
+        .emergency-contact h3 {
+            color: #d32f2f;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .capabilities-list {
+            list-style: none;
+        }
+        
+        .capabilities-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .capabilities-list li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #2E7D32;
+        }
+        
+        /* Footer */
+        footer {
+            background: #000;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            margin: 2rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        .footer-info p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .urgency-stats,
+            .budget-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="Jaxorik logo black.png" alt="Jaxorik AI Research Group"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="https://substack.com/@jaxorik" target="_blank">BLOG</a></li>
+                <li><a href="https://github.com/jaxorik" target="_blank">PORTFOLIO</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle">GET CUSTOM AI ▾</button>
+                    <div class="dropdown-menu">
+                        <a href="government.html">GOVERNMENT</a>
+                        <a href="research.html">RESEARCH</a>
+                        <a href="disaster.html">DISASTER RESPONSE</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Emergency AI Tools for Disaster Response</h1>
+            <div class="subtitle">Rapid Deployment • Works Offline • Fits Your Budget</div>
+            <p>When disasters strike, you need AI tools that work immediately, run on any hardware, and deliver actionable intelligence when networks are down and time is critical.</p>
+            <a href="#contact" class="cta-button">Get Emergency Response Tools</a>
+        </div>
+    </section>
+
+    <!-- Urgency Section -->
+    <section class="urgency-section">
+        <div class="urgency-content">
+            <h2>Every Hour Counts in Disaster Response</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Traditional damage assessment and resource allocation tools are too slow when lives are on the line. You need intelligence now, not next week.</p>
+            <div class="urgency-stats">
+                <div class="stat-card">
+                    <div class="stat-number">72</div>
+                    <div class="stat-text">hours is the critical window for search and rescue operations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30</div>
+                    <div class="stat-text">minutes to deploy our damage assessment tools</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-text">emergency support during active disasters</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Story Section -->
+    <section style="padding: 3rem 5%; background: white; text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto; padding: 2rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #d32f2f;">
+            <h3 style="color: #d32f2f; margin-bottom: 1rem; font-family: 'Courier New', monospace;">Why This Matters to Us</h3>
+            <p style="font-size: 1.1rem; color: #666;">Our Director of AI Innovation grew up in Los Alamos and experienced the Cerro Grande wildfire evacuation in 2000. She understands firsthand how quickly disasters escalate and why every hour matters in emergency response.</p>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="problems-section">
+        <div class="section-container">
+            <h2>Common Emergency Management Challenges</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <h3>Damage Assessment Takes Too Long</h3>
+                    <p class="problem">"We need to know where to send resources, but our current damage assessment takes weeks and we need answers today."</p>
+                    <p class="solution">Our satellite and drone image analysis provides damage assessment reports in hours, not weeks.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Communication Networks Are Down</h3>
+                    <p class="problem">"Our cloud-based tools don't work when cell towers are damaged and internet is unreliable."</p>
+                    <p class="solution">Our tools run completely offline on laptops and field devices when networks fail.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Resource Allocation Guesswork</h3>
+                    <p class="problem">"We're making resource deployment decisions based on incomplete information and best guesses."</p>
+                    <p class="solution">Real-time analysis helps optimize resource allocation based on actual conditions and priorities.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Budget and Approval Constraints</h3>
+                    <p class="problem">"We need tools that work within our emergency management budget and approval authority."</p>
+                    <p class="solution">Flexible deployment options designed to fit within your budget and procurement process.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Integration with Existing Systems</h3>
+                    <p class="problem">"New tools need to work with our existing emergency management software and protocols."</p>
+                    <p class="solution">Built to integrate with standard emergency management systems and FEMA protocols.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Non-Technical Staff Training</h3>
+                    <p class="problem">"Our emergency coordinators need tools that work immediately without extensive technical training."</p>
+                    <p class="solution">Intuitive interfaces designed for emergency managers, not computer scientists.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions-section">
+        <div class="section-container">
+            <h2>Emergency AI Solutions That Actually Work</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <h3>Rapid Damage Assessment</h3>
+                    <ul>
+                        <li>Satellite and drone image analysis</li>
+                        <li>Infrastructure damage evaluation</li>
+                        <li>Priority area identification</li>
+                        <li>Automated damage reports</li>
+                        <li>Works with any image source</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <h3>Search and Rescue Optimization</h3>
+                    <ul>
+                        <li>Search pattern optimization</li>
+                        <li>Resource allocation modeling</li>
+                        <li>Probability mapping for missing persons</li>
+                        <li>Team deployment recommendations</li>
+                        <li>Real-time strategy updates</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <h3>Predictive Analytics</h3>
+                    <ul>
+                        <li>Flood and fire spread prediction</li>
+                        <li>Evacuation route planning</li>
+                        <li>Weather impact modeling</li>
+                        <li>Resource demand forecasting</li>
+                        <li>Secondary disaster prevention</li>
+                    </ul>
+                </div>
+                <div class="solution-card">
+                    <h3>Offline-First Design</h3>
+                    <ul>
+                        <li>Runs on field laptops and tablets</li>
+                        <li>No internet connection required</li>
+                        <li>Syncs when connectivity returns</li>
+                        <li>Backup power compatible</li>
+                        <li>Rugged device support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget Section -->
+    <section class="budget-section">
+        <h2>Built to Work Within Emergency Budgets</h2>
+        <div class="budget-content">
+            <p>We understand emergency management operates under tight budget constraints and varying approval authorities. Our solutions are designed to get you the tools you need without bureaucratic delays.</p>
+            <div class="budget-features">
+                <div class="budget-feature">
+                    <h3>Flexible Pricing</h3>
+                    <p>Solutions scaled to fit your operational needs and approval authority limits</p>
+                </div>
+                <div class="budget-feature">
+                    <h3>Rapid Deployment</h3>
+                    <p>Can be delivered and operational within days of approval for urgent situations</p>
+                </div>
+                <div class="budget-feature">
+                    <h3>Phased Implementation</h3>
+                    <p>Start small and expand as needs grow, or split into separate tools for easier approval</p>
+                </div>
+                <div class="budget-feature">
+                    <h3>No Ongoing Fees</h3>
+                    <p>Tools work offline with no monthly subscriptions or cloud service dependencies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-content">
+            <div class="contact-form">
+                <h2>Get Emergency Response Tools</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="organization">Agency/Organization*</label>
+                        <input type="text" id="organization" name="organization" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">Your Role*</label>
+                        <select id="role" name="role" required>
+                            <option value="">Select your role</option>
+                            <option value="emergency-manager">Emergency Manager</option>
+                            <option value="first-responder">First Responder</option>
+                            <option value="county-official">County Official</option>
+                            <option value="state-official">State Official</option>
+                            <option value="federal-official">Federal Official</option>
+                            <option value="nonprofit-relief">Nonprofit Relief Organization</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone*</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="urgency">Timeline*</label>
+                        <select id="urgency" name="urgency" required>
+                            <option value="">Select timeline</option>
+                            <option value="immediate">Immediate - Active disaster response</option>
+                            <option value="urgent">Urgent - Preparing for imminent threat</option>
+                            <option value="planning">Planning - Building capabilities for future events</option>
+                            <option value="research">Research - Evaluating options</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="challenge">What emergency management challenge are you facing?*</label>
+                        <textarea id="challenge" name="challenge" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="approval-authority">What's your approval authority for emergency tools/software?</label>
+                        <input type="text" id="approval-authority" name="approval-authority" placeholder="e.g., $25,000, $50,000, need director approval, etc.">
+                    </div>
+                    <button type="submit" class="submit-btn">GET EMERGENCY RESPONSE TOOLS</button>
+                </form>
+            </div>
+            <div class="emergency-info">
+                <h2>Emergency Response Capabilities</h2>
+                <div class="emergency-contact">
+                    <h3>Active Disaster Support</h3>
+                    <p><strong>Emergency Phone:</strong> 505-506-6884</p>
+                    <p>24/7 support during active disaster response operations</p>
+                </div>
+                <h3>Listed in Disaster Response Registry</h3>
+                <p>We are officially registered for disaster response and can be activated through emergency management channels.</p>
+                
+                <h3>Rapid Deployment Capabilities</h3>
+                <ul class="capabilities-list">
+                    <li>Tools deployed within 24-48 hours for active disasters</li>
+                    <li>Remote installation and training</li>
+                    <li>Field support during operations</li>
+                    <li>Integration with existing emergency protocols</li>
+                    <li>Works with FEMA, state, and local systems</li>
+                    <li>Designed for non-technical emergency staff</li>
+                </ul>
+                
+                <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e9ecef;">
+                    <h3>Jaxorik AI Research Group</h3>
+                    <p>6300 Riverside Plaza Lane Northwest Suite 100<br>
+                    Albuquerque, New Mexico 87120</p>
+                    <p><strong>505-506-6884</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/jaxorik" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/company/jaxorik" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">Twitter</a>
+            </div>
+            <div class="footer-info">
+                <p><strong>505-506-6884</strong></p>
+                <p>Copyright © 2025 JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
+                <p>Registered for Disaster Response | Available 24/7 During Active Disasters</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
