@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jaxorik AI Research Group - Cutting Edge Solutions for Defense and Federal Innovation. SAM.gov registered, WOSB & SDVOSB eligible.">
-    <title>Cutting Edge Solutions for Defense - Jaxorik AI Research Group</title>
+    <meta name="description" content="Jaxorik AI Research Group - Government contracting for AI solutions. SAM.gov registered, WOSB & SDVOSB eligible, ITAR-compliant operations.">
+    <title>Government AI Contracting - Jaxorik AI Research Group</title>
     
     <style>
         * {
@@ -58,6 +58,74 @@
             list-style: none;
             gap: 2rem;
             align-items: center;
+            position: relative;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            background: #000;
+            color: white !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .dropdown-toggle:hover {
+            background: #333;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #333 !important;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+        
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-menu a:hover {
+            background: #f8f9fa;
+            color: #000 !important;
         }
         
         .nav-links a {
@@ -74,83 +142,287 @@
             color: #666;
         }
         
-        .cta-button {
-            background: #000;
-            color: white !important;
-            padding: 0.7rem 1.5rem;
-            border-radius: 4px;
-            transition: background 0.3s;
-        }
-        
-        .cta-button:hover {
-            background: #333;
-        }
-        
         /* Hero Section */
         .hero {
             margin-top: 80px;
             padding: 4rem 5%;
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #000, #333);
+            color: white;
             text-align: center;
         }
         
         .hero-content {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         
         .hero h1 {
             font-size: 3rem;
             font-family: 'Courier New', monospace;
-            margin-bottom: 2rem;
-            color: #333;
+            margin-bottom: 1rem;
         }
         
         .hero .subtitle {
             font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #2E7D32 !important;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        }
+        
+        /* Credentials Section */
+        .credentials-section {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+            text-align: center;
+        }
+        
+        .credentials-section h2 {
+            font-size: 2.5rem;
             margin-bottom: 3rem;
-            color: #666;
+            font-family: 'Courier New', monospace;
+            color: #333;
         }
         
-        .flag-image {
-            margin: 2rem 0;
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
         
-        .flag-image img {
-            width: 100%;
-            max-width: 600px;
+        .credential-card {
+            background: white;
+            padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-top: 4px solid #2E7D32;
         }
         
-        .credentials {
-            margin-top: 2rem;
+        .credential-card h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .credential-card p {
             color: #666;
+            margin: 0.5rem 0;
         }
         
-        .credentials p {
-            margin: 0.5rem 0;
-            font-size: 1.1rem;
+        /* Veteran Section */
+        .veteran-section {
+            background: radial-gradient(ellipse at center, #2E7D32 0%, #1B5E20 50%, #0D3D0F 100%);
+            color: white;
+            text-align: center;
+            padding: 3rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .veteran-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.03) 50%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .veteran-section h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .veteran-section .highlight {
+            font-size: 3rem;
+            font-family: 'Courier New', monospace;
+            color: #A5D6A7;
+            margin: 1rem 0;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        /* Problems Section */
+        .problems-section {
+            padding: 4rem 5%;
+            background: white;
+        }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .problems-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            text-align: center;
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .problem-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #2E7D32;
+        }
+        
+        .problem-card h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .problem-card .problem {
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        .problem-card .solution {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        /* Philosophy Section */
+        .philosophy-section {
+            background: #000;
+            color: white;
+            text-align: center;
+            padding: 4rem 5%;
+        }
+        
+        .philosophy-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: white;
+        }
+        
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .philosophy-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .bad-science-image {
+            margin: 3rem 0;
+        }
+        
+        .bad-science-image img {
+            max-width: 500px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+        
+        .services-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            text-align: center;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 4px solid #2E7D32;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .service-card h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .service-card ul {
+            list-style: none;
+        }
+        
+        .service-card li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .service-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2E7D32;
+            font-weight: bold;
         }
         
         /* Downloads Section */
         .downloads-section {
             padding: 4rem 5%;
-            background: white;
+            background: #000;
+            color: white;
             text-align: center;
         }
         
         .downloads-section h2 {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-family: 'Courier New', monospace;
-            color: #333;
-        }
-        
-        .downloads-subtitle {
-            font-size: 1.1rem;
-            color: #666;
             margin-bottom: 3rem;
+            font-family: 'Courier New', monospace;
+            color: white;
         }
         
         .download-items {
@@ -165,15 +437,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #f8f9fa;
+            background: #333;
             padding: 1.5rem;
             border-radius: 8px;
-            border: 1px solid #e9ecef;
+            border: 1px solid #555;
         }
         
         .download-item span {
             font-size: 1.1rem;
-            color: #333;
+            color: white;
         }
         
         .download-btn {
@@ -190,289 +462,6 @@
             background: #1B5E20;
         }
         
-        /* Veteran Section */
-        .veteran-section {
-            background: linear-gradient(135deg, #8B0000, #000);
-            color: white;
-            text-align: center;
-            padding: 3rem 5%;
-        }
-        
-        .veteran-section h2 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .veteran-section .highlight {
-            font-size: 3rem;
-            font-family: 'Courier New', monospace;
-            color: #FFD700;
-            margin: 1rem 0;
-        }
-        
-        /* What We Do Section */
-        .what-we-do-section {
-            padding: 4rem 5%;
-            background: #f8f9fa;
-        }
-        
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .what-we-do-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-family: 'Courier New', monospace;
-            color: #333;
-            text-align: center;
-        }
-        
-        .intro-text {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 3rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .support-list {
-            list-style: none;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .support-list li {
-            padding: 1rem 0;
-            padding-left: 2rem;
-            position: relative;
-            font-size: 1.1rem;
-            border-bottom: 1px solid #e9ecef;
-        }
-        
-        .support-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #2E7D32;
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-        
-        .support-list li:last-child {
-            border-bottom: none;
-        }
-        
-        /* Compliance Section */
-        .compliance-section {
-            padding: 4rem 5%;
-            background: white;
-            text-align: center;
-        }
-        
-        .compliance-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-family: 'Courier New', monospace;
-            color: #333;
-        }
-        
-        .compliance-list {
-            list-style: none;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .compliance-list li {
-            padding: 0.8rem 0;
-            padding-left: 2rem;
-            position: relative;
-            font-size: 1.1rem;
-            text-align: left;
-        }
-        
-        .compliance-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #2E7D32;
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-        
-        /* Philosophy Section */
-        .philosophy-section {
-            background: #000;
-            color: white;
-            text-align: center;
-            padding: 4rem 5%;
-        }
-        
-        .philosophy-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .philosophy-text {
-            text-align: left;
-        }
-        
-        .philosophy-text h3 {
-            font-size: 1.2rem;
-            color: #A5D6A7;
-            margin-bottom: 1rem;
-        }
-        
-        .philosophy-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-family: 'Courier New', monospace;
-            color: white;
-        }
-        
-        .philosophy-text p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .philosophy-image img {
-            width: 100%;
-            max-width: 500px;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(255,255,255,0.1);
-        }
-        
-        /* Downloads in Black Section */
-        .downloads-black-section {
-            background: #000;
-            color: white;
-            padding: 3rem 5%;
-            text-align: center;
-        }
-        
-        .downloads-black-section .download-item {
-            background: #333;
-            color: white;
-            border: 1px solid #555;
-        }
-        
-        .downloads-black-section .download-item span {
-            color: white;
-        }
-        
-        /* What We Can Help With Section */
-        .help-section {
-            padding: 4rem 5%;
-            background: #f8f9fa;
-        }
-        
-        .help-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-family: 'Courier New', monospace;
-            color: #333;
-            text-align: center;
-        }
-        
-        .help-items {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .help-item {
-            margin-bottom: 2rem;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid #e9ecef;
-        }
-        
-        .help-item:last-child {
-            border-bottom: none;
-        }
-        
-        .help-item h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #333;
-        }
-        
-        .help-item p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-        
-        .help-item .italics {
-            font-style: italic;
-            color: #888;
-        }
-        
-        /* How We Do It Section */
-        .how-section {
-            padding: 4rem 5%;
-            background: white;
-        }
-        
-        .how-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .how-text h3 {
-            font-size: 1.2rem;
-            color: #2E7D32;
-            margin-bottom: 1rem;
-        }
-        
-        .how-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-family: 'Courier New', monospace;
-            color: #333;
-        }
-        
-        .how-text p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 2rem;
-        }
-        
-        .how-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        /* Get More Information Section */
-        .info-section {
-            background: #000;
-            color: white;
-            padding: 4rem 5%;
-            text-align: center;
-        }
-        
-        .info-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-family: 'Courier New', monospace;
-            color: white;
-        }
-        
-        .info-section .download-items {
-            max-width: 800px;
-        }
-        
         /* Contact Section */
         .contact-section {
             padding: 4rem 5%;
@@ -485,6 +474,13 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
         .contact-form h2 {
@@ -506,7 +502,8 @@
         }
         
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 0.8rem;
             border: 1px solid #ddd;
@@ -520,7 +517,7 @@
         }
         
         .submit-btn {
-            background: #000;
+            background: #2E7D32;
             color: white;
             padding: 1rem 2rem;
             border: none;
@@ -532,34 +529,65 @@
         }
         
         .submit-btn:hover {
-            background: #333;
+            background: #1B5E20;
         }
         
-        .project-exclusions {
+        .company-info {
             background: white;
             padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        .project-exclusions h2 {
+        .company-info h2 {
             font-size: 2rem;
             margin-bottom: 2rem;
             font-family: 'Courier New', monospace;
             color: #333;
         }
         
-        .company-info {
+        .location-map {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .location-map iframe {
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .distance-list {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .distance-list h4 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .distance-list ul {
+            list-style: none;
+        }
+        
+        .distance-list li {
+            padding: 0.3rem 0;
+            color: #666;
+        }
+        
+        .project-exclusions {
             margin-top: 2rem;
             padding-top: 2rem;
             border-top: 1px solid #e9ecef;
         }
         
-        .company-info h3 {
-            font-size: 1.5rem;
+        .project-exclusions h3 {
+            color: #d32f2f;
             margin-bottom: 1rem;
             font-family: 'Courier New', monospace;
-            color: #333;
         }
         
         /* Footer */
@@ -608,8 +636,6 @@
                 font-size: 2rem;
             }
             
-            .philosophy-content,
-            .how-content,
             .contact-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -627,7 +653,14 @@
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="https://substack.com/@jaxorik" target="_blank">BLOG</a></li>
                 <li><a href="https://github.com/jaxorik" target="_blank">PORTFOLIO</a></li>
-                <li><a href="#contact" class="cta-button">GET CUSTOM AI ▸</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle">GET CUSTOM AI ▾</button>
+                    <div class="dropdown-menu">
+                        <a href="government.html">GOVERNMENT</a>
+                        <a href="researchers.html">RESEARCH</a>
+                        <a href="disasters.html">DISASTER RESPONSE</a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -635,32 +668,36 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Cutting Edge Solutions for Defense and Federal Innovation</h1>
-            <div class="subtitle">SAM.gov Registered | Eligible for WOSB & SDVOSB Set-Asides</div>
-            <div class="flag-image">
-                <img src="flag-tech.jpg" alt="American Flag with Technology Overlay">
-            </div>
-            <div class="credentials">
-                <p><strong>UEID:</strong> K8ENCCGZ2M13</p>
-                <p><strong>CAGE:</strong> 11X70</p>
-                <p><strong>WOSB + SDVOSB</strong> Certifications in Progress</p>
-                <p><strong>Listed in Disaster Response Registry</strong></p>
-            </div>
+            <h1>AI Solutions for Federal Agencies and Prime Contractors</h1>
+            <div class="subtitle">Transparent • Auditable • Export-Control Compliant</div>
+            <p>We support U.S. government agencies and prime contractors with AI systems designed for national defense, energy security, and mission-critical operations.</p>
+            <a href="#contact" class="cta-button">Download Capabilities Statement</a>
         </div>
     </section>
 
-    <!-- Downloads Section -->
-    <section class="downloads-section">
-        <h2>Downloads</h2>
-        <p class="downloads-subtitle">Here's everything you and your board need to know before hiring us.</p>
-        <div class="download-items">
-            <div class="download-item">
-                <span>Government Brief - Updated 9-2025 (pdf)</span>
-                <a href="#" class="download-btn">📥 Download</a>
+    <!-- Credentials Section -->
+    <section class="credentials-section">
+        <h2>SAM.gov Registered and Compliance Ready</h2>
+        <div class="credentials-grid">
+            <div class="credential-card">
+                <h3>SAM.gov Registration & Certifications</h3>
+                <p><strong>UEI:</strong> K8ENCCGZ2M13</p>
+                <p><strong>CAGE:</strong> 11X70</p>
+                <p><strong>WOSB:</strong> Certification Pending</p>
+                <p><strong>SDVOSB:</strong> Certification Pending</p>
+                <p>Eligible for set-aside contracts</p>
             </div>
-            <div class="download-item">
-                <span>Capabilities Statement - Updated 9-2025 (pdf)</span>
-                <a href="#" class="download-btn">📥 Download</a>
+            <div class="credential-card">
+                <h3>Export Control Compliance</h3>
+                <p>Former government and military employees</p>
+                <p>Experience with classified environments</p>
+                <p>Security clearance eligibility maintained</p>
+            </div>
+            <div class="credential-card">
+                <h3>Technical Credentials</h3>
+                <p>PhD-level data science expertise</p>
+                <p>Machine learning training from MIT</p>
+                <p>Deep learning studies at Carnegie Mellon</p>
             </div>
         </div>
     </section>
@@ -671,116 +708,116 @@
         <div class="highlight">Female Veteran-Owned</div>
     </section>
 
-    <!-- What We Do Section -->
-    <section class="what-we-do-section">
+    <!-- Problems Section -->
+    <section class="problems-section">
         <div class="section-container">
-            <h2>What We Do</h2>
-            <p class="intro-text">Jaxorik AI Research Group delivers machine learning systems designed for operational use in high-stakes environments.</p>
-            <p class="intro-text"><strong>We support:</strong></p>
-            <ul class="support-list">
-                <li>Real-time decision support</li>
-                <li>Clear and understandable, reproducible algorithms</li>
-                <li>AI-assisted logistics & threat detection</li>
-                <li>Compute-light models deployable in degraded or disconnected environments</li>
-                <li>R&D partnerships with DoD, DHS, and civilian agencies</li>
-            </ul>
+            <h2>Common Government Contracting Challenges</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <h3>Procurement Complexity</h3>
+                    <p class="problem">"We need AI solutions but our procurement process is complex and vendors often don't understand government requirements."</p>
+                    <p class="solution">We're SAM.gov registered with established compliance protocols and understand federal acquisition processes.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Security and Compliance</h3>
+                    <p class="problem">"We need AI systems that meet export control requirements and can handle sensitive government data."</p>
+                    <p class="solution">Former government employees who work within established ITAR compliance protocols and understand classified environments.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Black Box AI Risks</h3>
+                    <p class="problem">"We can't deploy AI systems we can't explain or audit for mission-critical government operations."</p>
+                    <p class="solution">Every AI system we build is transparent, auditable, and explainable - no black boxes for government work.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Long Development Cycles</h3>
+                    <p class="problem">"Contractors promise AI solutions but take months or years to deliver while our operational needs are immediate."</p>
+                    <p class="solution">Rapid prototyping and deployment focused on getting mission-critical tools operational quickly.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Vendor Reliability</h3>
+                    <p class="problem">"We need contractors who understand government timelines, budgets, and won't disappear mid-project."</p>
+                    <p class="solution">Disaster Response Registry listing and track record of delivering under pressure with government agencies.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Technical Integration</h3>
+                    <p class="problem">"New AI systems need to integrate with our existing government IT infrastructure and security protocols."</p>
+                    <p class="solution">Built to work with government systems, security requirements, and operational constraints from day one.</p>
+                </div>
+            </div>
         </div>
-    </section>
-
-    <!-- Compliance Section -->
-    <section class="compliance-section">
-        <h2>Compliance & Readiness</h2>
-        <ul class="compliance-list">
-            <li><strong>SAM.gov registered</strong></li>
-            <li><strong>UEID:</strong> K8ENCCGZ2M13</li>
-            <li><strong>CAGE:</strong> 11X70</li>
-            <li><strong>WOSB & SDVOSB</strong> certifications pending</li>
-            <li><strong>Disaster Response Registry:</strong> Active</li>
-            <li><strong>Flexible delivery:</strong> On-premise, GovCloud, or hybrid</li>
-        </ul>
     </section>
 
     <!-- Philosophy Section -->
     <section class="philosophy-section">
+        <h2>Transparent AI for Government Applications</h2>
         <div class="philosophy-content">
-            <div class="philosophy-image">
+            <p>Government agencies can't afford to deploy AI systems they can't explain, audit, or trust. Black box algorithms create security risks, compliance nightmares, and operational failures.</p>
+            <div class="bad-science-image">
                 <img src="bad science.png" alt="This is Bad Science - Black Box Diagram">
             </div>
-            <div class="philosophy-text">
-                <h3>Why Government Contractors Choose Our Approach</h3>
-                <h2>Transparent, Reproducible AI</h2>
-                <p>Black box algorithms create security risks, compliance nightmares, and operational failures when you can't explain how decisions were made. <strong>Our AI systems are built with complete transparency.</strong> You can audit every component, understand every decision. Our tools are built for mission success.</p>
-                <a href="about.html" class="cta-button">FIND OUT MORE</a>
+            <p>We build AI systems designed for government accountability. Every decision is auditable, every method is documented, and every result is reproducible. Because when national security is on the line, you need to understand exactly how your AI systems work.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="section-container">
+            <h2>Government AI Capabilities</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>National Defense Applications</h3>
+                    <ul>
+                        <li>Threat detection and analysis</li>
+                        <li>Infrastructure vulnerability assessment</li>
+                        <li>Real-time decision support systems</li>
+                        <li>Edge computing for remote operations</li>
+                        <li>Secure, auditable AI pipelines</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Energy Security Solutions</h3>
+                    <ul>
+                        <li>Grid anomaly detection</li>
+                        <li>Predictive maintenance systems</li>
+                        <li>Resource optimization modeling</li>
+                        <li>Critical infrastructure monitoring</li>
+                        <li>Emergency response coordination</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Disaster Response Systems</h3>
+                    <ul>
+                        <li>Rapid damage assessment</li>
+                        <li>Resource allocation optimization</li>
+                        <li>Search and rescue coordination</li>
+                        <li>Predictive modeling for natural disasters</li>
+                        <li>Offline-capable emergency tools</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Compliance and Integration</h3>
+                    <ul>
+                        <li>ITAR-compliant development processes</li>
+                        <li>Integration with existing government systems</li>
+                        <li>Security clearance eligible team members</li>
+                        <li>Documentation for audit requirements</li>
+                        <li>Rapid deployment capabilities</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Downloads in Black Section -->
-    <section class="downloads-black-section">
+    <!-- Downloads Section -->
+    <section class="downloads-section">
+        <h2>Download Government Resources</h2>
         <div class="download-items">
             <div class="download-item">
-                <span>Download our Capabilities Statement (pdf)</span>
+                <span>Capabilities Statement - Updated 9-2025 (pdf)</span>
                 <a href="#" class="download-btn">📥 Download</a>
             </div>
-        </div>
-    </section>
-
-    <!-- What We Can Help With Section -->
-    <section class="help-section">
-        <h2>What We Can Help With</h2>
-        <div class="help-items">
-            <div class="help-item">
-                <h3>We build and customize AI tools for real-world government needs—fast.</h3>
-                <p class="italics">(We don't sell off-the-shelf stuff. We create systems tailored to your mission.)</p>
-            </div>
-            <div class="help-item">
-                <h3>We design AI that works in the field, not just the lab.</h3>
-                <p class="italics">(We build tools that can run on limited internet, in unpredictable situations, and under pressure.)</p>
-            </div>
-            <div class="help-item">
-                <h3>We use data to predict problems before they happen.</h3>
-                <p class="italics">(From logistics bottlenecks to emerging threats, we help agencies make faster, smarter decisions.)</p>
-            </div>
-            <div class="help-item">
-                <h3>We provide advice on how to buy and use AI safely and effectively.</h3>
-                <p class="italics">(We provide technical insight during procurement, planning, and integration.)</p>
-            </div>
-            <div class="help-item">
-                <h3>We can deploy AI tools quickly in urgent situations.</h3>
-                <p class="italics">(We specialize in fast-turnaround prototypes and technology built for action—not endless testing.)</p>
-            </div>
-            <div class="help-item">
-                <h3>We keep your data safe, explain how the AI works, and avoid black-box surprises.</h3>
-                <p class="italics">(We prioritize transparency, security, and ethical decision-making.)</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- How We Do It Section -->
-    <section class="how-section">
-        <div class="how-content">
-            <div class="how-image">
-                <img src="drone-sky.jpg" alt="Drone flying against blue sky">
-            </div>
-            <div class="how-text">
-                <h3>Learn How Our Code is Mission-Ready</h3>
-                <h2>How We Do It</h2>
-                <p>When you need AI that works where resources are limited, like in disaster zones, on satellites, or anywhere cloud computing isn't an option, Reservoir Computing delivers transparent, efficient intelligence on minimal hardware. See exactly how it works - no black boxes, no surprises.</p>
-                <a href="about.html" class="cta-button">FIND OUT MORE</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Get More Information Section -->
-    <section class="info-section">
-        <h2>Get More Information</h2>
-        <div class="download-items">
             <div class="download-item">
                 <span>Government Brief - Updated 9-2025 (pdf)</span>
-                <a href="#" class="download-btn">📥 Download</a>
-            </div>
-            <div class="download-item">
-                <span>Slick Sheet - Updated 9-2025 (pdf)</span>
                 <a href="#" class="download-btn">📥 Download</a>
             </div>
         </div>
@@ -790,15 +827,15 @@
     <section class="contact-section" id="contact">
         <div class="contact-content">
             <div class="contact-form">
-                <h2>Get in Touch with Us</h2>
+                <h2>Request Government AI Capabilities</h2>
                 <form>
                     <div class="form-group">
                         <label for="name">Name*</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="organization">Organization or company*</label>
-                        <input type="text" id="organization" name="organization" required>
+                        <label for="agency">Agency/Organization*</label>
+                        <input type="text" id="agency" name="agency" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email*</label>
@@ -809,28 +846,71 @@
                         <input type="tel" id="phone" name="phone" required>
                     </div>
                     <div class="form-group">
-                        <label for="mission">Briefly describe your mission needs or project goals.*</label>
-                        <textarea id="mission" name="mission" required></textarea>
+                        <label for="clearance">Security Clearance Level (if applicable)</label>
+                        <select id="clearance" name="clearance">
+                            <option value="">Select clearance level</option>
+                            <option value="none">No clearance required</option>
+                            <option value="public-trust">Public Trust</option>
+                            <option value="secret">Secret</option>
+                            <option value="top-secret">Top Secret</option>
+                            <option value="ts-sci">TS/SCI</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="questions">What questions do you have for us?</label>
-                        <textarea id="questions" name="questions"></textarea>
+                        <label for="project-type">Project Type*</label>
+                        <select id="project-type" name="project-type" required>
+                            <option value="">Select project type</option>
+                            <option value="national-defense">National Defense</option>
+                            <option value="energy-security">Energy Security</option>
+                            <option value="disaster-response">Disaster Response</option>
+                            <option value="infrastructure">Critical Infrastructure</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
                     <div class="form-group">
-                        <label for="deployment">(For compliance purposes) Do you anticipate deploying this outside the United States (e.g. Canada, Mexico, NATO allies, or EU member states)?*</label>
-                        <textarea id="deployment" name="deployment" required></textarea>
+                        <label for="project-description">Project Requirements and Mission Objectives*</label>
+                        <textarea id="project-description" name="project-description" required></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">SEND</button>
+                    <div class="form-group">
+                        <label for="timeline">Project Timeline and Key Milestones</label>
+                        <textarea id="timeline" name="timeline"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="deployment">International Deployment Considerations (for ITAR compliance)*</label>
+                        <textarea id="deployment" name="deployment" placeholder="Will this system be deployed outside the United States or accessed by foreign nationals?" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">REQUEST CAPABILITIES BRIEFING</button>
                 </form>
             </div>
-            <div class="project-exclusions">
-                <h2>Project Exclusions</h2>
-                <p>Jaxorik maintains strict ethical standards in AI development. We do not accept contracts involving fraudulent applications, discriminatory algorithms, cryptocurrency schemes, or partisan political projects. While we support U.S. national defense initiatives, we do not develop autonomous weapons systems or AI-guided munitions. We appreciate your understanding of these ethical boundaries.</p>
+            <div class="company-info">
+                <h2>Jaxorik AI Research Group</h2>
                 
-                <div class="company-info">
-                    <h3>Jaxorik AI Research Group</h3>
-                    <p>6300 Riverside Plaza Lane Northwest Suite 100, Albuquerque, New Mexico 87120, United States</p>
-                    <p><strong>505-506-6884</strong></p>
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73853.96317359745!2d-106.69161044960343!3d35.10883615751392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8722724b9a3a202b%3A0xe75ebc28cfba8890!2s6300%20Riverside%20Plaza%20Ln%2C%20Albuquerque%2C%20NM%2087120!5e0!3m2!1sen!2sus!4v1758439992932!5m2!1sen!2sus" 
+                            width="100%" height="250" 
+                            style="border:0; border-radius: 8px;" 
+                            allowfullscreen="" loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <div class="distance-list">
+                    <h4>Strategic Location for Defense R&D</h4>
+                    <ul>
+                        <li><strong>Sandia National Labs:</strong> 20 minutes (15 miles)</li>
+                        <li><strong>Kirtland Air Force Base:</strong> 20 minutes (16 miles)</li>
+                        <li><strong>Los Alamos National Lab:</strong> 90 minutes (90 miles)</li>
+                        <li><strong>White Sands Missile Range:</strong> 3 hours (187 miles)</li>
+                    </ul>
+                </div>
+                
+                <p>6300 Riverside Plaza Lane Northwest Suite 100<br>
+                Albuquerque, New Mexico 87120, United States</p>
+                <p><strong>505-506-6884</strong></p>
+                
+                <div class="project-exclusions">
+                    <h3>Project Exclusions</h3>
+                    <p>We maintain strict ethical standards and do not accept contracts for autonomous weapons systems, discriminatory algorithms, or projects that conflict with U.S. national security interests.</p>
                 </div>
             </div>
         </div>
@@ -848,7 +928,7 @@
                 <p><strong>505-506-6884</strong></p>
                 <p>Copyright © 2025 JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
                 <p>SAM.gov registered | UEI: K8ENCCGZ2M13 | CAGE: 11X70</p>
-                <p>Disaster Response Certification: Active</p>
+                <p>Supporting U.S. national defense through transparent AI development</p>
             </div>
         </div>
     </footer>
