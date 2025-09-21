@@ -58,6 +58,74 @@
             list-style: none;
             gap: 2rem;
             align-items: center;
+            position: relative;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            background: #000;
+            color: white !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .dropdown-toggle:hover {
+            background: #333;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #333 !important;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+        
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-menu a:hover {
+            background: #f8f9fa;
+            color: #000 !important;
         }
         
         .nav-links a {
@@ -506,7 +574,14 @@
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="https://substack.com/@jaxorik" target="_blank">BLOG</a></li>
                 <li><a href="https://github.com/jaxorik" target="_blank">PORTFOLIO</a></li>
-                <li><a href="#contact" class="cta-button">GET CUSTOM AI ▸</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle">GET CUSTOM AI ▾</button>
+                    <div class="dropdown-menu">
+                        <a href="government.html">GOVERNMENT</a>
+                        <a href="research.html">RESEARCH</a>
+                        <a href="disaster.html">DISASTER RESPONSE</a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -624,6 +699,8 @@
                     <p>✔ Resource allocation modeling under crisis conditions</p>
                     <p>✔ Predictive analytics for floods, fires, and severe weather</p>
                     <p>✔ Field-ready tools that run offline when networks fail</p>
+                <p>&nbsp;</p>
+                <a href="disaster.html" class="cta-button">VIEW DISASTER RESPONSE CAPABILITIES</a>
             </div>
             <div class="service-card">
                 <h3>RESEARCH</h3>
@@ -633,6 +710,8 @@
                 <p>Too often, institutions rely on black-box models that obscure methods — but real science demands transparency.</p>
                 <p>&nbsp;</p>
                 <p>We provide AI development affordably — sometimes at cost — to support research teams. When our contributions extend to study design, analysis, or interpretation, we participate as co-authors. Otherwise, we can simply provide the tools as a service.</p>
+                <p>&nbsp;</p>
+                <a href="research.html" class="cta-button">VIEW RESEARCH CAPABILITIES</a>
             </div>
             <div class="service-card">
                 <h3>NATIONAL DEFENSE & ENERGY</h3>
@@ -644,6 +723,8 @@
                 <p>✔ Modeling and simulation for national defense projects</p>
                 <p>✔ Data mining and anomaly detection for energy research</p>
                 <p>✔ Deployable AI tools for mission-critical operations</p>
+                <p>&nbsp;</p>
+                <a href="government.html" class="cta-button">VIEW GOVERNMENT CAPABILITIES</a>
             </div>
         </div>
     </section>
