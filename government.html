@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jaxorik AI Research Group - Cutting Edge Solutions for Defense and Federal Innovation. SAM.gov registered, WOSB & SDVOSB eligible.">
+    <title>Cutting Edge Solutions for Defense - Jaxorik AI Research Group</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #666;
+        }
+        
+        .cta-button {
+            background: #000;
+            color: white !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: #333;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 5%;
+            background: #f8f9fa;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            color: #666;
+        }
+        
+        .flag-image {
+            margin: 2rem 0;
+        }
+        
+        .flag-image img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .credentials {
+            margin-top: 2rem;
+            color: #666;
+        }
+        
+        .credentials p {
+            margin: 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        /* Downloads Section */
+        .downloads-section {
+            padding: 4rem 5%;
+            background: white;
+            text-align: center;
+        }
+        
+        .downloads-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+        }
+        
+        .downloads-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+        
+        .download-items {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .download-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        
+        .download-item span {
+            font-size: 1.1rem;
+            color: #333;
+        }
+        
+        .download-btn {
+            background: #2E7D32;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: #1B5E20;
+        }
+        
+        /* Veteran Section */
+        .veteran-section {
+            background: linear-gradient(135deg, #8B0000, #000);
+            color: white;
+            text-align: center;
+            padding: 3rem 5%;
+        }
+        
+        .veteran-section h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .veteran-section .highlight {
+            font-size: 3rem;
+            font-family: 'Courier New', monospace;
+            color: #FFD700;
+            margin: 1rem 0;
+        }
+        
+        /* What We Do Section */
+        .what-we-do-section {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .what-we-do-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            text-align: center;
+        }
+        
+        .intro-text {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .support-list {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .support-list li {
+            padding: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .support-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2E7D32;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        .support-list li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Compliance Section */
+        .compliance-section {
+            padding: 4rem 5%;
+            background: white;
+            text-align: center;
+        }
+        
+        .compliance-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+        }
+        
+        .compliance-list {
+            list-style: none;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .compliance-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+            text-align: left;
+        }
+        
+        .compliance-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2E7D32;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        /* Philosophy Section */
+        .philosophy-section {
+            background: #000;
+            color: white;
+            text-align: center;
+            padding: 4rem 5%;
+        }
+        
+        .philosophy-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .philosophy-text {
+            text-align: left;
+        }
+        
+        .philosophy-text h3 {
+            font-size: 1.2rem;
+            color: #A5D6A7;
+            margin-bottom: 1rem;
+        }
+        
+        .philosophy-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: white;
+        }
+        
+        .philosophy-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .philosophy-image img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+        }
+        
+        /* Downloads in Black Section */
+        .downloads-black-section {
+            background: #000;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        .downloads-black-section .download-item {
+            background: #333;
+            color: white;
+            border: 1px solid #555;
+        }
+        
+        .downloads-black-section .download-item span {
+            color: white;
+        }
+        
+        /* What We Can Help With Section */
+        .help-section {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+        
+        .help-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            text-align: center;
+        }
+        
+        .help-items {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .help-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .help-item:last-child {
+            border-bottom: none;
+        }
+        
+        .help-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .help-item p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+        
+        .help-item .italics {
+            font-style: italic;
+            color: #888;
+        }
+        
+        /* How We Do It Section */
+        .how-section {
+            padding: 4rem 5%;
+            background: white;
+        }
+        
+        .how-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .how-text h3 {
+            font-size: 1.2rem;
+            color: #2E7D32;
+            margin-bottom: 1rem;
+        }
+        
+        .how-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+        }
+        
+        .how-text p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        
+        .how-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Get More Information Section */
+        .info-section {
+            background: #000;
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        
+        .info-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-family: 'Courier New', monospace;
+            color: white;
+        }
+        
+        .info-section .download-items {
+            max-width: 800px;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+        
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-form h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: #000;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #333;
+        }
+        
+        .project-exclusions {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .project-exclusions h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+        }
+        
+        .company-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .company-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+        }
+        
+        /* Footer */
+        footer {
+            background: #000;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            margin: 2rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        .footer-info p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .philosophy-content,
+            .how-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="Jaxorik logo black.png" alt="Jaxorik AI Research Group"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="https://substack.com/@jaxorik" target="_blank">BLOG</a></li>
+                <li><a href="https://github.com/jaxorik" target="_blank">PORTFOLIO</a></li>
+                <li><a href="#contact" class="cta-button">GET CUSTOM AI ▸</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Cutting Edge Solutions for Defense and Federal Innovation</h1>
+            <div class="subtitle">SAM.gov Registered | Eligible for WOSB & SDVOSB Set-Asides</div>
+            <div class="flag-image">
+                <img src="flag-tech.jpg" alt="American Flag with Technology Overlay">
+            </div>
+            <div class="credentials">
+                <p><strong>UEID:</strong> K8ENCCGZ2M13</p>
+                <p><strong>CAGE:</strong> 11X70</p>
+                <p><strong>WOSB + SDVOSB</strong> Certifications in Progress</p>
+                <p><strong>Listed in Disaster Response Registry</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section class="downloads-section">
+        <h2>Downloads</h2>
+        <p class="downloads-subtitle">Here's everything you and your board need to know before hiring us.</p>
+        <div class="download-items">
+            <div class="download-item">
+                <span>Government Brief - Updated 9-2025 (pdf)</span>
+                <a href="#" class="download-btn">📥 Download</a>
+            </div>
+            <div class="download-item">
+                <span>Capabilities Statement - Updated 9-2025 (pdf)</span>
+                <a href="#" class="download-btn">📥 Download</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Veteran Section -->
+    <section class="veteran-section">
+        <h2>Our business is proudly</h2>
+        <div class="highlight">Female Veteran-Owned</div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="what-we-do-section">
+        <div class="section-container">
+            <h2>What We Do</h2>
+            <p class="intro-text">Jaxorik AI Research Group delivers machine learning systems designed for operational use in high-stakes environments.</p>
+            <p class="intro-text"><strong>We support:</strong></p>
+            <ul class="support-list">
+                <li>Real-time decision support</li>
+                <li>Clear and understandable, reproducible algorithms</li>
+                <li>AI-assisted logistics & threat detection</li>
+                <li>Compute-light models deployable in degraded or disconnected environments</li>
+                <li>R&D partnerships with DoD, DHS, and civilian agencies</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Compliance Section -->
+    <section class="compliance-section">
+        <h2>Compliance & Readiness</h2>
+        <ul class="compliance-list">
+            <li><strong>SAM.gov registered</strong></li>
+            <li><strong>UEID:</strong> K8ENCCGZ2M13</li>
+            <li><strong>CAGE:</strong> 11X70</li>
+            <li><strong>WOSB & SDVOSB</strong> certifications pending</li>
+            <li><strong>Disaster Response Registry:</strong> Active</li>
+            <li><strong>Flexible delivery:</strong> On-premise, GovCloud, or hybrid</li>
+        </ul>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy-section">
+        <div class="philosophy-content">
+            <div class="philosophy-image">
+                <img src="bad science.png" alt="This is Bad Science - Black Box Diagram">
+            </div>
+            <div class="philosophy-text">
+                <h3>Why Government Contractors Choose Our Approach</h3>
+                <h2>Transparent, Reproducible AI</h2>
+                <p>Black box algorithms create security risks, compliance nightmares, and operational failures when you can't explain how decisions were made. <strong>Our AI systems are built with complete transparency.</strong> You can audit every component, understand every decision. Our tools are built for mission success.</p>
+                <a href="about.html" class="cta-button">FIND OUT MORE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads in Black Section -->
+    <section class="downloads-black-section">
+        <div class="download-items">
+            <div class="download-item">
+                <span>Download our Capabilities Statement (pdf)</span>
+                <a href="#" class="download-btn">📥 Download</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Can Help With Section -->
+    <section class="help-section">
+        <h2>What We Can Help With</h2>
+        <div class="help-items">
+            <div class="help-item">
+                <h3>We build and customize AI tools for real-world government needs—fast.</h3>
+                <p class="italics">(We don't sell off-the-shelf stuff. We create systems tailored to your mission.)</p>
+            </div>
+            <div class="help-item">
+                <h3>We design AI that works in the field, not just the lab.</h3>
+                <p class="italics">(We build tools that can run on limited internet, in unpredictable situations, and under pressure.)</p>
+            </div>
+            <div class="help-item">
+                <h3>We use data to predict problems before they happen.</h3>
+                <p class="italics">(From logistics bottlenecks to emerging threats, we help agencies make faster, smarter decisions.)</p>
+            </div>
+            <div class="help-item">
+                <h3>We provide advice on how to buy and use AI safely and effectively.</h3>
+                <p class="italics">(We provide technical insight during procurement, planning, and integration.)</p>
+            </div>
+            <div class="help-item">
+                <h3>We can deploy AI tools quickly in urgent situations.</h3>
+                <p class="italics">(We specialize in fast-turnaround prototypes and technology built for action—not endless testing.)</p>
+            </div>
+            <div class="help-item">
+                <h3>We keep your data safe, explain how the AI works, and avoid black-box surprises.</h3>
+                <p class="italics">(We prioritize transparency, security, and ethical decision-making.)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Do It Section -->
+    <section class="how-section">
+        <div class="how-content">
+            <div class="how-image">
+                <img src="drone-sky.jpg" alt="Drone flying against blue sky">
+            </div>
+            <div class="how-text">
+                <h3>Learn How Our Code is Mission-Ready</h3>
+                <h2>How We Do It</h2>
+                <p>When you need AI that works where resources are limited, like in disaster zones, on satellites, or anywhere cloud computing isn't an option, Reservoir Computing delivers transparent, efficient intelligence on minimal hardware. See exactly how it works - no black boxes, no surprises.</p>
+                <a href="about.html" class="cta-button">FIND OUT MORE</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get More Information Section -->
+    <section class="info-section">
+        <h2>Get More Information</h2>
+        <div class="download-items">
+            <div class="download-item">
+                <span>Government Brief - Updated 9-2025 (pdf)</span>
+                <a href="#" class="download-btn">📥 Download</a>
+            </div>
+            <div class="download-item">
+                <span>Slick Sheet - Updated 9-2025 (pdf)</span>
+                <a href="#" class="download-btn">📥 Download</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-content">
+            <div class="contact-form">
+                <h2>Get in Touch with Us</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="organization">Organization or company*</label>
+                        <input type="text" id="organization" name="organization" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone*</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mission">Briefly describe your mission needs or project goals.*</label>
+                        <textarea id="mission" name="mission" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="questions">What questions do you have for us?</label>
+                        <textarea id="questions" name="questions"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="deployment">(For compliance purposes) Do you anticipate deploying this outside the United States (e.g. Canada, Mexico, NATO allies, or EU member states)?*</label>
+                        <textarea id="deployment" name="deployment" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">SEND</button>
+                </form>
+            </div>
+            <div class="project-exclusions">
+                <h2>Project Exclusions</h2>
+                <p>Jaxorik maintains strict ethical standards in AI development. We do not accept contracts involving fraudulent applications, discriminatory algorithms, cryptocurrency schemes, or partisan political projects. While we support U.S. national defense initiatives, we do not develop autonomous weapons systems or AI-guided munitions. We appreciate your understanding of these ethical boundaries.</p>
+                
+                <div class="company-info">
+                    <h3>Jaxorik AI Research Group</h3>
+                    <p>6300 Riverside Plaza Lane Northwest Suite 100, Albuquerque, New Mexico 87120, United States</p>
+                    <p><strong>505-506-6884</strong></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/jaxorik" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/company/jaxorik" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">Twitter</a>
+            </div>
+            <div class="footer-info">
+                <p><strong>505-506-6884</strong></p>
+                <p>Copyright © 2025 JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
+                <p>SAM.gov registered | UEI: K8ENCCGZ2M13 | CAGE: 11X70</p>
+                <p>Disaster Response Certification: Active</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
