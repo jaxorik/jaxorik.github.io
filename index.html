@@ -192,22 +192,151 @@
         
         /* Veteran Owned Section */
         .veteran-section {
-            background: linear-gradient(135deg, #8B0000, #000);
+            background: radial-gradient(ellipse at center, #2E7D32 0%, #1B5E20 50%, #0D3D0F 100%);
             color: white;
             text-align: center;
             padding: 3rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .veteran-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.03) 50%, transparent 70%);
+            pointer-events: none;
         }
         
         .veteran-section h2 {
             font-size: 2rem;
             margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
         }
         
         .veteran-section .highlight {
             font-size: 3rem;
             font-family: 'Courier New', monospace;
-            color: #FFD700;
+            color: #A5D6A7;
             margin: 1rem 0;
+            position: relative;
+            z-index: 2;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        
+        /* Strategic Location Section */
+        .location-section {
+            background: #f8f9fa;
+            text-align: center;
+            padding: 4rem 5%;
+        }
+        
+        .location-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+        }
+        
+        .location-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .location-map {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Courier New', monospace;
+            color: #1976d2;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .map-placeholder::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 12px;
+            height: 12px;
+            background: #d32f2f;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
+        }
+        
+        .distance-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        .distance-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .distance-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .distance-item h4 {
+            font-family: 'Courier New', monospace;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .distance-time {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .strategic-note {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #2E7D32, #1B5E20);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .strategic-note h3 {
+            font-family: 'Courier New', monospace;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .strategic-note p {
+            opacity: 0.9;
+            line-height: 1.6;
         }
         
         /* About Section */
@@ -244,7 +373,7 @@
             content: "▸";
             position: absolute;
             left: 0;
-            color: #FFD700;
+            color: #A5D6A7;
         }
         
         .about-image {
@@ -305,7 +434,7 @@
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #84C225;
+            color: #2E7D32;
             font-family: 'Courier New', monospace;
         }
         
@@ -356,9 +485,14 @@
             }
             
             .section-content,
-            .about-content {
+            .about-content,
+            .location-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+            
+            .location-content {
+                text-align: center;
             }
         }
     </style>
@@ -392,7 +526,7 @@
         <div class="section-content">
             <div class="section-text">
                 <h2>We Work With US Government Prime Contractors</h2>
-                <p>We're former government & military employees and default to ITAR-level compliance.</p>
+                <p>We're former government & military employees and work within established ITAR compliance protocols.</p>
                 <a href="#contact" class="cta-button">FIND OUT MORE</a>
             </div>
             <div class="credentials">
@@ -411,6 +545,48 @@
     <section class="veteran-section">
         <h2>Our business is proudly</h2>
         <div class="highlight">Female Veteran-Owned</div>
+    </section>
+
+    <!-- Strategic Location Section -->
+    <section class="location-section">
+        <h2>Strategic Location for Defense R&D</h2>
+        <div class="location-content">
+            <div class="location-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73853.96317359745!2d-106.69161044960343!3d35.10883615751392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8722724b9a3a202b%3A0xe75ebc28cfba8890!2s6300%20Riverside%20Plaza%20Ln%2C%20Albuquerque%2C%20NM%2087120!5e0!3m2!1sen!2sus!4v1758439992932!5m2!1sen!2sus" 
+                        width="100%" height="300" 
+                        style="border:0; border-radius: 8px;" 
+                        allowfullscreen="" loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <p><em>Positioned at the heart of America's national defense research ecosystem</em></p>
+            </div>
+            <div class="distance-grid">
+                <div class="distance-item">
+                    <h4>Sandia National Labs</h4>
+                    <div class="distance-time">20 minutes • 15 miles</div>
+                </div>
+                <div class="distance-item">
+                    <h4>Kirtland Air Force Base</h4>
+                    <div class="distance-time">20 minutes • 16 miles</div>
+                </div>
+                <div class="distance-item">
+                    <h4>Los Alamos National Lab</h4>
+                    <div class="distance-time">90 minutes • 90 miles</div>
+                </div>
+                <div class="distance-item">
+                    <h4>White Sands Missile Range</h4>
+                    <div class="distance-time">3 hours • 187 miles</div>
+                </div>
+                <div class="distance-item">
+                    <h4>Colorado Springs</h4>
+                    <div class="distance-time">5.5 hours • 380 miles</div>
+                </div>
+                <div class="strategic-note">
+                    <h3>Full R&D Lifecycle Support</h3>
+                    <p>From research conception at national labs to field testing at White Sands and operational deployment with Space Force - we support the complete development pipeline for defense AI applications.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- About Section -->
