@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI development for academic research - transparent methods, reproducible results, budget-friendly solutions for data analysis and modeling.">
+    <title>AI Solutions for Academic Research - Jaxorik AI Research Group</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+            position: relative;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            background: #000;
+            color: white !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .dropdown-toggle:hover {
+            background: #333;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #333 !important;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+        
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-menu a:hover {
+            background: #f8f9fa;
+            color: #000 !important;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #666;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 5%;
+            background: linear-gradient(135deg, #2E7D32, #1B5E20);
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 1rem;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            background: white;
+            color: #2E7D32 !important;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        }
+        
+        /* Problems Section */
+        .problems-section {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .problems-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            text-align: center;
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .problem-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #2E7D32;
+        }
+        
+        .problem-card h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .problem-card p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .problem-card .solution {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        /* Philosophy Section */
+        .philosophy-section {
+            background: #000;
+            color: white;
+            text-align: center;
+            padding: 4rem 5%;
+        }
+        
+        .philosophy-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: white;
+        }
+        
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .philosophy-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .bad-science-image {
+            margin: 3rem 0;
+        }
+        
+        .bad-science-image img {
+            max-width: 500px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 4rem 5%;
+            background: white;
+        }
+        
+        .services-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            text-align: center;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 4px solid #2E7D32;
+        }
+        
+        .service-card h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .service-card ul {
+            list-style: none;
+        }
+        
+        .service-card li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .service-card li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #2E7D32;
+        }
+        
+        /* Collaboration Models Section */
+        .collaboration-section {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+        
+        .collaboration-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            text-align: center;
+        }
+        
+        .collaboration-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .collaboration-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .collaboration-card h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 1.3rem;
+        }
+        
+        .collaboration-card p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .collaboration-card .highlight {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 5%;
+            background: #000;
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: white;
+        }
+        
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .contact-form {
+            background: #333;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: left;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #555;
+            border-radius: 4px;
+            font-size: 1rem;
+            background: #444;
+            color: white;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: #2E7D32;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #1B5E20;
+        }
+        
+        /* Footer */
+        footer {
+            background: #000;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            margin: 2rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        .footer-info p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .collaboration-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="Jaxorik logo black.png" alt="Jaxorik AI Research Group"></a>
+            <ul class="nav-links">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="https://substack.com/@jaxorik" target="_blank">BLOG</a></li>
+                <li><a href="https://github.com/jaxorik" target="_blank">PORTFOLIO</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle">GET CUSTOM AI ▾</button>
+                    <div class="dropdown-menu">
+                        <a href="government.html">GOVERNMENT</a>
+                        <a href="research.html">RESEARCH</a>
+                        <a href="disaster.html">DISASTER RESPONSE</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>AI Solutions for Academic Research</h1>
+            <div class="subtitle">Transparent Methods • Reproducible Results • Budget-Friendly</div>
+            <p>When your research budget is tight but your data analysis needs are complex, we provide AI development that prioritizes scientific rigor over flashy demonstrations.</p>
+            <a href="#contact" class="cta-button">Discuss Your Research Project</a>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="problems-section">
+        <div class="section-container">
+            <h2>Common Research Challenges We Solve</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <h3>Budget Constraints</h3>
+                    <p>"We need data analysis done but our post-docs are already working 8 days a week and we can't afford expensive consulting rates."</p>
+                    <p class="solution">We offer flexible pricing and collaboration models that work within academic budget realities.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Reproducibility Requirements</h3>
+                    <p>"Reviewer #2 is asking how our model works, but we used a black-box system we can't explain. Please help. He is giving us the LOOK."</p>
+                    <p class="solution">Every model we build comes with complete documentation and explainable decision processes.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Technical Skills Gap</h3>
+                    <p>"We know our research domain but don't have the machine learning expertise to implement solutions."</p>
+                    <p class="solution">We translate between domain knowledge and technical implementation, bridging the gap effectively.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Publication Pressure</h3>
+                    <p>"We need robust methods that will pass peer review and stand up to scrutiny."</p>
+                    <p class="solution">Our transparent approaches are designed for academic publication and rigorous evaluation.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Time Constraints</h3>
+                    <p>"Grant deadlines and conference submissions don't wait for our laptop from 2010 to finish running this algorithm."</p>
+                    <p class="solution">We specialize in rapid prototyping and fast turnaround without sacrificing quality.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Visualization Nightmares</h3>
+                    <p>"We are really frustrated trying to make our charts look the way we want, and we're about to throw our computer through the wall."</p>
+                    <p class="solution">We will deal with Matplotlib and get your charts looking publication-ready.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section class="philosophy-section">
+        <h2>Science Demands Transparency</h2>
+        <div class="philosophy-content">
+            <p>Too often, researchers turn to black-box AI systems because they seem easier or more sophisticated. But real science requires methods you can explain, reproduce, and defend.</p>
+            <div class="bad-science-image">
+                <img src="bad science.png" alt="This is Bad Science - Black Box Diagram">
+            </div>
+            <p>We build AI systems designed for scientific rigor because we are scientists. Every decision our AI makes is auditable, every method is documented, and every result is reproducible. We don't want our name on conclusions that can't be verified, and you shouldn't settle for that either.</p>
+            <a href="https://github.com/datarae/Research_Academia/blob/main/reservoir_computing_intro.ipynb" target="_blank" class="cta-button" style="margin-top: 2rem;">See Our Approach in Action</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="section-container">
+            <h2>How We Support Research Teams</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Data Analysis & Modeling</h3>
+                    <ul>
+                        <li>Statistical analysis and hypothesis testing</li>
+                        <li>Predictive modeling and forecasting</li>
+                        <li>Pattern recognition in complex datasets</li>
+                        <li>Time series analysis</li>
+                        <li>Multivariate analysis</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Custom AI Development</h3>
+                    <ul>
+                        <li>Domain-specific model architectures</li>
+                        <li>Feature engineering for research data</li>
+                        <li>Optimization for limited computational resources</li>
+                        <li>Integration with existing research workflows</li>
+                        <li>Performance validation and testing</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Research Support Services</h3>
+                    <ul>
+                        <li>Grant proposal technical sections</li>
+                        <li>Peer review and methodology validation</li>
+                        <li>Conference presentation materials</li>
+                        <li>Publication-ready documentation</li>
+                        <li>Code review and optimization</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Domain Expertise</h3>
+                    <ul>
+                        <li>Climate and environmental data</li>
+                        <li>Biological and genomic datasets</li>
+                        <li>Social science and survey data</li>
+                        <li>Geospatial and remote sensing</li>
+                        <li>Economic and financial modeling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaboration Models Section -->
+    <section class="collaboration-section">
+        <div class="section-container">
+            <h2>Flexible Collaboration Models</h2>
+            <div class="collaboration-grid">
+                <div class="collaboration-card">
+                    <h3>Research Partnership</h3>
+                    <p>For projects involving significant methodological development or analytical contributions that advance the field.</p>
+                    <p class="highlight">Includes: Co-authorship opportunities, shared intellectual property, collaborative grant applications</p>
+                    <p>Best for: Novel methodological work, algorithm development, substantial analytical contributions</p>
+                </div>
+                <div class="collaboration-card">
+                    <h3>Technical Services</h3>
+                    <p>For straightforward implementation of established methods or tool development with clear specifications.</p>
+                    <p class="highlight">Includes: Custom tool development, data processing, standard analysis implementation</p>
+                    <p>Best for: Applying existing methods, automating workflows, processing large datasets</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2>Start Your Research Project</h2>
+        <div class="contact-content">
+            <p>Tell us about your research challenge. We'll discuss the best approach for your project, timeline, and budget.</p>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="institution">Institution/Organization*</label>
+                        <input type="text" id="institution" name="institution" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="research-area">Research Area*</label>
+                        <select id="research-area" name="research-area" required>
+                            <option value="">Select your field</option>
+                            <option value="climate-environmental">Climate & Environmental Science</option>
+                            <option value="biology-life-sciences">Biology & Life Sciences</option>
+                            <option value="social-sciences">Social Sciences</option>
+                            <option value="economics-finance">Economics & Finance</option>
+                            <option value="engineering">Engineering</option>
+                            <option value="physics-astronomy">Physics & Astronomy</option>
+                            <option value="reservoir-computing">Reservoir Computing</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-description">Describe your research project and data analysis needs*</label>
+                        <textarea id="project-description" name="project-description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="timeline">Project timeline and key deadlines</label>
+                        <textarea id="timeline" name="timeline"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="collaboration-type">Preferred collaboration type*</label>
+                        <select id="collaboration-type" name="collaboration-type" required>
+                            <option value="">Select collaboration model</option>
+                            <option value="research-partnership">Research Partnership (co-authorship)</option>
+                            <option value="technical-services">Technical Services</option>
+                            <option value="not-sure">Not sure - need consultation</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">START PROJECT DISCUSSION</button>
+                </form>
+            </div>
+            <p>We typically respond within 24 hours to discuss your project scope and determine the best collaboration approach.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/jaxorik" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/company/jaxorik" target="_blank">LinkedIn</a>
+                <a href="#" target="_blank">Twitter</a>
+            </div>
+            <div class="footer-info">
+                <p><strong>505-506-6884</strong></p>
+                <p>Copyright © 2025 JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
+                <p>Supporting academic research through transparent AI development</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
