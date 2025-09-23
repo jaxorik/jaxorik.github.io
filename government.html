@@ -142,42 +142,46 @@
             color: #666;
         }
         
-        /* Hero Section */
-        .hero {
+        /* Top Banner */
+        .top-banner {
             margin-top: 80px;
-            padding: 4rem 5%;
-            background: linear-gradient(135deg, #000, #333);
+            background: linear-gradient(135deg, #000 0%, #333 100%);
             color: white;
             text-align: center;
+            padding: 4rem 5%;
         }
         
-        .hero-content {
+        .banner-content {
             max-width: 1000px;
             margin: 0 auto;
         }
         
-        .hero h1 {
+        .top-banner h1 {
             font-size: 3rem;
             font-family: 'Courier New', monospace;
             margin-bottom: 1rem;
+            line-height: 1.2;
         }
         
-        .hero .subtitle {
+        .banner-subtitle {
             font-size: 1.3rem;
             margin-bottom: 2rem;
             opacity: 0.9;
+            color: #A5D6A7;
+            font-weight: 500;
         }
         
-        .hero p {
+        .top-banner p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             opacity: 0.9;
+            line-height: 1.6;
         }
         
-        .cta-button {
+        .banner-cta-button {
             background: white;
             color: #2E7D32 !important;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2.5rem;
             border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
@@ -185,73 +189,99 @@
             letter-spacing: 1px;
             transition: transform 0.3s, box-shadow 0.3s;
             display: inline-block;
+            font-size: 1rem;
+        }
+        
+        .banner-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255,255,255,0.3);
+        }
+        
+        /* Hero Section - Two Column Layout */
+        .hero {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .main-content h1 {
+            font-size: 3rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .main-content p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .cta-button {
+            background: #000;
+            color: white !important;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+            display: inline-block;
         }
         
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+            background: #333;
         }
         
-        /* Credentials Section */
-        .credentials-section {
-            padding: 4rem 5%;
-            background: #f8f9fa;
-            text-align: center;
-        }
-        
-        .credentials-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-family: 'Courier New', monospace;
-            color: #333;
-        }
-        
-        .credentials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .credential-card {
+        .credentials-sidebar {
             background: white;
             padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-top: 4px solid #2E7D32;
         }
         
-        .credential-card h3 {
-            color: #2E7D32;
-            margin-bottom: 1rem;
-            font-family: 'Courier New', monospace;
+        .credentials-sidebar h3 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
         }
         
-        .credential-card p {
+        .credential-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
             color: #666;
-            margin: 0.5rem 0;
+            font-size: 0.95rem;
+        }
+        
+        .credential-item:last-child {
+            border-bottom: none;
+        }
+        
+        .credential-item strong {
+            color: #333;
         }
         
         /* Veteran Section */
         .veteran-section {
-            background: radial-gradient(ellipse at center, #2E7D32 0%, #1B5E20 50%, #0D3D0F 100%);
+            background: url('desert-camo.jpg');
+            background-size: cover;
+            background-position: center;
             color: white;
             text-align: center;
-            padding: 3rem 5%;
+            padding: 4rem 5%;
             position: relative;
-            overflow: hidden;
-        }
-        
-        .veteran-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.03) 50%, transparent 70%);
-            pointer-events: none;
         }
         
         .veteran-section h2 {
@@ -268,7 +298,7 @@
             margin: 1rem 0;
             position: relative;
             z-index: 2;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
         
         /* Problems Section */
@@ -291,17 +321,29 @@
         }
         
         .problems-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
         }
         
         .problem-card {
             background: #f8f9fa;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-left: 4px solid #2E7D32;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border-left: 6px solid #2E7D32;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .problem-card:nth-child(even) {
+            margin-left: 0;
+            margin-right: auto;
+        }
+        
+        .problem-card:nth-child(odd) {
+            margin-left: auto;
+            margin-right: 0;
         }
         
         .problem-card h3 {
@@ -374,13 +416,16 @@
         
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
             gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
         
         .service-card {
             background: white;
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 8px;
             border-top: 4px solid #2E7D32;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -460,6 +505,56 @@
         
         .download-btn:hover {
             background: #1B5E20;
+        }
+        
+        /* Email Modal */
+        .email-modal {
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 3rem;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        .close {
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        .close:hover {
+            color: #333;
+        }
+        
+        .modal-content h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 1.5rem;
+        }
+        
+        .modal-content p {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1rem;
         }
         
         /* Contact Section */
@@ -632,7 +727,12 @@
                 display: none;
             }
             
-            .hero h1 {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .main-content h1 {
                 font-size: 2rem;
             }
             
@@ -665,39 +765,39 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
+    <!-- Top Hero Banner -->
+    <section class="top-banner">
+        <div class="banner-content">
             <h1>AI Solutions for Federal Agencies and Prime Contractors</h1>
-            <div class="subtitle">Transparent • Auditable • Export-Control Compliant</div>
+            <div class="banner-subtitle">Transparent • Auditable • Export-Control Compliant</div>
             <p>We support U.S. government agencies and prime contractors with AI systems designed for national defense, energy security, and mission-critical operations.</p>
-            <a href="#contact" class="cta-button">Download Capabilities Statement</a>
+            <a href="capabilities-statement.pdf" class="banner-cta-button" download>DOWNLOAD CAPABILITIES STATEMENT</a>
         </div>
     </section>
 
-    <!-- Credentials Section -->
-    <section class="credentials-section">
-        <h2>SAM.gov Registered and Compliance Ready</h2>
-        <div class="credentials-grid">
-            <div class="credential-card">
-                <h3>SAM.gov Registration & Certifications</h3>
-                <p><strong>UEI:</strong> K8ENCCGZ2M13</p>
-                <p><strong>CAGE:</strong> 11X70</p>
-                <p><strong>WOSB:</strong> Certification Pending</p>
-                <p><strong>SDVOSB:</strong> Certification Pending</p>
-                <p>Eligible for set-aside contracts</p>
+    <!-- Hero Section - Now Two Column -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="main-content">
+                <h1>SAM.gov Registered & Compliance Ready!</h1>
+                <p>We're former government & military employees and work within established export-control compliance protocols.</p>
+                <p>We specialize in projects related to energy and national defense (but never autonomous weapons).</p>
+                <a href="capabilities-statement.pdf" class="cta-button" download>CAPABILITIES STATEMENT</a>
             </div>
-            <div class="credential-card">
-                <h3>Export Control Compliance</h3>
-                <p>Former government and military employees</p>
-                <p>Experience with classified environments</p>
-                <p>Security clearance eligibility maintained</p>
-            </div>
-            <div class="credential-card">
-                <h3>Technical Credentials</h3>
-                <p>PhD-level data science expertise</p>
-                <p>Machine learning training from MIT</p>
-                <p>Deep learning studies at Carnegie Mellon</p>
+            <div class="credentials-sidebar">
+                <h3>Find us on SAM.gov:</h3>
+                <div class="credential-item">
+                    <strong>UEI:</strong> K8ENCCGZ2M13
+                </div>
+                <div class="credential-item">
+                    <strong>CAGE:</strong> 11X70
+                </div>
+                <div class="credential-item">
+                    <strong>WOSB + SDVOSB</strong> Certification Pending
+                </div>
+                <div class="credential-item">
+                    Listed in <strong>Disaster Response Registry</strong>
+                </div>
             </div>
         </div>
     </section>
@@ -814,11 +914,35 @@
         <div class="download-items">
             <div class="download-item">
                 <span>Capabilities Statement - Updated 9-2025 (pdf)</span>
-                <a href="#" class="download-btn">📥 Download</a>
+                <a href="capabilities-statement.pdf" class="download-btn" download>Download</a>
             </div>
             <div class="download-item">
-                <span>Government Brief - Updated 9-2025 (pdf)</span>
-                <a href="#" class="download-btn">📥 Download</a>
+                <span>Complete Government Contractor Packet</span>
+                <button class="download-btn" onclick="showEmailForm()">Get Access</button>
+            </div>
+        </div>
+        
+        <!-- Email capture modal -->
+        <div id="emailModal" class="email-modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" onclick="hideEmailForm()">&times;</span>
+                <h3>Get Your Government Contractor Packet</h3>
+                <p>Complete government brief, case studies, process guides, and technical specifications.</p>
+                <form id="emailForm" onsubmit="handleEmailSubmit(event)">
+                    <div class="form-group">
+                        <label for="packet-email">Email Address*</label>
+                        <input type="email" id="packet-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="packet-name">Name*</label>
+                        <input type="text" id="packet-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="packet-organization">Organization</label>
+                        <input type="text" id="packet-organization" name="organization">
+                    </div>
+                    <button type="submit" class="submit-btn">DOWNLOAD PACKET</button>
+                </form>
             </div>
         </div>
     </section>
@@ -947,6 +1071,46 @@
                 }
             });
         });
+        
+        // Email modal functionality
+        function showEmailForm() {
+            document.getElementById('emailModal').style.display = 'block';
+        }
+        
+        function hideEmailForm() {
+            document.getElementById('emailModal').style.display = 'none';
+        }
+        
+        function handleEmailSubmit(event) {
+            event.preventDefault();
+            
+            // Get form data
+            const email = document.getElementById('packet-email').value;
+            const name = document.getElementById('packet-name').value;
+            const organization = document.getElementById('packet-organization').value;
+            
+            // Here you would normally send this data to your email service
+            // For now, just simulate the download
+            alert('Thank you! Your download will begin shortly. Check your email for the complete packet.');
+            
+            // Start the download (replace with your actual packet file)
+            const link = document.createElement('a');
+            link.href = 'government-contractor-packet.pdf';
+            link.download = 'government-contractor-packet.pdf';
+            link.click();
+            
+            // Close modal and reset form
+            hideEmailForm();
+            document.getElementById('emailForm').reset();
+        }
+        
+        // Close modal when clicking outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('emailModal');
+            if (event.target === modal) {
+                hideEmailForm();
+            }
+        }
     </script>
 </body>
 </html>
