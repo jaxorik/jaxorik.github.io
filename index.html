@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jaxorik AI Research Group - Customized AI tools for government, businesses & research. Female Veteran-Owned Small Business specializing in reproducible, transparent, and deployable AI solutions.">
-    <title>Jaxorik AI Research Group - AI That's Reproducible, Transparent & Deployable</title>
+    <meta name="description" content="Jaxorik AI Research Group - Government contracting for AI solutions. SAM.gov registered, WOSB & SDVOSB eligible, ITAR-compliant operations.">
+    <title>Government AI Contracting - Jaxorik AI Research Group</title>
     
     <style>
         * {
@@ -139,159 +139,95 @@
         }
         
         .nav-links a:hover {
-            color: #2E7D32;
-            transform: translateY(-1px);
+            color: #666;
+        }
+        
+        /* Hero Section - Two Column Layout */
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .main-content h1 {
+            font-size: 3rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .main-content p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
         }
         
         .cta-button {
             background: #000;
             color: white !important;
-            padding: 0.7rem 1.5rem;
+            padding: 1rem 2rem;
             border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: background 0.3s;
+            display: inline-block;
         }
         
         .cta-button:hover {
             background: #333;
         }
         
-        /* Hero Section */
-        .hero {
-            margin-top: 80px;
-            min-height: 90vh;
-            background: linear-gradient(135deg, #000000 0%, #2c2c2c 100%);
-            background-size: cover, cover, cover;
-            background-position: center, center, center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-        
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.1) 70%);
-            pointer-events: none;
-        }
-        
-        .hero-content {
-            max-width: 900px;
-            padding: 2rem;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            font-family: 'Courier New', monospace;
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-        }
-        
-        .hero .tagline {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .hero-cta {
-            display: inline-block;
-            background: white;
-            color: #000;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .hero-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
-        }
-        
-        /* Section: Government Contractors */
-        .section {
-            padding: 4rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .gov-section {
-            background: #f8f9fa;
-        }
-        
-        .section-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-        
-        .section-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-family: 'Courier New', monospace;
-        }
-        
-        .section-text p {
-            margin-bottom: 2rem;
-            color: #666;
-        }
-        
-        .credentials {
+        .credentials-sidebar {
             background: white;
             padding: 2rem;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
         
-        .credentials h3 {
-            margin-bottom: 1rem;
+        .credentials-sidebar h3 {
+            font-size: 1.2rem;
             color: #333;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
         }
         
-        .credentials ul {
-            list-style: none;
-        }
-        
-        .credentials li {
-            padding: 0.5rem 0;
+        .credential-item {
+            padding: 0.8rem 0;
             border-bottom: 1px solid #eee;
+            color: #666;
+            font-size: 0.95rem;
         }
         
-        .credentials li:last-child {
+        .credential-item:last-child {
             border-bottom: none;
         }
         
-        /* Veteran Owned Section */
+        .credential-item strong {
+            color: #333;
+        }
+        
+        /* Veteran Section */
         .veteran-section {
-            background: url('desert-camo.jpg');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('desert-camo.jpg');
             background-size: cover;
             background-position: center;
             color: white;
             text-align: center;
-            padding: 3rem 5%;
+            padding: 4rem 5%;
             position: relative;
-            overflow: hidden;
-        }
-        
-        .veteran-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.02) 50%, transparent 70%);
-            pointer-events: none;
         }
         
         .veteran-section h2 {
@@ -299,8 +235,6 @@
             margin-bottom: 0.5rem;
             position: relative;
             z-index: 2;
-            font-weight: bold;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
         
         .veteran-section .highlight {
@@ -310,172 +244,108 @@
             margin: 1rem 0;
             position: relative;
             z-index: 2;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-            font-weight: bold;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
         
-        /* Strategic Location Section */
-        .location-section {
+        /* Problems Section */
+        .problems-section {
+            padding: 4rem 5%;
+            background: white;
+        }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .problems-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+            text-align: center;
+        }
+        
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .problem-card {
             background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-left: 4px solid #2E7D32;
+        }
+        
+        .problem-card h3 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .problem-card .problem {
+            color: #666;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        .problem-card .solution {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        /* Philosophy Section */
+        .philosophy-section {
+            background: #000;
+            color: white;
             text-align: center;
             padding: 4rem 5%;
         }
         
-        .location-section h2 {
+        .philosophy-section h2 {
             font-size: 2.5rem;
             margin-bottom: 2rem;
             font-family: 'Courier New', monospace;
-            color: #333;
-        }
-        
-        .location-content {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .location-map {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        
-        .map-placeholder {
-            width: 100%;
-            height: 300px;
-            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Courier New', monospace;
-            color: #1976d2;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .map-placeholder::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 12px;
-            height: 12px;
-            background: #d32f2f;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 10px rgba(211, 47, 47, 0.5);
-        }
-        
-        .distance-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-        
-        .distance-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            text-align: left;
-            transition: transform 0.3s ease;
-        }
-        
-        .distance-item:hover {
-            transform: translateY(-2px);
-        }
-        
-        .distance-item h4 {
-            font-family: 'Courier New', monospace;
-            color: #333;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .distance-time {
-            color: #666;
-            font-size: 0.9rem;
-        }
-        
-        /* About Section */
-        .about-section {
-            background: #000;
             color: white;
         }
         
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
         
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-family: 'Courier New', monospace;
+        .philosophy-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
         }
         
-        .about-text ul {
-            list-style: none;
-            margin: 2rem 0;
+        .bad-science-image {
+            margin: 3rem 0;
         }
         
-        .about-text li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-        
-        .about-text li:before {
-            content: "▸";
-            position: absolute;
-            left: 0;
-            color: #A5D6A7;
-        }
-        
-        .about-image {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .about-image img {
+        .bad-science-image img {
+            max-width: 500px;
             width: 100%;
-            height: auto;
             border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(255,255,255,0.1);
         }
         
-        .cta-button {
-            background: #000;
-            color: white !important;
-            padding: 0.7rem 1.5rem;
-            border-radius: 4px;
-            transition: background 0.3s;
-            display: inline-block;
-            text-decoration: none;
-            margin-top: 1rem;
-        }
-        
-        /* Services Grid */
+        /* Services Section */
         .services-section {
+            padding: 4rem 5%;
             background: #f8f9fa;
         }
         
         .services-section h2 {
-            text-align: center;
             font-size: 2.5rem;
             margin-bottom: 3rem;
             font-family: 'Courier New', monospace;
+            color: #333;
+            text-align: center;
         }
         
         .services-grid {
@@ -488,19 +358,211 @@
             background: white;
             padding: 2rem;
             border-radius: 8px;
+            border-top: 4px solid #2E7D32;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
         }
         
         .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
             color: #2E7D32;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .service-card ul {
+            list-style: none;
+        }
+        
+        .service-card li {
+            padding: 0.3rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .service-card li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2E7D32;
+            font-weight: bold;
+        }
+        
+        /* Downloads Section */
+        .downloads-section {
+            padding: 4rem 5%;
+            background: #000;
+            color: white;
+            text-align: center;
+        }
+        
+        .downloads-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-family: 'Courier New', monospace;
+            color: white;
+        }
+        
+        .download-items {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .download-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #555;
+        }
+        
+        .download-item span {
+            font-size: 1.1rem;
+            color: white;
+        }
+        
+        .download-btn {
+            background: #2E7D32;
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+        
+        .download-btn:hover {
+            background: #1B5E20;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+        }
+        
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: #2E7D32;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background: #1B5E20;
+        }
+        
+        .company-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .company-info h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+        }
+        
+        .location-map {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        
+        .location-map iframe {
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .distance-list {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .distance-list h4 {
+            color: #2E7D32;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .distance-list ul {
+            list-style: none;
+        }
+        
+        .distance-list li {
+            padding: 0.3rem 0;
+            color: #666;
+        }
+        
+        .project-exclusions {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .project-exclusions h3 {
+            color: #d32f2f;
+            margin-bottom: 1rem;
             font-family: 'Courier New', monospace;
         }
         
@@ -546,19 +608,18 @@
                 display: none;
             }
             
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section-content,
-            .about-content,
-            .location-content {
+            .hero-container {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
             
-            .location-content {
-                text-align: center;
+            .main-content h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
     </style>
@@ -567,9 +628,9 @@
     <!-- Header -->
     <header>
         <nav>
-            <a href="#" class="logo"><img src="Jaxorik logo black.png" alt="Jaxorik AI Research Group"></a>
+            <a href="index.html" class="logo"><img src="Jaxorik logo black.png" alt="Jaxorik AI Research Group"></a>
             <ul class="nav-links">
-                <li><a href="#home">HOME</a></li>
+                <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="https://substack.com/@jaxorik" target="_blank">BLOG</a></li>
                 <li><a href="https://github.com/jaxorik" target="_blank">PORTFOLIO</a></li>
@@ -585,141 +646,243 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>AI THAT'S REPRODUCIBLE, TRANSPARENT & DEPLOYABLE</h1>
-            <p class="tagline">Customized AI tools for government, businesses & research use where resources are limited</p>
-            <a href="#contact" class="hero-cta">Download Capabilities Statement</a>
-        </div>
-    </section>
-
-    <!-- Government Contractors Section -->
-    <section class="section gov-section">
-        <div class="section-content">
-            <div class="section-text">
-                <h2>We Work With US Government Prime Contractors</h2>
-                <p>We're former government & military employees and work within established ITAR compliance protocols.</p>
+    <!-- Hero Section - Now Two Column -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="main-content">
+                <h1>SAM.gov Registered & Compliance Ready!</h1>
+                <p>We're former government & military employees and work within established export-control compliance protocols.</p>
+                <p>We specialize in projects related to energy and national defense (but never autonomous weapons).</p>
                 <a href="#contact" class="cta-button">FIND OUT MORE</a>
             </div>
-            <div class="credentials">
+            <div class="credentials-sidebar">
                 <h3>Find us on SAM.gov:</h3>
-                <ul>
-                    <li><strong>UEI:</strong> K8ENCCGZ2M13</li>
-                    <li><strong>CAGE:</strong> 11X70</li>
-                    <li><strong>WOSB + SDVOSB</strong> Certification Pending</li>
-                    <li>Listed in <strong>Disaster Response Registry</strong></li>
-                </ul>
+                <div class="credential-item">
+                    <strong>UEI:</strong> K8ENCCGZ2M13
+                </div>
+                <div class="credential-item">
+                    <strong>CAGE:</strong> 11X70
+                </div>
+                <div class="credential-item">
+                    <strong>WOSB + SDVOSB</strong> Certification Pending
+                </div>
+                <div class="credential-item">
+                    Listed in <strong>Disaster Response Registry</strong>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Veteran Owned Banner -->
+    <!-- Veteran Section -->
     <section class="veteran-section">
         <h2>Our business is proudly</h2>
         <div class="highlight">Female Veteran-Owned</div>
     </section>
 
-    <!-- Strategic Location Section -->
-    <section class="location-section">
-        <h2>Strategic Location for Defense R&D</h2>
-        <div class="location-content">
-            <div class="location-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73853.96317359745!2d-106.69161044960343!3d35.10883615751392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8722724b9a3a202b%3A0xe75ebc28cfba8890!2s6300%20Riverside%20Plaza%20Ln%2C%20Albuquerque%2C%20NM%2087120!5e0!3m2!1sen!2sus!4v1758439992932!5m2!1sen!2sus" 
-                        width="100%" height="300" 
-                        style="border:0; border-radius: 8px;" 
-                        allowfullscreen="" loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-                <p><em><b>By appointment only.</b> For security and privacy, we don't maintain public signage.</em></p>
-            </div>
-            <div class="distance-grid">
-                <div class="distance-item">
-                    <h4>Sandia National Labs</h4>
-                    <div class="distance-time">20 minutes • 15 miles</div>
+    <!-- Problems Section -->
+    <section class="problems-section">
+        <div class="section-container">
+            <h2>Common Government Contracting Challenges</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <h3>Procurement Complexity</h3>
+                    <p class="problem">"We need AI solutions but our procurement process is complex and vendors often don't understand government requirements."</p>
+                    <p class="solution">We're SAM.gov registered with established compliance protocols and understand federal acquisition processes.</p>
                 </div>
-                <div class="distance-item">
-                    <h4>Kirtland Air Force Base</h4>
-                    <div class="distance-time">20 minutes • 16 miles</div>
+                <div class="problem-card">
+                    <h3>Security and Compliance</h3>
+                    <p class="problem">"We need AI systems that meet export control requirements and can handle sensitive government data."</p>
+                    <p class="solution">Former government employees who work within established ITAR compliance protocols and understand classified environments.</p>
                 </div>
-                <div class="distance-item">
-                    <h4>Los Alamos National Lab</h4>
-                    <div class="distance-time">90 minutes • 90 miles</div>
+                <div class="problem-card">
+                    <h3>Black Box AI Risks</h3>
+                    <p class="problem">"We can't deploy AI systems we can't explain or audit for mission-critical government operations."</p>
+                    <p class="solution">Every AI system we build is transparent, auditable, and explainable - no black boxes for government work.</p>
                 </div>
-                <div class="distance-item">
-                    <h4>White Sands Missile Range</h4>
-                    <div class="distance-time">3 hours • 187 miles</div>
+                <div class="problem-card">
+                    <h3>Long Development Cycles</h3>
+                    <p class="problem">"Contractors promise AI solutions but take months or years to deliver while our operational needs are immediate."</p>
+                    <p class="solution">Rapid prototyping and deployment focused on getting mission-critical tools operational quickly.</p>
                 </div>
-                <div class="distance-item">
-                    <h4>Colorado Springs</h4>
-                    <div class="distance-time">5.5 hours • 380 miles</div>
+                <div class="problem-card">
+                    <h3>Vendor Reliability</h3>
+                    <p class="problem">"We need contractors who understand government timelines, budgets, and won't disappear mid-project."</p>
+                    <p class="solution">Disaster Response Registry listing and track record of delivering under pressure with government agencies.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Technical Integration</h3>
+                    <p class="problem">"New AI systems need to integrate with our existing government IT infrastructure and security protocols."</p>
+                    <p class="solution">Built to work with government systems, security requirements, and operational constraints from day one.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="section about-section" id="about">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>About our Leader</h2>
-                <p>Rae Chipera is a data scientist with 10+ years of industry experience building novel AI solutions. Here's why she's different:</p>
-                <ul>
-                    <li>Completing a PhD in data science</li>
-                    <li>MBA in quantitative finance</li>
-                    <li>Former SIGINT Marine</li>
-                    <li>Eligible for clearance reinstatement</li>
-                    <li>Studied machine learning at MIT</li>
-                    <li>Studied deep learning at Carnegie Mellon University</li>
-                    <li>Grew up in Los Alamos, NM</li>
-                </ul>
+    <!-- Philosophy Section -->
+    <section class="philosophy-section">
+        <h2>Transparent AI for Government Applications</h2>
+        <div class="philosophy-content">
+            <p>Government agencies can't afford to deploy AI systems they can't explain, audit, or trust. Black box algorithms create security risks, compliance nightmares, and operational failures.</p>
+            <div class="bad-science-image">
+                <img src="bad science.png" alt="This is Bad Science - Black Box Diagram">
             </div>
-            <div class="about-image">
-                <img src="Rae Chipera.jpg" alt="Rae Chipera, CEO and Founder of Jaxorik AI Research Group" style="width: 100%; max-width: 400px; border-radius: 8px;">
-            </div>
+            <p>We build AI systems designed for government accountability. Every decision is auditable, every method is documented, and every result is reproducible. Because when national security is on the line, you need to understand exactly how your AI systems work.</p>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section class="section services-section">
-        <h2>We Help With </h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>DISASTER RESPONSE</h3>
-                <h4>Get Deployable, Auditable AI That Works Anywhere</h4>
-                <p>When resources are limited and infrastructure is damaged, our AI still delivers actionable insights.</p>
-                <p>&nbsp;</p>
-                <p>We help with:</p>
-                    <p>✔ Satellite & drone image analysis for damage assessment or SAR</p>
-                    <p>✔ Resource allocation modeling under crisis conditions</p>
-                    <p>✔ Predictive analytics for floods, fires, and severe weather</p>
-                    <p>✔ Field-ready tools that run offline when networks fail</p>
-                <p>&nbsp;</p>
-                <a href="disasters.html" class="cta-button">LET'S DO THIS</a>
+    <section class="services-section">
+        <div class="section-container">
+            <h2>Government AI Capabilities</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>National Defense Applications</h3>
+                    <ul>
+                        <li>Threat detection and analysis</li>
+                        <li>Infrastructure vulnerability assessment</li>
+                        <li>Real-time decision support systems</li>
+                        <li>Edge computing for remote operations</li>
+                        <li>Secure, auditable AI pipelines</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Energy Security Solutions</h3>
+                    <ul>
+                        <li>Grid anomaly detection</li>
+                        <li>Predictive maintenance systems</li>
+                        <li>Resource optimization modeling</li>
+                        <li>Critical infrastructure monitoring</li>
+                        <li>Emergency response coordination</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Disaster Response Systems</h3>
+                    <ul>
+                        <li>Rapid damage assessment</li>
+                        <li>Resource allocation optimization</li>
+                        <li>Search and rescue coordination</li>
+                        <li>Predictive modeling for natural disasters</li>
+                        <li>Offline-capable emergency tools</li>
+                    </ul>
+                </div>
+                <div class="service-card">
+                    <h3>Compliance and Integration</h3>
+                    <ul>
+                        <li>ITAR-compliant development processes</li>
+                        <li>Integration with existing government systems</li>
+                        <li>Security clearance eligible team members</li>
+                        <li>Documentation for audit requirements</li>
+                        <li>Rapid deployment capabilities</li>
+                    </ul>
+                </div>
             </div>
-            <div class="service-card">
-                <h3>RESEARCH</h3>
-                <h4>Save Your Research Budget with AI</h4>
-                <p>Research budgets are really tight right now, and you don't have the money to hire a postdoc to process your data.</p>
-                <p>&nbsp;</p>
-                <p>Too often, institutions rely on black-box models that obscure methods — but real science demands transparency.</p>
-                <p>&nbsp;</p>
-                <p>We provide AI development affordably — sometimes at cost — to support research teams. When our contributions extend to study design, analysis, or interpretation, we participate as co-authors. Otherwise, we can simply provide the tools as a service.</p>
-                <p>&nbsp;</p>
-                <a href="researchers.html" class="cta-button">VIEW RESEARCH CAPABILITIES</a>
+        </div>
+    </section>
+
+    <!-- Downloads Section -->
+    <section class="downloads-section">
+        <h2>Download Government Resources</h2>
+        <div class="download-items">
+            <div class="download-item">
+                <span>Capabilities Statement - Updated 9-2025 (pdf)</span>
+                <a href="#" class="download-btn">Download</a>
             </div>
-            <div class="service-card">
-                <h3>DEFENSE & ENERGY</h3>
-                <h4>Mission-Focused AI for Federal Agencies</h4>
-                <p>We support U.S. government agencies and prime contractors, operating within export-controlled guidelines for national defense projects. Our focus is on decision support, but <b>never autonomous weapons systems.</b></p>
-                <p>&nbsp;</p>
-                <p>We help with:</p>
-                <p>✔ Secure, auditable AI pipelines</p>
-                <p>✔ Modeling and simulation for national defense projects</p>
-                <p>✔ Data mining and anomaly detection for energy research</p>
-                <p>✔ Deployable AI tools for mission-critical operations</p>
-                <p>&nbsp;</p>
-                <a href="government.html" class="cta-button">LEARN MORE</a>
+            <div class="download-item">
+                <span>Government Brief - Updated 9-2025 (pdf)</span>
+                <a href="#" class="download-btn">Download</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-content">
+            <div class="contact-form">
+                <h2>Request Government AI Capabilities</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="name">Name*</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="agency">Agency/Organization*</label>
+                        <input type="text" id="agency" name="agency" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone*</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="clearance">Security Clearance Level (if applicable)</label>
+                        <select id="clearance" name="clearance">
+                            <option value="">Select clearance level</option>
+                            <option value="none">No clearance required</option>
+                            <option value="public-trust">Public Trust</option>
+                            <option value="secret">Secret</option>
+                            <option value="top-secret">Top Secret</option>
+                            <option value="ts-sci">TS/SCI</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-type">Project Type*</label>
+                        <select id="project-type" name="project-type" required>
+                            <option value="">Select project type</option>
+                            <option value="national-defense">National Defense</option>
+                            <option value="energy-security">Energy Security</option>
+                            <option value="disaster-response">Disaster Response</option>
+                            <option value="infrastructure">Critical Infrastructure</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-description">Project Requirements and Mission Objectives*</label>
+                        <textarea id="project-description" name="project-description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="timeline">Project Timeline and Key Milestones</label>
+                        <textarea id="timeline" name="timeline"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="deployment">International Deployment Considerations (for ITAR compliance)*</label>
+                        <textarea id="deployment" name="deployment" placeholder="Will this system be deployed outside the United States or accessed by foreign nationals?" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">REQUEST CAPABILITIES BRIEFING</button>
+                </form>
+            </div>
+            <div class="company-info">
+                <h2>Jaxorik AI Research Group</h2>
+                
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73853.96317359745!2d-106.69161044960343!3d35.10883615751392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8722724b9a3a202b%3A0xe75ebc28cfba8890!2s6300%20Riverside%20Plaza%20Ln%2C%20Albuquerque%2C%20NM%2087120!5e0!3m2!1sen!2sus!4v1758439992932!5m2!1sen!2sus" 
+                            width="100%" height="250" 
+                            style="border:0; border-radius: 8px;" 
+                            allowfullscreen="" loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                
+                <div class="distance-list">
+                    <h4>Strategic Location for Defense R&D</h4>
+                    <ul>
+                        <li><strong>Sandia National Labs:</strong> 20 minutes (15 miles)</li>
+                        <li><strong>Kirtland Air Force Base:</strong> 20 minutes (16 miles)</li>
+                        <li><strong>Los Alamos National Lab:</strong> 90 minutes (90 miles)</li>
+                        <li><strong>White Sands Missile Range:</strong> 3 hours (187 miles)</li>
+                    </ul>
+                </div>
+                
+                <p>6300 Riverside Plaza Lane Northwest Suite 100<br>
+                Albuquerque, New Mexico 87120, United States</p>
+                <p><strong>505-506-6884</strong></p>
+                
+                <div class="project-exclusions">
+                    <h3>Project Exclusions</h3>
+                    <p>We maintain strict ethical standards and do not accept contracts for autonomous weapons systems, discriminatory algorithms, or projects that conflict with U.S. national security interests.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -736,7 +899,7 @@
                 <p><strong>505-506-6884</strong></p>
                 <p>Copyright © 2025 JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
                 <p>SAM.gov registered | UEI: K8ENCCGZ2M13 | CAGE: 11X70</p>
-                <p>Disaster Response Certification: Active</p>
+                <p>Supporting U.S. national defense through transparent AI development</p>
             </div>
         </div>
     </footer>
@@ -753,7 +916,7 @@
                         block: 'start'
                     });
                 }
-            );
+            });
         });
     </script>
 </body>
