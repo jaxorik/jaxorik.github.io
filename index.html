@@ -455,15 +455,28 @@
             box-shadow: 0 5px 20px rgba(255,255,255,0.1);
         }
         
-        .cta-button {
-            background: #000;
-            color: white !important;
-            padding: 0.7rem 1.5rem;
+        .team-button-container {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .team-cta-button {
+            background: white;
+            color: #000 !important;
+            padding: 1rem 2rem;
             border-radius: 4px;
-            transition: background 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             display: inline-block;
             text-decoration: none;
-            margin-top: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .team-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
         }
         
         /* Services Grid */
@@ -677,6 +690,9 @@
             <div class="about-image">
                 <img src="Rae Chipera.jpg" alt="Rae Chipera, CEO and Founder of Jaxorik AI Research Group" style="width: 100%; max-width: 400px; border-radius: 8px;">
             </div>
+            <div class="team-button-container">
+                <a href="about.html" class="team-cta-button">MEET THE TEAM</a>
+            </div>
         </div>
     </section>
 
@@ -706,7 +722,7 @@
                 <p>&nbsp;</p>
                 <p>We provide AI development affordably — sometimes at cost — to support research teams. When our contributions extend to study design, analysis, or interpretation, we participate as co-authors. Otherwise, we can simply provide the tools as a service.</p>
                 <p>&nbsp;</p>
-                <a href="researchers.html" class="cta-button">COLLABORATE WITH ME →</a>
+                <a href="researchers.html" class="cta-button">COLLABORATE WITH US →</a>
             </div>
             <div class="service-card">
                 <h3>DEFENSE & ENERGY</h3>
@@ -738,8 +754,8 @@
                 <p>SAM.gov registered | UEI: K8ENCCGZ2M13 | CAGE: 11X70</p>
                 <p>Disaster Response Certification: Active</p>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </section>
 
     <script>
         // Smooth scrolling for anchor links
@@ -753,7 +769,7 @@
                         block: 'start'
                     });
                 }
-            );
+            });
         });
     </script>
 </body>
