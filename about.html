@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Rae Chipera - Former Marine SIGINT Analyst, PhD candidate, and founder of Jaxorik AI Research Group. Specializing in explainable AI for national defense applications.">
-    <title>About Rae Chipera - Jaxorik AI Research Group</title>
+    <meta name="description" content="About Jaxorik AI Research Group - Explainable AI for national defense and disaster response applications.">
+    <title>About Jaxorik AI Research Group</title>
     
     <style>
         * {
@@ -167,7 +167,7 @@
             font-size: 1.5rem;
             margin-bottom: 2rem;
             opacity: 0.9;
-            color: #A5D6A7;
+            color: white;
             font-weight: 500;
         }
         
@@ -179,13 +179,184 @@
             margin: 0 auto;
         }
         
-        /* Hero Section */
-        .hero {
+        /* Section Styling */
+        .section {
             padding: 4rem 5%;
-            background: #f8f9fa;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-full {
+            padding: 4rem 5%;
         }
         
-        .hero-content {
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+        }
+
+        /* Philosophy Section */
+        .philosophy-section {
+            background: #000;
+            color: white;
+            text-align: center;
+        }
+        
+        .philosophy-section h2 {
+            color: white;
+        }
+
+        .philosophy-section p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto 1.5rem auto;
+            line-height: 1.6;
+        }
+
+        .philosophy-section .closing {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Noisy Data Section */
+        .noisy-data-section {
+            background: #f8f9fa;
+        }
+
+        .noisy-data-section h2 {
+            font-family: 'Courier New', monospace;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .noisy-data-section .intro {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2rem;
+            max-width: 800px;
+        }
+
+        .data-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .data-example-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-left: 4px solid #2E7D32;
+        }
+
+        .data-example-item h4 {
+            font-family: 'Courier New', monospace;
+            color: #2E7D32;
+            margin-bottom: 0.5rem;
+        }
+
+        .data-example-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .gravity-spy-block {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        .gravity-spy-block h3 {
+            font-family: 'Courier New', monospace;
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .gravity-spy-block img {
+            width: 100%;
+            max-width: 700px;
+            display: block;
+            margin: 1rem auto;
+            border-radius: 4px;
+        }
+
+        .gravity-spy-block p {
+            color: #555;
+            font-size: 0.95rem;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .graceful-degradation {
+            margin-top: 2rem;
+            background: #000;
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .graceful-degradation strong {
+            color: #A5D6A7;
+        }
+
+        /* Company Standards Section */
+        .company-section {
+            background: #000;
+            color: white;
+            text-align: center;
+        }
+        
+        .company-section h2 {
+            color: white;
+        }
+
+        .company-section > .section > p {
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            opacity: 0.9;
+        }
+        
+        .compliance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .compliance-item {
+            background: #333;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #A5D6A7;
+            text-align: left;
+        }
+        
+        .compliance-item h4 {
+            color: #A5D6A7;
+            margin-bottom: 0.5rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Founder Hero Section */
+        .founder-section {
+            background: #f8f9fa;
+            padding: 4rem 5%;
+        }
+
+        .founder-content {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
@@ -194,56 +365,42 @@
             align-items: center;
         }
         
-        .hero-text h2 {
+        .founder-text h2 {
             font-size: 2.5rem;
             font-family: 'Courier New', monospace;
             margin-bottom: 1rem;
             color: #333;
         }
         
-        .hero-text .name {
+        .founder-text .name {
             font-size: 2rem;
             font-family: 'Courier New', monospace;
             margin: 1rem 0;
             color: #2E7D32;
         }
         
-        .hero-text .subtitle {
+        .founder-text .subtitle {
             font-size: 1.1rem;
             margin-bottom: 2rem;
             color: #666;
         }
         
-        .hero-text p {
-            opacity: 0.9;
+        .founder-text p {
             font-size: 1.1rem;
             margin-bottom: 1rem;
+            color: #444;
         }
         
-        .hero-image {
+        .founder-image {
             display: flex;
             justify-content: center;
         }
         
-        .hero-image img {
+        .founder-image img {
             width: 100%;
             max-width: 400px;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-        
-        /* Section Styling */
-        .section {
-            padding: 4rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-family: 'Courier New', monospace;
-            color: #333;
         }
         
         /* Military Service Section */
@@ -302,18 +459,7 @@
             left: 0;
             color: #2E7D32;
         }
-        
-        /* Philosophy Section */
-        .philosophy-section {
-            background: #000;
-            color: white;
-            text-align: center;
-        }
-        
-        .philosophy-section h2 {
-            color: white;
-        }
-        
+
         /* Education Section */
         .education-section {
             background: #f8f9fa;
@@ -345,37 +491,11 @@
         
         .education-card li {
             padding: 0.3rem 0;
+            border-bottom: 1px solid #f0f0f0;
         }
-        
-        /* Company Section */
-        .company-section {
-            background: #000;
-            color: white;
-            text-align: center;
-        }
-        
-        .company-section h2 {
-            color: white;
-        }
-        
-        .compliance-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .compliance-item {
-            background: #333;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #A5D6A7;
-        }
-        
-        .compliance-item h4 {
-            color: #A5D6A7;
-            margin-bottom: 0.5rem;
-            font-family: 'Courier New', monospace;
+
+        .education-card li:last-child {
+            border-bottom: none;
         }
         
         /* Footer */
@@ -420,7 +540,7 @@
                 display: none;
             }
             
-            .hero-content,
+            .founder-content,
             .military-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -430,7 +550,7 @@
                 font-size: 2.5rem;
             }
             
-            .hero-text h2 {
+            .founder-text h2 {
                 font-size: 2rem;
             }
         }
@@ -444,13 +564,11 @@
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
-                <li><a href="https://substack.com/@jaxorik" target="_blank">BLOG</a></li>
-                <li><a href="https://github.com/jaxorik" target="_blank">PORTFOLIO</a></li>
+                <li><a href="https://github.com/jaxorik" target="_blank">GITHUB</a></li>
                 <li class="dropdown">
                     <button class="dropdown-toggle">GET CUSTOM AI ▾</button>
                     <div class="dropdown-menu">
-                        <a href="government.html">GOVERNMENT</a>
-                        <a href="researchers.html">RESEARCH</a>
+                        <a href="government.html">DEFENSE & ENERGY</a>
                         <a href="disasters.html">DISASTER RESPONSE</a>
                     </div>
                 </li>
@@ -467,18 +585,85 @@
         </div>
     </section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h2>Meet the Boss</h2>
-                <div class="name">Rae Chipera</div>
-                <div class="subtitle">PhD(c), MBA</div>
-                <p>Data scientist with 10+ years of experience building novel AI solutions for national defense applications. Completing a PhD in data science with an MBA in quantitative finance.</p>
-                <p>Former Marine SIGINT Analyst with security clearance eligibility and deep understanding of classified environments.</p>
+    <!-- Technical Philosophy -->
+    <div class="section-full philosophy-section">
+        <div class="section">
+            <h2>Technical Philosophy</h2>
+            <p>Most AI vendors assume clean, structured, complete data. Real field conditions don't cooperate — and in defense and disaster response, that gap can cost lives.</p>
+            <p>Jaxorik builds models that are transparent, auditable, and designed to degrade gracefully rather than fail silently. We believe humans are decision-makers; AI is a tool that supports them.</p>
+            <div style="margin: 3rem 0; text-align: center;">
+                <img src="bad science.png" alt="Input to Black Box to Output - This is Bad Science" style="max-width: 600px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
             </div>
-            <div class="hero-image">
-                <img src="Rae Chipera.jpg" alt="Rae Chipera, Director of AI Innovation">
+            <p class="closing">Every Jaxorik model must be explainable, auditable, and deployable in austere environments where traditional cloud-based AI fails.</p>
+        </div>
+    </div>
+
+    <!-- Noisy / Broken Data Section -->
+    <div class="section-full noisy-data-section">
+        <div class="section">
+            <h2>Built for Messy, Chaotic Data</h2>
+            <p class="intro">Traditional AI models assume clean, complete, structured inputs. Real-world field data rarely cooperates. Our models are designed to handle:</p>
+            <div class="data-examples">
+                <div class="data-example-item">
+                    <h4>Corrupted Imagery</h4>
+                    <p>Satellite or drone feeds with cloud cover, compression artifacts, partial occlusion, or missing frames.</p>
+                </div>
+                <div class="data-example-item">
+                    <h4>Dropped Sensor Feeds</h4>
+                    <p>Signals that drop out, spike, arrive out of sequence, or go silent entirely during a mission.</p>
+                </div>
+                <div class="data-example-item">
+                    <h4>Incomplete Records</h4>
+                    <p>Datasets with missing fields, corrupted entries, or conflicting sources — common in crisis conditions.</p>
+                </div>
+            </div>
+
+            <div class="gravity-spy-block">
+                <h3>Real Example: LIGO Gravity Spy Dataset</h3>
+                <img src="gravityspy_samples_part2.png" alt="Gravity Spy spectrogram samples showing corrupted and noisy data">
+                <p>Real gravitational wave detector data used in Jaxorik's research. The solid green squares are corrupted or missing samples — data that a standard model would choke on. Our approach maintains classification performance even when inputs are incomplete, handling these gracefully rather than generating false confidence.</p>
+            </div>
+
+            <div class="graceful-degradation">
+                Where a standard model hallucinates or crashes, ours <strong>degrades gracefully</strong> — flagging uncertainty instead of generating false confidence.
+            </div>
+        </div>
+    </div>
+
+    <!-- Company Standards -->
+    <div class="section-full company-section">
+        <div class="section">
+            <h2>Company Standards</h2>
+            <p style="max-width: 700px; margin: 0 auto 2rem auto; opacity: 0.9;">Jaxorik operates under strict ethical guidelines, maintaining export-control awareness as standard practice and adapting to client-specific compliance requirements.</p>
+            <div class="compliance-grid">
+                <div class="compliance-item">
+                    <h4>Security Standards</h4>
+                    <p>Export-control awareness, sneakernet protocols, adaptable to client compliance requirements.</p>
+                </div>
+                <div class="compliance-item">
+                    <h4>Quality Assurance</h4>
+                    <p>Transparent methodologies, auditable algorithms, reproducible results.</p>
+                </div>
+                <div class="compliance-item">
+                    <h4>Mission Focus</h4>
+                    <p>National security priorities, decision-support systems — never autonomous weapons.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Founder Section -->
+    <section class="founder-section">
+        <div class="founder-content">
+            <div class="founder-text">
+                <h2>About the Founder</h2>
+                <div class="name">Rae Chipera</div>
+                <div class="subtitle">PhD Candidate, MBA | Founder & CEO</div>
+                <p>Data scientist with 10+ years of military and industry experience building novel AI solutions for national defense applications.</p>
+                <p>PhD candidate in Data Science at National University, with an MBA in Quantitative Finance. Former Marine SIGINT Analyst with security clearance eligibility and firsthand understanding of the operational constraints faced by defense and intelligence organizations.</p>
+            </div>
+            <div class="founder-image">
+                <img src="Rae Chipera.jpg" alt="Rae Chipera, Founder & CEO of Jaxorik AI Research Group">
             </div>
         </div>
     </section>
@@ -491,12 +676,12 @@
                 <p>Corporal Chipera served with distinction in the United States Marine Corps as a Signals Intelligence Analyst, including deployment to Iraq in support of Operation Iraqi Freedom.</p>
                 <p>Her military experience provides unique insight into the operational requirements and constraints faced by defense and intelligence organizations deploying AI systems in challenging environments.</p>
                 <div class="service-highlights">
-                    <h4>Service Highlights:</h4>
+                    <h4>Service Highlights</h4>
                     <ul>
-                        <li>Iraq Campaign Medal - Combat deployment</li>
-                        <li>Good Conduct Medal - Exemplary service</li>
-                        <li>Expert Rifle Badge - Perfect score (250/250)</li>
-                        <li>Expert Pistol Badge - Top marksmanship</li>
+                        <li>Iraq Campaign Medal — Combat deployment</li>
+                        <li>Good Conduct Medal — Exemplary service</li>
+                        <li>Expert Rifle Badge — Perfect score (250/250)</li>
+                        <li>Expert Pistol Badge — Top marksmanship</li>
                         <li>Security clearance eligibility maintained</li>
                     </ul>
                 </div>
@@ -507,18 +692,6 @@
         </div>
     </section>
 
-    <!-- Philosophy Section -->
-    <section class="section philosophy-section">
-        <h2>Technical Philosophy</h2>
-        <p>Chipera's research focuses on AI systems designed for resource-constrained environments. She advocates for transparent, auditable algorithms over black-box solutions, stressing that humans are decision-makers using AI as assistants or tools.</p>
-        <div style="margin: 3rem 0; text-align: center;">
-            <img src="bad science.png" alt="Input to Black Box to Output - This is Bad Science" style="max-width: 600px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-        </div>
-        <div style="font-size: 1.2rem; opacity: 0.9;">
-            Jaxorik's approach emphasizes practical deployment in austere conditions where traditional cloud-based AI fails. Every model must be explainable, auditable, and deployable in mission-critical environments.
-        </div>
-    </section>
-
     <!-- Education Section -->
     <section class="section education-section">
         <h2>Education & Expertise</h2>
@@ -526,19 +699,19 @@
             <div class="education-card">
                 <h3>Academic Background</h3>
                 <ul>
-                    <li>PhD in Data Science (in progress)</li>
-                    <li>MBA in Financial Management</li>
-                    <li>Machine Learning - MIT</li>
-                    <li>Deep Learning - Carnegie Mellon</li>
-                    <li>Grew up in Los Alamos, NM</li>
+                    <li>PhD Candidate, Data Science — National University</li>
+                    <li>MBA in Quantitative Finance</li>
+                    <li>Completed MIT Machine Learning program</li>
+                    <li>Completed CMU Deep Learning program</li>
+                    <li>Los Alamos, NM native</li>
                 </ul>
             </div>
             <div class="education-card">
                 <h3>Technical Expertise</h3>
                 <ul>
                     <li>Explainable AI Systems</li>
-                    <li>Reservoir Computing</li>
-                    <li>Edge Computing Deployment</li>
+                    <li>Reservoir Computing & Echo State Networks</li>
+                    <li>Edge & Offline Deployment</li>
                     <li>Export-Control Compliance</li>
                     <li>Disaster Response & Search and Rescue</li>
                 </ul>
@@ -548,43 +721,19 @@
                 <ul>
                     <li>UEI: K8ENCCGZ2M13</li>
                     <li>CAGE: 11X70</li>
-                    <li>WOSB Certification (Pending)</li>
-                    <li>SDVOSB Certification (Pending)</li>
+                    <li>WOSB Certified</li>
+                    <li>SDVOSB Certified</li>
                     <li>Listed in Disaster Response Registry</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Company Section -->
-    <section class="section company-section">
-        <h2>Company Standards</h2>
-        <p>Jaxorik operates under strict ethical guidelines, maintaining export-control awareness as standard practice and adapting to client-specific compliance requirements.</p>
-        <div class="compliance-grid">
-            <div class="compliance-item">
-                <h4>Security Standards</h4>
-                <p>Export-control awareness, Sneakernet protocols, adaptable to client's compliance protocols</p>
-            </div>
-            <div class="compliance-item">
-                <h4>Quality Assurance</h4>
-                <p>Transparent methodologies, auditable algorithms, reproducible results</p>
-            </div>
-            <div class="compliance-item">
-                <h4>Mission Focus</h4>
-                <p>National security priorities, decision-support systems, never autonomous weapons</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Dog Section -->
+    <!-- Ghost Rider Section -->
     <section class="section" style="background: #f8f9fa; text-align: center;">
-        <h2>Meet Our Team</h2>
-        <div style="max-width: 600px; margin: 0 auto; margin-bottom: 3rem;">
-            <p style="font-size: 1.2rem; color: #333; line-height: 1.6; margin-bottom: 2rem;">We have a team of engineers, some AI helpers, and of course, our...</p>
-            <h3 style="color: #2E7D32; font-family: 'Courier New', monospace; margin-bottom: 2rem; font-size: 2rem;">Head of Document Shredding</h3>
-        </div>
+        <h3 style="color: #2E7D32; font-family: 'Courier New', monospace; margin-bottom: 2rem; font-size: 2rem;">Head of Document Shredding</h3>
         <div style="max-width: 600px; margin: 0 auto;">
-            <img src="ghost-rider.jpg" alt="Ghost Rider, Jaxorik's Head of Document Shredding" style="width: 300px; height: 300px; object-fit: cover; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+            <img src="ghost-rider.jpg" alt="Ghost Rider, Head of Document Shredding" style="width: 300px; height: 300px; object-fit: cover; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 2rem;">
             <p style="font-size: 1.1rem; color: #666; line-height: 1.6;">Responsible for secure disposal of sensitive materials and maintaining office morale. Expert in paper destruction and treat negotiation.</p>
         </div>
     </section>
@@ -595,19 +744,17 @@
             <div class="social-links">
                 <a href="https://github.com/jaxorik" target="_blank">GitHub</a>
                 <a href="https://www.linkedin.com/company/jaxorik" target="_blank">LinkedIn</a>
-                <a href="#" target="_blank">Twitter</a>
             </div>
             <div class="footer-info">
                 <p><strong>505-506-6884</strong></p>
-                <p>Copyright © 2025 JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
+                <p>Copyright © 2026 JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
                 <p>SAM.gov registered | UEI: K8ENCCGZ2M13 | CAGE: 11X70</p>
                 <p>Disaster Response Certification: Active</p>
             </div>
-        </footer>
-    </section>
+        </div>
+    </footer>
 
     <script>
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
