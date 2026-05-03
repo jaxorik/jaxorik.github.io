@@ -4,7 +4,923 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Jaxorik AI Research Group - Customized AI tools for disaster response, energy, and defense. Female Veteran-Owned Small Business specializing in reproducible, transparent, and deployable AI solutions.">
+    <title>Jaxorik AI<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jaxorik AI Research Group - Customized AI tools for disaster response, energy, and defense. Female Veteran-Owned Small Business specializing in reproducible, transparent, and deployable AI solutions.">
     <title>Jaxorik AI Research Group - Reproducible, Responsible, Transparent & Deployable AI Models</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: #333;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 999;
+            padding: 1rem 5%;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu a,
+        .mobile-menu button {
+            display: block;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            background: none;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+            text-align: left;
+            width: 100%;
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu .mobile-submenu {
+            padding-left: 1.5rem;
+        }
+
+        .mobile-menu .mobile-submenu a {
+            font-size: 0.85rem;
+            color: #555;
+            border-bottom: 1px solid #f5f5f5;
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-toggle {
+            background: #000;
+            color: white !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: Arial, sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .dropdown-toggle:hover {
+            background: #333;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #333 !important;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+        
+        .dropdown-menu a:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-menu a:hover {
+            background: #f8f9fa;
+            color: #000 !important;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #2E7D32;
+        }
+        
+        .cta-button {
+            background: #000;
+            color: white !important;
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            background: #333;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            background: linear-gradient(135deg, #000000 0%, #2c2c2c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.1) 70%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+        
+        .hero .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background: white;
+            color: #000;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        }
+
+        .hero-cta-secondary {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .hero-cta-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Section: Government Contractors */
+        .section {
+            padding: 4rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .gov-section {
+            background: #f8f9fa;
+        }
+        
+        .section-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .section-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .section-text p {
+            margin-bottom: 2rem;
+            color: #666;
+        }
+        
+        .credentials {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .credentials h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+        
+        .credentials ul {
+            list-style: none;
+        }
+        
+        .credentials li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .credentials li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Veteran Owned Section */
+        .veteran-section {
+            background: url('desert-camo.jpg') center/cover;
+            color: white;
+            text-align: center;
+            padding: 3rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .veteran-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.02) 50%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .veteran-section h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .veteran-section .highlight {
+            font-size: 3rem;
+            font-family: 'Courier New', monospace;
+            color: white;
+            margin: 1rem 0;
+            position: relative;
+            z-index: 2;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+            font-weight: bold;
+        }
+        
+        /* Strategic Location Section */
+        .location-section {
+            background: #f8f9fa;
+            text-align: center;
+            padding: 4rem 5%;
+        }
+        
+        .location-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+        }
+        
+        .location-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .location-map {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .distance-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        .distance-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .distance-item:hover {
+            transform: translateY(-2px);
+        }
+        
+        .distance-item h4 {
+            font-family: 'Courier New', monospace;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .distance-time {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        /* About Section */
+        .about-section {
+            background: #000;
+            color: white;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Courier New', monospace;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: #ccc;
+        }
+        
+        .about-text ul {
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .about-text li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .about-text li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #A5D6A7;
+        }
+        
+        .about-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(255,255,255,0.1);
+        }
+        
+        .team-button-container {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .team-cta-button {
+            background: white;
+            color: #000 !important;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .team-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255,255,255,0.3);
+        }
+        
+        /* Services Grid */
+        .services-section {
+            background: #f8f9fa;
+        }
+        
+        .services-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #2E7D32;
+            font-family: 'Courier New', monospace;
+        }
+
+        .service-card h4 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .service-card p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin: 1rem 0 1.5rem 0;
+        }
+
+        .service-card ul li {
+            padding: 0.4rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: #555;
+        }
+
+        .service-card ul li:before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: #2E7D32;
+        }
+        
+        /* Footer */
+        footer {
+            background: #000;
+            color: white;
+            padding: 3rem 5%;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .social-links {
+            margin: 2rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        .footer-info p {
+            margin: 0.5rem 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .section-content,
+            .about-content,
+            .location-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .location-content {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="logo"><img src="Jaxorik logo black.png" alt="Jaxorik AI Research Group"></a>
+            <ul class="nav-links">
+                <li><a href="#home">HOME</a></li>
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="https://github.com/jaxorik" target="_blank">GITHUB</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle">GET CUSTOM AI ▾</button>
+                    <div class="dropdown-menu">
+                        <a href="government.html">DEFENSE & ENERGY</a>
+                        <a href="disasters.html">DISASTER RESPONSE</a>
+                    </div>
+                </li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#home">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="https://github.com/jaxorik" target="_blank">GITHUB</a>
+        <div class="mobile-submenu">
+            <a href="government.html">DEFENSE & ENERGY</a>
+            <a href="disasters.html">DISASTER RESPONSE</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>AI THAT'S REPRODUCIBLE, TRANSPARENT & DEPLOYABLE</h1>
+            <p class="tagline">Auditable models for government and defense, built for austere environments and compliant by design</p>
+            <div class="hero-ctas">
+                <a href="jaxorik_capabilities_statement.pdf" download class="hero-cta">Download Capabilities Statement</a>
+                <a href="jaxorik_technical_package.pdf" download class="hero-cta-secondary">Technical Package →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Government Contractors Section -->
+    <section class="section gov-section">
+        <div class="section-content">
+            <div class="section-text">
+                <h2>We Work With US Government Prime Contractors</h2>
+                <p>We're former government & military employees and work within established DOD compliance protocols.</p>
+                <a href="about.html" class="cta-button">FIND OUT MORE</a>
+            </div>
+            <div class="credentials">
+                <h3>Find us on SAM.gov:</h3>
+                <ul>
+                    <li><strong>UEI:</strong> K8ENCCGZ2M13</li>
+                    <li><strong>CAGE:</strong> 11X70</li>
+                    <li><strong>WOSB + SDVOSB</strong> Certified</li>
+                    <li>Listed in <strong>Disaster Response Registry</strong></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Veteran Owned Banner -->
+    <section class="veteran-section">
+        <h2>Our business is proudly</h2>
+        <div class="highlight">Female Veteran-Owned</div>
+    </section>
+
+    <!-- Strategic Location Section -->
+    <section class="location-section">
+        <h2>Strategic Location for Defense R&D</h2>
+        <div class="location-content">
+            <div class="location-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73853.96317359745!2d-106.69161044960343!3d35.10883615751392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8722724b9a3a202b%3A0xe75ebc28cfba8890!2s6300%20Riverside%20Plaza%20Ln%2C%20Albuquerque%2C%20NM%2087120!5e0!3m2!1sen!2sus!4v1758439992932!5m2!1sen!2sus" 
+                        width="100%" height="300" 
+                        style="border:0; border-radius: 8px;" 
+                        allowfullscreen="" loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Map showing Jaxorik AI Research Group location in Albuquerque, NM">
+                </iframe>
+                <p><em><b>By appointment only.</b> For security and privacy, we don't maintain public signage.</em></p>
+            </div>
+            <div class="distance-grid">
+                <div class="distance-item">
+                    <h4>Sandia National Labs</h4>
+                    <div class="distance-time">20 minutes • 15 miles</div>
+                </div>
+                <div class="distance-item">
+                    <h4>Kirtland Air Force Base</h4>
+                    <div class="distance-time">20 minutes • 16 miles</div>
+                </div>
+                <div class="distance-item">
+                    <h4>Los Alamos National Lab</h4>
+                    <div class="distance-time">90 minutes • 90 miles</div>
+                </div>
+                <div class="distance-item">
+                    <h4>White Sands Missile Range</h4>
+                    <div class="distance-time">3 hours • 187 miles</div>
+                </div>
+                <div class="distance-item">
+                    <h4>Colorado Springs</h4>
+                    <div class="distance-time">5.5 hours • 380 miles</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About our Leader</h2>
+                <p>Rae Chipera is a data scientist with 10+ years of military and industry experience building novel AI solutions. Her background includes:</p>
+                <ul>
+                    <li>Data science PhD candidate — National University</li>
+                    <li>MBA in Quantitative Finance</li>
+                    <li>Former USMC SIGINT analyst — Iraq deployment, DLI-trained</li>
+                    <li>Eligible for clearance reinstatement</li>
+                    <li>Completed MIT Machine Learning and CMU Deep Learning programs</li>
+                    <li>Los Alamos, NM native</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="Rae Chipera.jpg" alt="Rae Chipera, CEO and Founder of Jaxorik AI Research Group" style="width: 100%; max-width: 400px; border-radius: 8px;">
+            </div>
+            <div class="team-button-container">
+                <a href="about.html" class="team-cta-button">MEET THE TEAM</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services-section">
+        <h2>We Help With</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>DISASTER RESPONSE</h3>
+                <h4>Get Deployable, Auditable AI That Works Anywhere</h4>
+                <p>When resources are limited and infrastructure is damaged, our AI still delivers actionable insights.</p>
+                <ul>
+                    <li>Satellite & drone image analysis for damage assessment or SAR</li>
+                    <li>Resource allocation modeling under crisis conditions</li>
+                    <li>Predictive analytics for floods, fires, and severe weather</li>
+                    <li>Field-ready tools that run offline when networks fail</li>
+                </ul>
+                <a href="disasters.html" class="cta-button">GET RAPID RESPONSE →</a>
+            </div>
+            <div class="service-card">
+                <h3>DEFENSE & ENERGY</h3>
+                <h4>Mission-Focused AI for Federal Agencies</h4>
+                <p>We support U.S. government agencies and prime contractors, operating within DOD guidelines for national defense projects. Our focus is on decision support, but <strong>never autonomous weapons systems.</strong></p>
+                <ul>
+                    <li>Secure, auditable AI pipelines</li>
+                    <li>Modeling and simulation for national defense projects</li>
+                    <li>Data mining and anomaly detection for energy research</li>
+                    <li>Deployable AI tools for mission-critical operations</li>
+                </ul>
+                <a href="government.html" class="cta-button">SCHEDULE A CONSULTATION →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/jaxorik" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/company/jaxorik" target="_blank">LinkedIn</a>
+            </div>
+            <div class="footer-info">
+                <p><strong>505-506-6884</strong></p>
+                <p>Copyright © <script>document.write(new Date().getFullYear())</script> JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
+                <p>SAM.gov registered | UEI: K8ENCCGZ2M13 | CAGE: 11X70</p>
+                <p>Listed in the SAM.gov Disaster Response Registry</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                mobileMenu.classList.remove('open');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html> Research Group - Reproducible, Responsible, Transparent & Deployable AI Models</title>
     
     <style>
         * {
