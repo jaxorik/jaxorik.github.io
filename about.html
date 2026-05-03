@@ -60,6 +60,84 @@
             align-items: center;
             position: relative;
         }
+
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+            background: none;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 2px;
+            background: #333;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 80px;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 999;
+            padding: 1rem 5%;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu a,
+        .mobile-menu button {
+            display: block;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            background: none;
+            border-left: none;
+            border-right: none;
+            border-top: none;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+            text-align: left;
+            width: 100%;
+        }
+
+        .mobile-menu .mobile-submenu a {
+            font-size: 0.85rem;
+            color: #555;
+            padding-left: 1.5rem;
+            border-bottom: 1px solid #f5f5f5;
+        }
         
         .dropdown {
             position: relative;
@@ -388,6 +466,9 @@
         .founder-image {
             display: flex;
             justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
         }
         
         .founder-image img {
@@ -395,6 +476,12 @@
             max-width: 400px;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .founder-image figcaption {
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
         }
         
         /* Military Service Section */
@@ -409,10 +496,23 @@
             align-items: center;
         }
         
+        .military-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
         .military-image img {
             width: 100%;
             border-radius: 8px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .military-image figcaption {
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
         }
         
         .military-text {
@@ -533,6 +633,10 @@
             .nav-links {
                 display: none;
             }
+
+            .hamburger {
+                display: flex;
+            }
             
             .founder-content,
             .military-content {
@@ -560,15 +664,31 @@
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="https://github.com/jaxorik" target="_blank">GITHUB</a></li>
                 <li class="dropdown">
-                    <button class="dropdown-toggle">GET CUSTOM AI ▾</button>
+                    <button class="dropdown-toggle" aria-expanded="false">GET CUSTOM AI ▾</button>
                     <div class="dropdown-menu">
                         <a href="government.html">DEFENSE & ENERGY</a>
                         <a href="disasters.html">DISASTER RESPONSE</a>
                     </div>
                 </li>
             </ul>
+            <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </nav>
     </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="https://github.com/jaxorik" target="_blank">GITHUB</a>
+        <div class="mobile-submenu">
+            <a href="government.html">DEFENSE & ENERGY</a>
+            <a href="disasters.html">DISASTER RESPONSE</a>
+        </div>
+    </div>
 
     <!-- Top Hero Banner -->
     <section class="top-banner">
@@ -592,8 +712,6 @@
                         <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </marker>
                 </defs>
-
-                <!-- Stage 1: Raw Data -->
                 <rect x="53" y="20" width="130" height="160" rx="8" fill="#e8e8e8" stroke="#999" stroke-width="0.5"/>
                 <text font-family="'Courier New', monospace" font-size="13" font-weight="bold" x="118" y="50" text-anchor="middle" fill="#333">1. Raw data</text>
                 <line x1="70" y1="62" x2="166" y2="62" stroke="#999" stroke-width="0.5"/>
@@ -603,11 +721,7 @@
                 <text font-family="Arial, sans-serif" font-size="11" x="118" y="140" text-anchor="middle" fill="#777">Satellite imagery</text>
                 <text font-family="Arial, sans-serif" font-size="11" x="118" y="156" text-anchor="middle" fill="#777">Field comms</text>
                 <text font-family="Arial, sans-serif" font-size="11" x="118" y="172" text-anchor="middle" fill="#777">Infrastructure maps</text>
-
-                <!-- Arrow 1→2 -->
                 <line x1="185" y1="100" x2="199" y2="100" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
-
-                <!-- Stage 2: Auditable Model -->
                 <rect x="201" y="20" width="130" height="160" rx="8" fill="#c8e6d4" stroke="#2E7D32" stroke-width="0.5"/>
                 <text font-family="'Courier New', monospace" font-size="13" font-weight="bold" x="266" y="44" text-anchor="middle" fill="#1b5e20">2. Auditable</text>
                 <text font-family="'Courier New', monospace" font-size="13" font-weight="bold" x="266" y="60" text-anchor="middle" fill="#1b5e20">model</text>
@@ -616,11 +730,7 @@
                 <text font-family="Arial, sans-serif" font-size="11" x="266" y="108" text-anchor="middle" fill="#2d5a35">AI with full</text>
                 <text font-family="Arial, sans-serif" font-size="11" x="266" y="124" text-anchor="middle" fill="#2d5a35">decision audit trails</text>
                 <text font-family="Arial, sans-serif" font-size="11" x="266" y="152" text-anchor="middle" fill="#3a7d44">No black boxes</text>
-
-                <!-- Arrow 2→3 -->
                 <line x1="333" y1="100" x2="347" y2="100" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
-
-                <!-- Stage 3: Quality Assurance -->
                 <rect x="349" y="20" width="130" height="160" rx="8" fill="#c8e6d4" stroke="#2E7D32" stroke-width="0.5"/>
                 <text font-family="'Courier New', monospace" font-size="13" font-weight="bold" x="414" y="44" text-anchor="middle" fill="#1b5e20">3. Quality</text>
                 <text font-family="'Courier New', monospace" font-size="13" font-weight="bold" x="414" y="60" text-anchor="middle" fill="#1b5e20">assurance</text>
@@ -629,11 +739,7 @@
                 <text font-family="Arial, sans-serif" font-size="11" x="414" y="108" text-anchor="middle" fill="#2d5a35">extreme conditions</text>
                 <text font-family="Arial, sans-serif" font-size="11" x="414" y="124" text-anchor="middle" fill="#2d5a35">DoD-standard</text>
                 <text font-family="Arial, sans-serif" font-size="11" x="414" y="140" text-anchor="middle" fill="#2d5a35">compliance</text>
-
-                <!-- Arrow 3→4 -->
                 <line x1="481" y1="100" x2="495" y2="100" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
-
-                <!-- Stage 4: Deployment -->
                 <rect x="497" y="20" width="130" height="160" rx="8" fill="#1b5e20" stroke="#0a3d12" stroke-width="0.5"/>
                 <text font-family="'Courier New', monospace" font-size="13" font-weight="bold" x="562" y="50" text-anchor="middle" fill="#ffffff">4. Deployment</text>
                 <line x1="514" y1="62" x2="610" y2="62" stroke="#4caf50" stroke-width="0.5"/>
@@ -642,25 +748,17 @@
                 <text font-family="Arial, sans-serif" font-size="11" x="562" y="114" text-anchor="middle" fill="#c8e6c9">Runs offline</text>
                 <text font-family="Arial, sans-serif" font-size="11" x="562" y="140" text-anchor="middle" fill="#a5d6a7">Ongoing mission</text>
                 <text font-family="Arial, sans-serif" font-size="11" x="562" y="156" text-anchor="middle" fill="#a5d6a7">support</text>
-
-                <!-- Divider -->
                 <line x1="53" y1="202" x2="627" y2="202" stroke="#ccc" stroke-width="0.5"/>
-
-                <!-- Card 1: Built for broken data -->
                 <rect x="53" y="214" width="174" height="100" rx="8" fill="#fff" stroke="#ddd" stroke-width="0.5"/>
                 <text font-family="'Courier New', monospace" font-size="12" font-weight="bold" x="140" y="238" text-anchor="middle" fill="#2E7D32">Built for broken data</text>
                 <text font-family="Arial, sans-serif" font-size="11" x="140" y="258" text-anchor="middle" fill="#555">Standard models require</text>
                 <text font-family="Arial, sans-serif" font-size="11" x="140" y="274" text-anchor="middle" fill="#555">corrupted samples to be</text>
                 <text font-family="Arial, sans-serif" font-size="11" x="140" y="290" text-anchor="middle" fill="#555">omitted. Ours don't.</text>
-
-                <!-- Card 2: Designed by veterans -->
                 <rect x="253" y="214" width="174" height="100" rx="8" fill="#fff" stroke="#ddd" stroke-width="0.5"/>
                 <text font-family="'Courier New', monospace" font-size="12" font-weight="bold" x="340" y="238" text-anchor="middle" fill="#2E7D32">Designed by veterans</text>
                 <text font-family="Arial, sans-serif" font-size="11" x="340" y="258" text-anchor="middle" fill="#555">Built by engineers with</text>
                 <text font-family="Arial, sans-serif" font-size="11" x="340" y="274" text-anchor="middle" fill="#555">firsthand SIGINT field</text>
                 <text font-family="Arial, sans-serif" font-size="11" x="340" y="290" text-anchor="middle" fill="#555">data experience</text>
-
-                <!-- Card 3: Compliant by design -->
                 <rect x="453" y="214" width="174" height="100" rx="8" fill="#fff" stroke="#ddd" stroke-width="0.5"/>
                 <text font-family="'Courier New', monospace" font-size="12" font-weight="bold" x="540" y="238" text-anchor="middle" fill="#2E7D32">Compliant by design</text>
                 <text font-family="Arial, sans-serif" font-size="11" x="540" y="258" text-anchor="middle" fill="#555">Export-control aware,</text>
@@ -675,7 +773,7 @@
         <div class="section">
             <h2>Technical Philosophy</h2>
             <p>Most AI vendors assume your data is clean, structured, and complete. Real field conditions don't cooperate with that. In defense and disaster response, that gap can cost lives.</p>
-            <p>Jaxorik builds auditable models that are designed by engineers with firsthand experience collecting and interpreting signals intelligence in the field, where data is incomplete, noisy, and mission-critical. We believe humans are decision-makers; AI is a tool that supports them.</p>
+            <p>Jaxorik builds auditable models designed by engineers with firsthand experience collecting and interpreting signals intelligence in the field — where data is incomplete, noisy, and mission-critical. We believe humans are decision-makers; AI is a tool that supports them.</p>
             <div style="margin: 3rem 0; text-align: center;">
                 <img src="bad science.png" alt="Input to Black Box to Output - This is Bad Science" style="max-width: 600px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
             </div>
@@ -702,14 +800,12 @@
                     <p>Datasets with missing fields, corrupted entries, or conflicting sources — common in crisis conditions.</p>
                 </div>
             </div>
-
             <div class="gravity-spy-block">
                 <h3>Real Example: LIGO Gravity Spy Dataset</h3>
-                <img src="gravityspy_samples_part2.png" alt="Gravity Spy spectrogram samples showing corrupted and noisy data">
-                <p>Real gravitational wave detector data used in Jaxorik's research. The solid green squares are corrupted or missing samples. Since a standard model requires clean data, it would omit the corrupted samples, training your AI to ignore the exact conditions it will face in a crisis.</p>
+                <img src="gravityspy_samples_part2.png" alt="Gravity Spy spectrogram samples showing corrupted and noisy data including solid green squares representing missing or corrupted samples">
+                <p>Real gravitational wave detector data used in Jaxorik's research. The solid green squares are corrupted or missing samples. Since a standard model requires clean data, it would omit the corrupted samples — training your AI to ignore the exact conditions it will face in a crisis.</p>
                 <p>Our approach maintains classification performance even when inputs are incomplete, handling these gracefully rather than generating false confidence.</p>
             </div>
-
             <div class="graceful-degradation">
                 Where a standard model hallucinates or crashes, ours <strong>degrades gracefully</strong> — flagging uncertainty instead of generating false confidence.
             </div>
@@ -748,9 +844,10 @@
                 <p>Data scientist with 10+ years of military and industry experience building novel AI solutions for national defense applications.</p>
                 <p>PhD candidate in Data Science at National University, with an MBA in Quantitative Finance. Former Marine SIGINT Analyst with security clearance eligibility and firsthand understanding of the operational constraints faced by defense and intelligence organizations.</p>
             </div>
-            <div class="founder-image">
+            <figure class="founder-image">
                 <img src="Rae Chipera.jpg" alt="Rae Chipera, Founder & CEO of Jaxorik AI Research Group">
-            </div>
+                <figcaption>Rae Chipera — Founder & CEO</figcaption>
+            </figure>
         </div>
     </section>
 
@@ -759,7 +856,7 @@
         <h2>Military Service</h2>
         <div class="military-content">
             <div class="military-text">
-                <p>Corporal Chipera served with distinction in the United States Marine Corps as a Signals Intelligence Analyst, including deployment to Iraq in support of Operation Iraqi Freedom.</p>
+                <p>Rae served in the United States Marine Corps as a Signals Intelligence Analyst, including deployment to Iraq in support of Operation Iraqi Freedom.</p>
                 <p>Her military experience provides unique insight into the operational requirements and constraints faced by defense and intelligence organizations deploying AI systems in challenging environments.</p>
                 <div class="service-highlights">
                     <h4>Service Highlights</h4>
@@ -767,14 +864,15 @@
                         <li>Iraq Campaign Medal — Combat deployment</li>
                         <li>Good Conduct Medal — Exemplary service</li>
                         <li>Expert Rifle Badge — Perfect score (250/250)</li>
-                        <li>Expert Pistol Badge — Top marksmanship</li>
+                        <li>Expert Pistol Badge</li>
                         <li>Security clearance eligibility maintained</li>
                     </ul>
                 </div>
             </div>
-            <div class="military-image">
-                <img src="Rae Chipera USMC.png" alt="Cpl. Chipera in uniform">
-            </div>
+            <figure class="military-image">
+                <img src="Rae Chipera USMC.png" alt="Rae Chipera in USMC uniform">
+                <figcaption>Cpl. Chipera, USMC</figcaption>
+            </figure>
         </div>
     </section>
 
@@ -787,8 +885,7 @@
                 <ul>
                     <li>PhD Candidate, Data Science — National University</li>
                     <li>MBA in Quantitative Finance</li>
-                    <li>Completed MIT Machine Learning program</li>
-                    <li>Completed CMU Deep Learning program</li>
+                    <li>MIT & CMU professional ML/Deep Learning programs</li>
                     <li>Los Alamos, NM native</li>
                 </ul>
             </div>
@@ -803,13 +900,13 @@
                 </ul>
             </div>
             <div class="education-card">
-                <h3>Government Contracting</h3>
+                <h3>Contracting Credentials</h3>
                 <ul>
                     <li>UEI: K8ENCCGZ2M13</li>
                     <li>CAGE: 11X70</li>
                     <li>WOSB Certified</li>
                     <li>SDVOSB Certified</li>
-                    <li>Listed in Disaster Response Registry</li>
+                    <li>Listed in SAM.gov Disaster Response Registry</li>
                 </ul>
             </div>
         </div>
@@ -819,7 +916,7 @@
     <section class="section" style="background: #f8f9fa; text-align: center;">
         <h3 style="color: #2E7D32; font-family: 'Courier New', monospace; margin-bottom: 2rem; font-size: 2rem;">Head of Document Shredding</h3>
         <div style="max-width: 600px; margin: 0 auto;">
-            <img src="ghost-rider.jpg" alt="Ghost Rider, Head of Document Shredding" style="width: 300px; height: 300px; object-fit: cover; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 2rem;">
+            <img src="ghost-rider.jpg" alt="Ghost Rider, Jaxorik Head of Document Shredding, a Carolina Dog" style="width: 300px; height: 300px; object-fit: cover; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 2rem;">
             <p style="font-size: 1.1rem; color: #666; line-height: 1.6;">Responsible for secure disposal of sensitive materials and maintaining office morale. Expert in paper destruction and treat negotiation.</p>
         </div>
     </section>
@@ -832,24 +929,48 @@
                 <a href="https://www.linkedin.com/company/jaxorik" target="_blank">LinkedIn</a>
             </div>
             <div class="footer-info">
-                <p><strong>505-506-6884</strong></p>
-                <p>Copyright © 2026 JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
+                <p><strong><a href="tel:+15055066884" style="color: inherit; text-decoration: none;">505-506-6884</a></strong></p>
+                <p>Copyright © <script>document.write(new Date().getFullYear())</script> JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
                 <p>SAM.gov registered | UEI: K8ENCCGZ2M13 | CAGE: 11X70</p>
-                <p>Disaster Response Certification: Active</p>
+                <p>Listed in the SAM.gov Disaster Response Registry</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Hamburger menu
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburger.addEventListener('click', () => {
+            const isOpen = hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', isOpen);
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('open');
+                mobileMenu.classList.remove('open');
+                hamburger.setAttribute('aria-expanded', false);
+            });
+        });
+
+        // Dropdown aria-expanded
+        document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const expanded = btn.getAttribute('aria-expanded') === 'true';
+                btn.setAttribute('aria-expanded', !expanded);
+            });
+        });
+
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
