@@ -294,7 +294,7 @@
             color: #555;
             font-size: 0.95rem;
             max-width: 700px;
-            margin: 0 auto;
+            margin: 0 auto 1rem auto;
             text-align: center;
         }
 
@@ -321,12 +321,6 @@
         
         .company-section h2 {
             color: white;
-        }
-
-        .company-section > .section > p {
-            max-width: 700px;
-            margin: 0 auto 2rem auto;
-            opacity: 0.9;
         }
         
         .compliance-grid {
@@ -680,12 +674,12 @@
     <div class="section-full philosophy-section">
         <div class="section">
             <h2>Technical Philosophy</h2>
-            <p>Most AI vendors assume clean, structured, complete data. Real field conditions don't cooperate — and in defense and disaster response, that gap can cost lives.</p>
-            <p>Jaxorik builds models that are transparent, auditable, and designed to degrade gracefully rather than fail silently. We believe humans are decision-makers; AI is a tool that supports them.</p>
+            <p>Most AI vendors assume your data is clean, structured, and complete. Real field conditions don't cooperate with that. In defense and disaster response, that gap can cost lives.</p>
+            <p>Jaxorik builds auditable models that are designed by engineers with firsthand experience collecting and interpreting signals intelligence in the field, where data is incomplete, noisy, and mission-critical. We believe humans are decision-makers; AI is a tool that supports them.</p>
             <div style="margin: 3rem 0; text-align: center;">
                 <img src="bad science.png" alt="Input to Black Box to Output - This is Bad Science" style="max-width: 600px; width: 100%; height: auto; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
             </div>
-            <p class="closing">Every Jaxorik model must be explainable, auditable, and deployable in austere environments where traditional cloud-based AI fails.</p>
+            <p class="closing">Every Jaxorik model is explainable, auditable, and deployable in austere environments where cloud-based AI fails.</p>
         </div>
     </div>
 
@@ -693,7 +687,7 @@
     <div class="section-full noisy-data-section">
         <div class="section">
             <h2>Built for Messy, Chaotic Data</h2>
-            <p class="intro">Traditional AI models assume clean, complete, structured inputs. Real-world field data rarely cooperates. Our models are designed to handle:</p>
+            <p class="intro">Traditional AI models assume clean, complete, structured inputs. Real-world field data rarely cooperates with that. Our models are designed to handle:</p>
             <div class="data-examples">
                 <div class="data-example-item">
                     <h4>Corrupted Imagery</h4>
@@ -712,7 +706,8 @@
             <div class="gravity-spy-block">
                 <h3>Real Example: LIGO Gravity Spy Dataset</h3>
                 <img src="gravityspy_samples_part2.png" alt="Gravity Spy spectrogram samples showing corrupted and noisy data">
-                <p>Real gravitational wave detector data used in Jaxorik's research. The solid green squares are corrupted or missing samples — data that a standard model would choke on. Our approach maintains classification performance even when inputs are incomplete, handling these gracefully rather than generating false confidence.</p>
+                <p>Real gravitational wave detector data used in Jaxorik's research. The solid green squares are corrupted or missing samples. Since a standard model requires clean data, it would omit the corrupted samples, training your AI to ignore the exact conditions it will face in a crisis.</p>
+                <p>Our approach maintains classification performance even when inputs are incomplete, handling these gracefully rather than generating false confidence.</p>
             </div>
 
             <div class="graceful-degradation">
