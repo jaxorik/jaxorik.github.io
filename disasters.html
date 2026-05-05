@@ -804,7 +804,7 @@
     <!-- Emergency Phone Section -->
     <section class="emergency-section">
         <h2>Active Disaster? Call Us Now.</h2>
-        <p>Customers have direct access to our founder during active disasters.</p>
+        <p>24/7 support during active disaster response operations.</p>
         <div class="emergency-phone">
             <a href="tel:+15055066884" style="color: white; text-decoration: none;">505-506-6884</a>
         </div>
@@ -818,10 +818,11 @@
             <div class="form-container">
                 <div class="form-section">
                     <form action="https://formspree.io/f/meenganb" method="POST">
+                        <input type="text" name="_gotcha" style="display:none">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name *</label>
-                                <input type="text" id="name" name="name" required placeholder="Your name">
+                                <input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name">
                             </div>
                             <div class="form-group">
                                 <label for="role">Your Role *</label>
@@ -840,16 +841,16 @@
                         </div>
                         <div class="form-group">
                             <label for="organization">Agency / Organization *</label>
-                            <input type="text" id="organization" name="organization" required placeholder="Your agency or organization">
+                            <input type="text" id="organization" name="organization" required placeholder="Your agency or organization" autocomplete="organization">
                         </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="email">Email *</label>
-                                <input type="email" id="email" name="email" required placeholder="your@email.com">
+                                <input type="email" id="email" name="email" required placeholder="your@email.com" autocomplete="email">
                             </div>
                             <div class="form-group">
                                 <label for="phone">Phone *</label>
-                                <input type="tel" id="phone" name="phone" required placeholder="555-555-5555">
+                                <input type="tel" id="phone" name="phone" required placeholder="555-555-5555" autocomplete="tel">
                             </div>
                         </div>
                         <div class="form-group">
@@ -883,6 +884,7 @@
                             <input type="text" id="budget" name="budget" placeholder="e.g., $25,000 / need director approval / FEMA funded">
                         </div>
                         <button type="submit" class="submit-btn">Send Message</button>
+                        <p class="form-note">Your contact information will only be used to respond to your inquiry. We don't do newsletters, and we never sell or share your data.</p>
                         <p class="form-note">For active disasters, call <a href="tel:+15055066884" style="color: #d32f2f;">505-506-6884</a> directly.</p>
                     </form>
                 </div>
@@ -893,7 +895,7 @@
                         <div class="emergency-phone-big">
                             <a href="tel:+15055066884" style="color: #d32f2f; text-decoration: none;">505-506-6884</a>
                         </div>
-                        <p class="emergency-details">Customers get direct contact to our founder during active disasters.</p>
+                        <p class="emergency-details">Customers have direct contact to our founder during active disasters.</p>
                     </div>
                     <div class="info-section">
                         <h3>Listed in SAM.gov Disaster Response Registry</h3>
@@ -902,11 +904,11 @@
                     <div class="info-section">
                         <h3>Rapid Deployment Capabilities</h3>
                         <ul>
-                            <li>Ready to deploy within days of contract execution</li>
+                            <li>Tools deployed within 24–48 hours for active disasters</li>
                             <li>Remote installation and training available</li>
                             <li>Field support during operations</li>
                             <li>Integration with existing emergency protocols</li>
-                            <li>Ships ready-to-use on dedicated hardware — no IT integration required</li>
+                            <li>Compatible with FEMA, state, and local systems</li>
                             <li>Designed for non-technical emergency staff</li>
                         </ul>
                     </div>
