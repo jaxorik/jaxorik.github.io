@@ -7,818 +7,230 @@
     <title>Government AI Contracting - Jaxorik AI Research Group</title>
     
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        /* Header & Navigation */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+
         header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            position: fixed; top: 0; width: 100%;
+            background: rgba(255,255,255,0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             z-index: 1000;
         }
-        
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-            max-width: 1400px;
-            margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 1rem 5%; max-width: 1400px; margin: 0 auto;
         }
-        
-        .logo {
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-            align-items: center;
-            position: relative;
-        }
+        .logo { width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; }
+        .logo img { width: 100%; height: 100%; object-fit: contain; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; position: relative; }
 
-        /* Hamburger */
         .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-            background: none;
-            border: none;
-            padding: 0.5rem;
+            display: none; flex-direction: column; cursor: pointer;
+            gap: 5px; background: none; border: none; padding: 0.5rem;
         }
-
-        .hamburger span {
-            display: block;
-            width: 25px;
-            height: 2px;
-            background: #333;
-            transition: all 0.3s ease;
-        }
-
-        .hamburger.open span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
-
-        .hamburger.open span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.open span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        }
+        .hamburger span { display: block; width: 25px; height: 2px; background: #333; transition: all 0.3s ease; }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
         .mobile-menu {
-            display: none;
-            position: fixed;
-            top: 80px;
-            left: 0;
-            right: 0;
-            background: white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            z-index: 999;
-            padding: 1rem 5%;
-            flex-direction: column;
+            display: none; position: fixed; top: 80px; left: 0; right: 0;
+            background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 999; padding: 1rem 5%; flex-direction: column;
         }
-
-        .mobile-menu.open {
-            display: flex;
-        }
-
+        .mobile-menu.open { display: flex; }
         .mobile-menu a {
-            display: block;
-            padding: 1rem 0;
-            border-bottom: 1px solid #eee;
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            display: block; padding: 1rem 0; border-bottom: 1px solid #eee;
+            text-decoration: none; color: #333; font-weight: 500;
+            text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;
+        }
+        .mobile-menu .mobile-submenu a {
+            font-size: 0.85rem; color: #555;
+            padding-left: 1.5rem; border-bottom: 1px solid #f5f5f5;
         }
 
-        .mobile-menu .mobile-submenu a {
-            font-size: 0.85rem;
-            color: #555;
-            padding-left: 1.5rem;
-            border-bottom: 1px solid #f5f5f5;
-        }
-        
-        .dropdown {
-            position: relative;
-        }
-        
+        .dropdown { position: relative; }
         .dropdown-toggle {
-            background: #000;
-            color: white !important;
-            padding: 0.7rem 1.5rem;
-            border-radius: 4px;
-            transition: background 0.3s;
-            cursor: pointer;
-            border: none;
-            font-family: Arial, sans-serif;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            background: #000; color: white !important; padding: 0.7rem 1.5rem;
+            border-radius: 4px; transition: background 0.3s; cursor: pointer;
+            border: none; font-family: Arial, sans-serif; font-size: 0.9rem;
+            font-weight: 500; text-transform: uppercase; letter-spacing: 1px;
         }
-        
-        .dropdown-toggle:hover {
-            background: #333;
-        }
-        
+        .dropdown-toggle:hover { background: #333; }
         .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            min-width: 200px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 1001;
+            position: absolute; top: 100%; right: 0; background: white;
+            border: 1px solid #ddd; border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); min-width: 200px;
+            opacity: 0; visibility: hidden; transform: translateY(-10px);
+            transition: all 0.3s ease; z-index: 1001;
         }
-        
-        .dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
+        .dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
         .dropdown-menu a {
-            display: block;
-            padding: 1rem 1.5rem;
-            color: #333 !important;
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #eee;
-            transition: background 0.3s;
+            display: block; padding: 1rem 1.5rem; color: #333 !important;
+            text-decoration: none; font-size: 0.9rem; font-weight: 500;
+            text-transform: uppercase; letter-spacing: 1px;
+            border-bottom: 1px solid #eee; transition: background 0.3s;
         }
-        
-        .dropdown-menu a:last-child {
-            border-bottom: none;
-        }
-        
-        .dropdown-menu a:hover {
-            background: #f8f9fa;
-            color: #000 !important;
-        }
-        
+        .dropdown-menu a:last-child { border-bottom: none; }
+        .dropdown-menu a:hover { background: #f8f9fa; color: #000 !important; }
         .nav-links a {
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            transition: color 0.3s;
+            text-decoration: none; color: #333; font-weight: 500;
+            text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; transition: color 0.3s;
         }
-        
-        .nav-links a:hover {
-            color: #2E7D32;
-        }
-        
-        /* Top Banner */
+        .nav-links a:hover { color: #2E7D32; }
+
         .top-banner {
             margin-top: 80px;
             background: linear-gradient(135deg, #000 0%, #333 100%);
-            color: white;
-            text-align: center;
-            padding: 4rem 5%;
+            color: white; text-align: center; padding: 4rem 5%;
         }
-        
-        .banner-content {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .top-banner h1 {
-            font-size: 3rem;
-            font-family: 'Courier New', monospace;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        
-        .banner-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            color: #A5D6A7;
-            font-weight: 500;
-        }
-        
-        .top-banner p {
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            line-height: 1.6;
-        }
-        
+        .banner-content { max-width: 1000px; margin: 0 auto; }
+        .top-banner h1 { font-size: 3rem; font-family: 'Courier New', monospace; margin-bottom: 1rem; line-height: 1.2; }
+        .banner-subtitle { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9; color: #A5D6A7; font-weight: 500; }
+        .top-banner p { font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.9; line-height: 1.6; }
         .banner-cta-button {
-            background: white;
-            color: #2E7D32 !important;
-            padding: 1.2rem 2.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: inline-block;
-            font-size: 1rem;
+            background: white; color: #2E7D32 !important; padding: 1.2rem 2.5rem;
+            border-radius: 4px; text-decoration: none; font-weight: bold;
+            text-transform: uppercase; letter-spacing: 1px;
+            transition: transform 0.3s, box-shadow 0.3s; display: inline-block; font-size: 1rem;
         }
-        
-        .banner-cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255,255,255,0.3);
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 4rem 5%;
-            background: #f8f9fa;
-        }
-        
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .main-content h2 {
-            font-size: 2.5rem;
-            font-family: 'Courier New', monospace;
-            color: #333;
-            margin-bottom: 1rem;
-            line-height: 1.2;
-        }
-        
-        .main-content p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
+        .banner-cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(255,255,255,0.3); }
 
-        .main-content .cta-button {
-            margin-top: 1rem;
+        .hero { padding: 4rem 5%; background: #f8f9fa; }
+        .hero-container {
+            max-width: 1200px; margin: 0 auto;
+            display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: center;
         }
-        
+        .main-content h2 { font-size: 2.5rem; font-family: 'Courier New', monospace; color: #333; margin-bottom: 1rem; line-height: 1.2; }
+        .main-content p { font-size: 1.1rem; color: #666; margin-bottom: 1rem; line-height: 1.6; }
+        .main-content .cta-button { margin-top: 1rem; }
         .cta-button {
-            background: #000;
-            color: white !important;
-            padding: 1rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: background 0.3s;
-            display: inline-block;
+            background: #000; color: white !important; padding: 1rem 2rem;
+            border-radius: 4px; text-decoration: none; font-weight: bold;
+            text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s; display: inline-block;
         }
-        
-        .cta-button:hover {
-            background: #333;
-        }
-        
-        .credentials-sidebar {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .credentials-sidebar h3 {
-            font-size: 1.2rem;
-            color: #333;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-            font-family: 'Courier New', monospace;
-        }
-        
-        .credential-item {
-            padding: 0.8rem 0;
-            border-bottom: 1px solid #eee;
-            color: #666;
-            font-size: 0.95rem;
-        }
-        
-        .credential-item:last-child {
-            border-bottom: none;
-        }
-        
-        .credential-item strong {
-            color: #333;
-        }
-        
-        /* Veteran Section */
+        .cta-button:hover { background: #333; }
+        .credentials-sidebar { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .credentials-sidebar h3 { font-size: 1.2rem; color: #333; margin-bottom: 1.5rem; font-weight: 600; font-family: 'Courier New', monospace; }
+        .credential-item { padding: 0.8rem 0; border-bottom: 1px solid #eee; color: #666; font-size: 0.95rem; }
+        .credential-item:last-child { border-bottom: none; }
+        .credential-item strong { color: #333; }
+
         .veteran-section {
             background: url('desert-camo.jpg') center/cover;
-            color: white;
-            text-align: center;
-            padding: 4rem 5%;
-            position: relative;
+            color: white; text-align: center; padding: 4rem 5%; position: relative;
         }
-
         .veteran-section::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
+            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.02) 50%, transparent 70%);
             pointer-events: none;
         }
-        
-        .veteran-section h2 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            position: relative;
-            z-index: 2;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-        
+        .veteran-section h2 { font-size: 2rem; margin-bottom: 0.5rem; position: relative; z-index: 2; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
         .veteran-section .highlight {
-            font-size: 3rem;
-            font-family: 'Courier New', monospace;
-            color: white;
-            margin: 1rem 0;
-            position: relative;
-            z-index: 2;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
-            font-weight: bold;
+            font-size: 3rem; font-family: 'Courier New', monospace; color: white;
+            margin: 1rem 0; position: relative; z-index: 2;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: bold;
         }
-        
-        /* Problems Section */
-        .problems-section {
-            padding: 4rem 5%;
-            background: white;
-        }
-        
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .problems-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-family: 'Courier New', monospace;
-            color: #333;
-            text-align: center;
-        }
-        
-        .problems-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
-        }
-        
+
+        .problems-section { padding: 4rem 5%; background: white; }
+        .section-container { max-width: 1200px; margin: 0 auto; }
+        .problems-section h2 { font-size: 2.5rem; margin-bottom: 3rem; font-family: 'Courier New', monospace; color: #333; text-align: center; }
+        .problems-grid { display: flex; flex-direction: column; gap: 3rem; }
         .problem-card {
-            background: #f8f9fa;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border-left: 6px solid #2E7D32;
-            max-width: 800px;
-            margin: 0 auto;
-            width: 100%;
+            background: #f8f9fa; padding: 3rem; border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08); border-left: 6px solid #2E7D32;
+            max-width: 800px; margin: 0 auto; width: 100%;
         }
-        
-        .problem-card:nth-child(even) {
-            margin-left: 0;
-            margin-right: auto;
-        }
-        
-        .problem-card:nth-child(odd) {
-            margin-left: auto;
-            margin-right: 0;
-        }
-        
-        .problem-card h3 {
-            color: #2E7D32;
-            margin-bottom: 1rem;
-            font-family: 'Courier New', monospace;
-        }
-        
-        .problem-card .problem {
-            color: #666;
-            margin-bottom: 1rem;
-            font-style: italic;
-        }
-        
-        .problem-card .solution {
-            color: #333;
-            font-weight: 500;
-        }
-        
-        /* Philosophy Section */
-        .philosophy-section {
-            background: #000;
-            color: white;
-            text-align: center;
-            padding: 4rem 5%;
-        }
-        
-        .philosophy-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            font-family: 'Courier New', monospace;
-            color: white;
-        }
-        
-        .philosophy-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .philosophy-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .bad-science-image {
-            margin: 3rem 0;
-        }
-        
-        .bad-science-image img {
-            max-width: 500px;
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(255,255,255,0.1);
-        }
-        
-        /* Services Section */
-        .services-section {
-            padding: 4rem 5%;
-            background: #f8f9fa;
-        }
-        
-        .services-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-family: 'Courier New', monospace;
-            color: #333;
-            text-align: center;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 8px;
-            border-top: 4px solid #2E7D32;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .service-card h3 {
-            color: #2E7D32;
-            margin-bottom: 1rem;
-            font-family: 'Courier New', monospace;
-        }
-        
-        .service-card ul {
-            list-style: none;
-        }
-        
-        .service-card li {
-            padding: 0.3rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-            color: #555;
-        }
-        
-        .service-card li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #2E7D32;
-            font-weight: bold;
-        }
-        
-        /* Downloads Section */
-        .downloads-section {
-            padding: 4rem 5%;
-            background: #000;
-            color: white;
-            text-align: center;
-        }
-        
-        .downloads-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            font-family: 'Courier New', monospace;
-            color: white;
-        }
-        
-        .download-items {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
+        .problem-card:nth-child(even) { margin-left: 0; margin-right: auto; }
+        .problem-card:nth-child(odd) { margin-left: auto; margin-right: 0; }
+        .problem-card h3 { color: #2E7D32; margin-bottom: 1rem; font-family: 'Courier New', monospace; }
+        .problem-card .problem { color: #666; margin-bottom: 1rem; font-style: italic; }
+        .problem-card .solution { color: #333; font-weight: 500; }
+
+        .philosophy-section { background: #000; color: white; text-align: center; padding: 4rem 5%; }
+        .philosophy-section h2 { font-size: 2.5rem; margin-bottom: 2rem; font-family: 'Courier New', monospace; color: white; }
+        .philosophy-content { max-width: 800px; margin: 0 auto; }
+        .philosophy-content p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
+        .bad-science-image { margin: 3rem 0; }
+        .bad-science-image img { max-width: 500px; width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(255,255,255,0.1); }
+
+        .services-section { padding: 4rem 5%; background: #f8f9fa; }
+        .services-section h2 { font-size: 2.5rem; margin-bottom: 3rem; font-family: 'Courier New', monospace; color: #333; text-align: center; }
+        .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1000px; margin: 0 auto; }
+        .service-card { background: white; padding: 2.5rem; border-radius: 8px; border-top: 4px solid #2E7D32; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .service-card h3 { color: #2E7D32; margin-bottom: 1rem; font-family: 'Courier New', monospace; }
+        .service-card ul { list-style: none; }
+        .service-card li { padding: 0.3rem 0; padding-left: 1.5rem; position: relative; color: #555; }
+        .service-card li:before { content: "✓"; position: absolute; left: 0; color: #2E7D32; font-weight: bold; }
+
+        .downloads-section { padding: 4rem 5%; background: #000; color: white; text-align: center; }
+        .downloads-section h2 { font-size: 2.5rem; margin-bottom: 3rem; font-family: 'Courier New', monospace; color: white; }
+        .download-items { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
         .download-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #333;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border: 1px solid #555;
+            display: flex; justify-content: space-between; align-items: center;
+            background: #333; padding: 1.5rem; border-radius: 8px; border: 1px solid #555;
         }
-        
-        .download-item span {
-            font-size: 1.1rem;
-            color: white;
-            text-align: left;
-        }
-        
+        .download-item span { font-size: 1.1rem; color: white; text-align: left; }
         .download-btn {
-            background: #2E7D32;
-            color: white;
-            padding: 0.7rem 1.5rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background 0.3s;
-            white-space: nowrap;
-            margin-left: 1rem;
+            background: #2E7D32; color: white; padding: 0.7rem 1.5rem; border-radius: 4px;
+            text-decoration: none; font-weight: 500; transition: background 0.3s; white-space: nowrap; margin-left: 1rem;
         }
-        
-        .download-btn:hover {
-            background: #1B5E20;
-        }
-        
-        /* Contact Section */
-        .contact-section {
-            padding: 4rem 5%;
-            background: #f8f9fa;
-        }
-        
-        .contact-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-        
-        .contact-form {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .contact-form h2 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-            font-family: 'Courier New', monospace;
-            color: #333;
-        }
+        .download-btn:hover { background: #1B5E20; }
 
-        .contact-form .form-intro {
-            color: #666;
-            margin-bottom: 2rem;
-            font-size: 0.95rem;
+        .contact-section { padding: 4rem 5%; background: #f8f9fa; }
+        .contact-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+        .contact-form { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .contact-form h2 { font-size: 2rem; margin-bottom: 0.5rem; font-family: 'Courier New', monospace; color: #333; }
+        .contact-form .form-intro { color: #666; margin-bottom: 2rem; font-size: 0.95rem; }
+        .form-group { margin-bottom: 1.25rem; }
+        .form-group label { display: block; font-size: 0.9rem; font-weight: 600; color: #333; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 0.75rem 1rem; border: 1px solid #ddd; border-radius: 4px;
+            font-family: Arial, sans-serif; font-size: 0.95rem; color: #333;
+            transition: border-color 0.3s; background: #fafafa;
         }
-
-        /* Form Styles */
-        .form-group {
-            margin-bottom: 1.25rem;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: #333;
-            margin-bottom: 0.4rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: Arial, sans-serif;
-            font-size: 0.95rem;
-            color: #333;
-            transition: border-color 0.3s;
-            background: #fafafa;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #2E7D32;
-            background: white;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 100px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: none; border-color: #2E7D32; background: white; }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
         .form-submit {
-            background: #000;
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 4px;
-            font-family: Arial, sans-serif;
-            font-size: 1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-            width: 100%;
-            margin-top: 0.5rem;
+            background: #000; color: white; padding: 1rem 2rem; border: none; border-radius: 4px;
+            font-family: Arial, sans-serif; font-size: 1rem; font-weight: bold;
+            text-transform: uppercase; letter-spacing: 1px; cursor: pointer;
+            transition: background 0.3s, transform 0.2s; width: 100%; margin-top: 0.5rem;
         }
+        .form-submit:hover { background: #333; transform: translateY(-1px); }
+        .form-note { font-size: 0.8rem; color: #999; margin-top: 1rem; text-align: center; }
 
-        .form-submit:hover {
-            background: #333;
-            transform: translateY(-1px);
-        }
+        .company-info { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .company-info h2 { font-size: 2rem; margin-bottom: 2rem; font-family: 'Courier New', monospace; color: #333; }
+        .location-map { margin: 2rem 0; text-align: center; }
+        .distance-list { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; }
+        .distance-list h4 { color: #2E7D32; margin-bottom: 1rem; font-family: 'Courier New', monospace; }
+        .distance-list ul { list-style: none; }
+        .distance-list li { padding: 0.3rem 0; color: #666; }
+        .project-exclusions { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e9ecef; }
+        .project-exclusions h3 { color: #d32f2f; margin-bottom: 1rem; font-family: 'Courier New', monospace; }
 
-        .form-note {
-            font-size: 0.8rem;
-            color: #999;
-            margin-top: 1rem;
-            text-align: center;
-        }
-        
-        .company-info {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .company-info h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            font-family: 'Courier New', monospace;
-            color: #333;
-        }
-        
-        .location-map {
-            margin: 2rem 0;
-            text-align: center;
-        }
-        
-        .distance-list {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 2rem 0;
-        }
-        
-        .distance-list h4 {
-            color: #2E7D32;
-            margin-bottom: 1rem;
-            font-family: 'Courier New', monospace;
-        }
-        
-        .distance-list ul {
-            list-style: none;
-        }
-        
-        .distance-list li {
-            padding: 0.3rem 0;
-            color: #666;
-        }
-        
-        .project-exclusions {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e9ecef;
-        }
-        
-        .project-exclusions h3 {
-            color: #d32f2f;
-            margin-bottom: 1rem;
-            font-family: 'Courier New', monospace;
-        }
-        
-        /* Footer */
-        footer {
-            background: #000;
-            color: white;
-            padding: 3rem 5%;
-            text-align: center;
-        }
-        
-        .footer-content {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .social-links {
-            margin: 2rem 0;
-        }
-        
-        .social-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1.2rem;
-        }
-        
-        .footer-info {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid #333;
-            font-size: 0.9rem;
-            color: #999;
-        }
-        
-        .footer-info p {
-            margin: 0.5rem 0;
-        }
-        
-        /* Responsive */
+        footer { background: #000; color: white; padding: 3rem 5%; text-align: center; }
+        .footer-content { max-width: 1400px; margin: 0 auto; }
+        .social-links { margin: 2rem 0; }
+        .social-links a { color: white; text-decoration: none; margin: 0 1rem; font-size: 1.2rem; }
+        .footer-info { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #333; font-size: 0.9rem; color: #999; }
+        .footer-info p { margin: 0.5rem 0; }
+
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hamburger { display: flex; }
-            
-            .hero-container,
-            .contact-content,
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
+            .hero-container, .contact-content, .services-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .form-row { grid-template-columns: 1fr; }
             .top-banner h1 { font-size: 2rem; }
             .main-content h2 { font-size: 2rem; }
-
-            .problem-card:nth-child(even),
-            .problem-card:nth-child(odd) {
-                margin: 0 auto;
-            }
+            .problem-card:nth-child(even), .problem-card:nth-child(odd) { margin: 0 auto; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav>
             <a href="index.html" class="logo"><img src="Jaxorik logo black.png" alt="Jaxorik AI Research Group"></a>
@@ -835,14 +247,11 @@
                 </li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </nav>
     </header>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
         <a href="index.html">HOME</a>
         <a href="about.html">ABOUT</a>
@@ -853,7 +262,6 @@
         </div>
     </div>
 
-    <!-- Top Hero Banner -->
     <section class="top-banner">
         <div class="banner-content">
             <h1>AI Solutions for Federal Agencies and Prime Contractors</h1>
@@ -866,7 +274,6 @@
         </div>
     </section>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
             <div class="main-content">
@@ -876,7 +283,7 @@
                 <a href="jaxorik_capabilities_statement.pdf" class="cta-button" download>CAPABILITIES STATEMENT</a>
             </div>
             <div class="credentials-sidebar">
-                <h3>Find us on SAM.gov:</h3>
+                <h3>Find us on <a href="https://sam.gov/search/?keywords=K8ENCCGZ2M13" target="_blank" style="color: #2E7D32;">SAM.gov</a>:</h3>
                 <div class="credential-item"><strong>UEI:</strong> K8ENCCGZ2M13</div>
                 <div class="credential-item"><strong>CAGE:</strong> 11X70</div>
                 <div class="credential-item"><strong>WOSB + SDVOSB</strong> Certified</div>
@@ -886,13 +293,11 @@
         </div>
     </section>
 
-    <!-- Veteran Section -->
     <section class="veteran-section">
         <h2>Our business is proudly</h2>
         <div class="highlight">Female Veteran-Owned</div>
     </section>
 
-    <!-- Problems Section -->
     <section class="problems-section">
         <div class="section-container">
             <h2>Common Government Contracting Challenges</h2>
@@ -910,18 +315,22 @@
                 <div class="problem-card">
                     <h3>Vendor Reliability</h3>
                     <p class="problem">"We need contractors who understand government timelines, budgets, and won't disappear mid-project."</p>
-                    <p class="solution">We are veterans, and our founder is from Los Alamos, NM. We understand how to be on time, and we only bid on projects that matter to us too.</p>
+                    <p class="solution">We're veterans with deep roots in government contracting. We're not a venture-backed shop chasing the next pivot. We bid on projects we'd be proud to deliver, and we deliver on time.</p>
                 </div>
                 <div class="problem-card">
                     <h3>Technical Integration</h3>
                     <p class="problem">"New AI systems need to integrate with our existing government IT infrastructure and security protocols."</p>
                     <p class="solution">We deliver models on a fresh machine pre-configured to your environment, unless a different delivery method is established in advance.</p>
                 </div>
+                <div class="problem-card">
+                    <h3>Classified Data Concerns</h3>
+                    <p class="problem">"We need AI tools but our data is classified and we don't want vendors in our facility."</p>
+                    <p class="solution">We ship you an unclassified, ready-to-run model on a configured laptop. Your team loads your data on your systems. The model never sees classified information during training and development — the classification boundary stays where it belongs.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Philosophy Section -->
     <section class="philosophy-section">
         <h2>Transparent AI for Government Applications</h2>
         <div class="philosophy-content">
@@ -933,7 +342,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services-section">
         <div class="section-container">
             <h2>Government AI Capabilities</h2>
@@ -941,29 +349,27 @@
                 <div class="service-card">
                     <h3>National Defense</h3>
                     <ul>
-                        <li>Threat detection and analysis</li>
-                        <li>Infrastructure vulnerability assessment</li>
-                        <li>Real-time decision support systems</li>
-                        <li>Edge computing for remote operations</li>
-                        <li>Secure, auditable AI pipelines</li>
+                        <li>Detect unusual patterns in signals and sensor data</li>
+                        <li>Deploy AI on a laptop with no internet required</li>
+                        <li>Audit every decision — no black boxes</li>
+                        <li>Classify complex, noisy signals — even with corrupted or missing data</li>
+                        <li>Operate in secure, air-gapped environments</li>
                     </ul>
                 </div>
                 <div class="service-card">
                     <h3>Energy Security</h3>
                     <ul>
-                        <li>Grid anomaly detection</li>
-                        <li>Predictive maintenance systems</li>
-                        <li>Resource optimization modeling</li>
-                        <li>Critical infrastructure monitoring</li>
-                        <li>Emergency response coordination</li>
+                        <li>Detect anomalies in grid and infrastructure data</li>
+                        <li>Monitor field equipment without cloud connectivity</li>
+                        <li>Predict equipment failures from messy or incomplete sensor data</li>
+                        <li>Analyze data from distributed or remote systems</li>
+                        <li>Deploy tools offline when infrastructure is damaged</li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Downloads Section -->
     <section class="downloads-section">
         <h2>Download Government Resources</h2>
         <div class="download-items">
@@ -978,7 +384,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="contact-section" id="contact">
         <div class="contact-content">
             <div class="contact-form">
@@ -1022,17 +427,16 @@
                         <textarea id="questions" name="questions" placeholder="Any specific questions about our capabilities, compliance, or process..."></textarea>
                     </div>
                     <button type="submit" class="form-submit">SEND MESSAGE</button>
-                    <p class="form-note">We respond within 2 business days. For urgent matters call <a href="tel:+15055066884" style="color: #2E7D32;">505-506-6884</a>.</p>
+                    <p class="form-note">We respond within 2 business days. For urgent matters call <a href="tel:+15055066884" style="color: #2E7D32;">505-506-6884</a> or email <a href="mailto:contracts@jaxorik.com" style="color: #2E7D32;">contracts@jaxorik.com</a>.</p>
                 </form>
             </div>
-
             <div class="company-info">
                 <h2>Jaxorik AI Research Group</h2>
                 <div class="location-map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73853.96317359745!2d-106.69161044960343!3d35.10883615751392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8722724b9a3a202b%3A0xe75ebc28cfba8890!2s6300%20Riverside%20Plaza%20Ln%2C%20Albuquerque%2C%20NM%2087120!5e0!3m2!1sen!2sus!4v1758439992932!5m2!1sen!2sus" 
-                            width="100%" height="250" 
-                            style="border:0; border-radius: 8px;" 
-                            allowfullscreen="" loading="lazy" 
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73853.96317359745!2d-106.69161044960343!3d35.10883615751392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8722724b9a3a202b%3A0xe75ebc28cfba8890!2s6300%20Riverside%20Plaza%20Ln%2C%20Albuquerque%2C%20NM%2087120!5e0!3m2!1sen!2sus!4v1758439992932!5m2!1sen!2sus"
+                            width="100%" height="250"
+                            style="border:0; border-radius: 8px;"
+                            allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
                             title="Map showing Jaxorik AI Research Group location in Albuquerque, NM">
                     </iframe>
@@ -1046,7 +450,7 @@
                         <li><strong>White Sands Missile Range:</strong> 3 hours (187 miles)</li>
                     </ul>
                 </div>
-                <p style="color: #666; margin-bottom: 0.5rem;">6300 Riverside Plaza Lane NW, Suite 100<br>Albuquerque, New Mexico 87120</p>
+                <p style="color: #666; margin-bottom: 0.5rem;">6300 Riverside Plaza Lane NW<br>Albuquerque, New Mexico 87120</p>
                 <p style="margin-bottom: 0.5rem;"><em>By appointment only.</em></p>
                 <p><strong><a href="tel:+15055066884" style="color: inherit; text-decoration: none;">505-506-6884</a></strong></p>
                 <div class="project-exclusions">
@@ -1057,7 +461,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="social-links">
@@ -1076,13 +479,11 @@
     <script>
         const hamburger = document.getElementById('hamburger');
         const mobileMenu = document.getElementById('mobile-menu');
-
         hamburger.addEventListener('click', () => {
             const isOpen = hamburger.classList.toggle('open');
             mobileMenu.classList.toggle('open');
             hamburger.setAttribute('aria-expanded', isOpen);
         });
-
         mobileMenu.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('open');
@@ -1090,14 +491,11 @@
                 hamburger.setAttribute('aria-expanded', false);
             });
         });
-
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
     </script>
