@@ -5,7 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Emergency AI Tools for Disaster Response - Deployable, auditable AI that works anywhere. SAM.gov registered, WOSB and SDVOSB certified.">
     <title>Emergency AI Tools for Disaster Response | Jaxorik AI Research Group</title>
-    
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Emergency AI Tools for Disaster Response | Jaxorik AI Research Group">
+    <meta property="og:description" content="Deployable, auditable AI that works anywhere — offline, on any hardware, when time is critical. SAM.gov registered, WOSB + SDVOSB certified.">
+    <meta property="og:image" content="https://jaxorik.com/Jaxorik%20logo%20black.png">
+    <meta property="og:url" content="https://jaxorik.com/disasters.html">
+    <meta name="twitter:card" content="summary_large_image">
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
@@ -13,6 +22,7 @@
         header {
             position: fixed; top: 0; width: 100%;
             background: rgba(255,255,255,0.95);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             z-index: 1000;
@@ -23,7 +33,7 @@
         }
         .logo { width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; }
         .logo img { width: 100%; height: 100%; object-fit: contain; }
-        .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; align-items: center; position: relative; }
         .nav-links a {
             text-decoration: none; color: #333; font-weight: 500;
             text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px; transition: color 0.3s;
@@ -51,6 +61,37 @@
             text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;
         }
         .mobile-menu a:last-child { border-bottom: none; }
+        .mobile-menu .mobile-submenu a {
+            font-size: 0.85rem; color: #555;
+            padding-left: 1.5rem; border-bottom: 1px solid #f5f5f5;
+        }
+
+        .dropdown { position: relative; }
+        .dropdown-toggle {
+            background: #9b1c1c; color: white !important; padding: 0.7rem 1.5rem;
+            border-radius: 4px; transition: background 0.3s; cursor: pointer;
+            border: none; font-family: Arial, sans-serif; font-size: 0.9rem;
+            font-weight: 500; text-transform: uppercase; letter-spacing: 1px;
+        }
+        .dropdown-toggle:hover { background: #7b1212; }
+        .dropdown-menu {
+            position: absolute; top: 100%; left: 0; background: white;
+            border: 1px solid #ddd; border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); min-width: 200px;
+            opacity: 0; visibility: hidden; transform: translateY(-10px);
+            transition: all 0.3s ease; z-index: 1001;
+        }
+        .dropdown:hover .dropdown-menu,
+        .dropdown.open .dropdown-menu,
+        .dropdown:focus-within .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .dropdown-menu a {
+            display: block; padding: 1rem 1.5rem; color: #333 !important;
+            text-decoration: none; font-size: 0.9rem; font-weight: 500;
+            text-transform: uppercase; letter-spacing: 1px;
+            border-bottom: 1px solid #eee; transition: background 0.3s;
+        }
+        .dropdown-menu a:last-child { border-bottom: none; }
+        .dropdown-menu a:hover { background: #f8f9fa; color: #9b1c1c !important; }
 
         .hero {
             margin-top: 80px; padding: 4rem 5% 3rem;
@@ -144,7 +185,22 @@
             letter-spacing: 1px; cursor: pointer; transition: background 0.3s, transform 0.2s; margin-top: 0.5rem;
         }
         .submit-btn:hover { background: #7b1212; transform: translateY(-1px); }
+        .submit-btn:disabled { background: #c98a8a; cursor: not-allowed; transform: none; }
         .form-note { font-size: 0.8rem; color: #999; margin-top: 1rem; text-align: center; }
+
+        /* Form status messages */
+        .form-status { padding: 1rem; border-radius: 4px; margin-top: 1rem; font-size: 0.95rem; display: none; }
+        .form-status.error { display: block; background: #fdecea; color: #b71c1c; border: 1px solid #f5c6cb; }
+        .form-success { display: none; text-align: center; padding: 2rem 1rem; }
+        .form-success h3 { color: #9b1c1c; font-family: 'Courier New', monospace; margin-bottom: 1rem; font-size: 1.5rem; }
+        .form-success p { color: #555; font-size: 1.05rem; }
+        .form-success .checkmark { font-size: 3rem; color: #9b1c1c; display: block; margin-bottom: 0.5rem; }
+
+        /* Visually hidden honeypot — kept out of tab order and off-screen */
+        .hp-field {
+            position: absolute; left: -9999px; width: 1px; height: 1px;
+            overflow: hidden; opacity: 0;
+        }
 
         .info-panel { display: flex; flex-direction: column; gap: 1.5rem; }
         .emergency-contact-box { background: #fff3e0; border-left: 5px solid #ff9800; padding: 2rem; border-radius: 0 8px 8px 0; }
@@ -184,7 +240,14 @@
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
-                <li><a href="https://github.com/jaxorik" target="_blank">GITHUB</a></li>
+                <li><a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
+                <li class="dropdown">
+                    <button class="dropdown-toggle" id="dropdown-toggle" aria-expanded="false" aria-haspopup="true">GET CUSTOM AI ▾</button>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="government.html">DEFENSE & ENERGY</a>
+                        <a href="disasters.html">DISASTER RESPONSE</a>
+                    </div>
+                </li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
                 <span></span><span></span><span></span>
@@ -195,7 +258,11 @@
     <div class="mobile-menu" id="mobile-menu">
         <a href="index.html">HOME</a>
         <a href="about.html">ABOUT</a>
-        <a href="https://github.com/jaxorik" target="_blank">GITHUB</a>
+        <a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GITHUB</a>
+        <div class="mobile-submenu">
+            <a href="government.html">DEFENSE & ENERGY</a>
+            <a href="disasters.html">DISASTER RESPONSE</a>
+        </div>
     </div>
 
     <section class="hero">
@@ -306,8 +373,12 @@
             <p class="form-intro">Tell us about your situation and we'll get back to you within 1 business day. For active disasters, call us directly.</p>
             <div class="form-container">
                 <div class="form-section">
-                    <form action="https://formspree.io/f/meenganb" method="POST">
-                        <input type="text" name="_gotcha" style="display:none">
+                    <form id="contact-form" action="https://formspree.io/f/meenganb" method="POST">
+                        <!-- Honeypot: hidden from users and assistive tech, bots tend to fill it -->
+                        <div class="hp-field" aria-hidden="true">
+                            <label for="_gotcha">Leave this field empty</label>
+                            <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+                        </div>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Name *</label>
@@ -373,9 +444,15 @@
                             <input type="text" id="budget" name="budget" placeholder="e.g., $25,000 / need director approval / FEMA funded">
                         </div>
                         <button type="submit" class="submit-btn">Send Message</button>
-                        <p class="form-note">Your contact information will only be used to respond to your inquiry. We don't do newsletters, and we never sell or share your data.</p>
+                        <div class="form-status error" id="form-error"></div>
+                        <p class="form-note">Your contact information will only be used to respond to your inquiry. Rae's Substack is kept separate, and we never sell or share your data.</p>
                         <p class="form-note">For active disasters, call <a href="tel:+15055066884" style="color: #9b1c1c;">505-506-6884</a> directly.</p>
                     </form>
+                    <div class="form-success" id="form-success">
+                        <span class="checkmark">✓</span>
+                        <h3>Message Received</h3>
+                        <p>Thanks for reaching out. We'll get back to you within 1 business day. For an active disaster, call <a href="tel:+15055066884" style="color: #9b1c1c;">505-506-6884</a> directly — don't wait on this form.</p>
+                    </div>
                 </div>
 
                 <div class="info-panel">
@@ -384,7 +461,7 @@
                         <div class="emergency-phone-big">
                             <a href="tel:+15055066884" style="color: #9b1c1c; text-decoration: none;">505-506-6884</a>
                         </div>
-                        <p class="emergency-details">Customers have direct contact to our founder during active disasters.</p>
+                        <p class="emergency-details">Customers have a direct line to our founder during active disasters.</p>
                     </div>
                     <div class="info-section">
                         <h3>Listed in SAM.gov Disaster Response Registry</h3>
@@ -413,8 +490,8 @@
     <footer>
         <div class="footer-content">
             <div class="social-links">
-                <a href="https://github.com/jaxorik" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/company/jaxorik" target="_blank">LinkedIn</a>
+                <a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/company/jaxorik" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
             <div class="footer-info">
                 <p><strong><a href="tel:+15055066884" style="color: inherit; text-decoration: none;">505-506-6884</a></strong></p>
@@ -440,12 +517,74 @@
                 hamburger.setAttribute('aria-expanded', false);
             });
         });
+
+        // Accessible dropdown toggle (keyboard + touch friendly)
+        const dropdownToggle = document.getElementById('dropdown-toggle');
+        const dropdown = dropdownToggle.closest('.dropdown');
+        dropdownToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = dropdown.classList.toggle('open');
+            dropdownToggle.setAttribute('aria-expanded', isOpen);
+        });
+        document.addEventListener('click', () => {
+            dropdown.classList.remove('open');
+            dropdownToggle.setAttribute('aria-expanded', 'false');
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                dropdown.classList.remove('open');
+                dropdownToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
+        });
+
+        // AJAX form submission — keeps the user on-site and shows an inline confirmation
+        const form = document.getElementById('contact-form');
+        const formError = document.getElementById('form-error');
+        const formSuccess = document.getElementById('form-success');
+        const submitBtn = form.querySelector('.submit-btn');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            formError.style.display = 'none';
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    form.style.display = 'none';
+                    formSuccess.style.display = 'block';
+                    formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    const data = await response.json().catch(() => ({}));
+                    const msg = data.errors
+                        ? data.errors.map(err => err.message).join(', ')
+                        : 'Something went wrong sending your message. Please call 505-506-6884 or email us directly.';
+                    formError.textContent = msg;
+                    formError.style.display = 'block';
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                }
+            } catch (err) {
+                formError.textContent = 'Network error — please call 505-506-6884 directly, especially for an active disaster.';
+                formError.style.display = 'block';
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+            }
         });
     </script>
 </body>
