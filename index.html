@@ -5,7 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Jaxorik AI Research Group - Customized AI tools for disaster response, energy, and defense. Female Veteran-Owned Small Business specializing in reproducible, transparent, and deployable AI solutions.">
     <title>Jaxorik AI Research Group - Reproducible, Responsible, Transparent & Deployable AI Models</title>
-    
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jaxorik AI Research Group">
+    <meta property="og:description" content="Reproducible, responsible, transparent & deployable AI for disaster response, energy, and defense. Female Veteran-Owned Small Business.">
+    <meta property="og:image" content="https://jaxorik.com/Jaxorik%20logo%20black.png">
+    <meta property="og:url" content="https://jaxorik.com/">
+    <meta name="twitter:card" content="summary_large_image">
+
     <style>
         * {
             margin: 0;
@@ -25,6 +34,7 @@
             top: 0;
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             z-index: 1000;
@@ -185,7 +195,9 @@
             z-index: 1001;
         }
         
-        .dropdown:hover .dropdown-menu {
+        .dropdown:hover .dropdown-menu,
+        .dropdown.open .dropdown-menu,
+        .dropdown:focus-within .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
@@ -708,10 +720,10 @@
             <ul class="nav-links">
                 <li><a href="#home">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
-                <li><a href="https://github.com/jaxorik" target="_blank">GITHUB</a></li>
+                <li><a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
                 <li class="dropdown">
-                    <button class="dropdown-toggle">GET CUSTOM AI ▾</button>
-                    <div class="dropdown-menu">
+                    <button class="dropdown-toggle" id="dropdown-toggle" aria-expanded="false" aria-haspopup="true">GET CUSTOM AI ▾</button>
+                    <div class="dropdown-menu" id="dropdown-menu">
                         <a href="government.html">DEFENSE & ENERGY</a>
                         <a href="disasters.html">DISASTER RESPONSE</a>
                     </div>
@@ -729,7 +741,7 @@
     <div class="mobile-menu" id="mobile-menu">
         <a href="#home">HOME</a>
         <a href="about.html">ABOUT</a>
-        <a href="https://github.com/jaxorik" target="_blank">GITHUB</a>
+        <a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GITHUB</a>
         <div class="mobile-submenu">
             <a href="government.html">DEFENSE & ENERGY</a>
             <a href="disasters.html">DISASTER RESPONSE</a>
@@ -872,8 +884,8 @@
     <footer>
         <div class="footer-content">
             <div class="social-links">
-                <a href="https://github.com/jaxorik" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/company/jaxorik" target="_blank">LinkedIn</a>
+                <a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/company/jaxorik" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
             <div class="footer-info">
                 <p><strong><a href="tel:+15055066884" style="color: inherit; text-decoration: none;">505-506-6884</a></strong></p>
@@ -900,6 +912,29 @@
                 hamburger.classList.remove('open');
                 mobileMenu.classList.remove('open');
             });
+        });
+
+        // Accessible dropdown toggle (keyboard + touch friendly)
+        const dropdownToggle = document.getElementById('dropdown-toggle');
+        const dropdown = dropdownToggle.closest('.dropdown');
+
+        dropdownToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = dropdown.classList.toggle('open');
+            dropdownToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close dropdown on outside click or Escape
+        document.addEventListener('click', () => {
+            dropdown.classList.remove('open');
+            dropdownToggle.setAttribute('aria-expanded', 'false');
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                dropdown.classList.remove('open');
+                dropdownToggle.setAttribute('aria-expanded', 'false');
+            }
         });
 
         // Smooth scrolling for anchor links
