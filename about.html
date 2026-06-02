@@ -5,7 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="About Jaxorik AI Research Group - Explainable AI for national defense and disaster response applications.">
     <title>About Jaxorik AI Research Group</title>
-    
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Open Graph / social preview -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Jaxorik AI Research Group">
+    <meta property="og:description" content="Explainable, auditable AI for national defense and disaster response. Named by a machine; led by a Marine.">
+    <meta property="og:image" content="https://jaxorik.com/Jaxorik%20logo%20black.png">
+    <meta property="og:url" content="https://jaxorik.com/about.html">
+    <meta name="twitter:card" content="summary_large_image">
+
     <style>
         * {
             margin: 0;
@@ -25,6 +34,7 @@
             top: 0;
             width: 100%;
             background: rgba(255, 255, 255, 0.95);
+            -webkit-backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             z-index: 1000;
@@ -165,7 +175,7 @@
         .dropdown-menu {
             position: absolute;
             top: 100%;
-            right: 0;
+            left: 0;
             background: white;
             border: 1px solid #ddd;
             border-radius: 4px;
@@ -178,7 +188,9 @@
             z-index: 1001;
         }
         
-        .dropdown:hover .dropdown-menu {
+        .dropdown:hover .dropdown-menu,
+        .dropdown.open .dropdown-menu,
+        .dropdown:focus-within .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
@@ -662,10 +674,10 @@
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
-                <li><a href="https://github.com/jaxorik" target="_blank">GITHUB</a></li>
+                <li><a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
                 <li class="dropdown">
-                    <button class="dropdown-toggle" aria-expanded="false">GET CUSTOM AI ▾</button>
-                    <div class="dropdown-menu">
+                    <button class="dropdown-toggle" id="dropdown-toggle" aria-expanded="false" aria-haspopup="true">GET CUSTOM AI ▾</button>
+                    <div class="dropdown-menu" id="dropdown-menu">
                         <a href="government.html">DEFENSE & ENERGY</a>
                         <a href="disasters.html">DISASTER RESPONSE</a>
                     </div>
@@ -683,7 +695,7 @@
     <div class="mobile-menu" id="mobile-menu">
         <a href="index.html">HOME</a>
         <a href="about.html">ABOUT</a>
-        <a href="https://github.com/jaxorik" target="_blank">GITHUB</a>
+        <a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GITHUB</a>
         <div class="mobile-submenu">
             <a href="government.html">DEFENSE & ENERGY</a>
             <a href="disasters.html">DISASTER RESPONSE</a>
@@ -808,6 +820,9 @@
             <div class="graceful-degradation">
                 Where a standard model hallucinates or crashes, ours <strong>degrades gracefully</strong> — flagging uncertainty instead of generating false confidence.
             </div>
+            <div style="text-align: center; margin-top: 2.5rem;">
+                <a href="jaxorik_capabilities_statement.pdf" download style="display: inline-block; background: #000; color: #fff; padding: 1rem 2rem; border-radius: 4px; text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; transition: background 0.3s;" onmouseover="this.style.background='#333'" onmouseout="this.style.background='#000'">Download Capabilities Statement</a>
+            </div>
         </div>
     </div>
 
@@ -819,7 +834,7 @@
             <div class="compliance-grid">
                 <div class="compliance-item">
                     <h4>Security Standards</h4>
-                    <p>Export-control awareness, sneakernet protocols, adaptable to client compliance requirements.</p>
+                    <p>Export-control awareness, air-gapped data handling, adaptable to client compliance requirements.</p>
                 </div>
                 <div class="compliance-item">
                     <h4>Quality Assurance</h4>
@@ -924,8 +939,8 @@
     <footer>
         <div class="footer-content">
             <div class="social-links">
-                <a href="https://github.com/jaxorik" target="_blank">GitHub</a>
-                <a href="https://www.linkedin.com/company/jaxorik" target="_blank">LinkedIn</a>
+                <a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/company/jaxorik" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
             <div class="footer-info">
                 <p><strong><a href="tel:+15055066884" style="color: inherit; text-decoration: none;">505-506-6884</a></strong></p>
@@ -955,12 +970,27 @@
             });
         });
 
-        // Dropdown aria-expanded
-        document.querySelectorAll('.dropdown-toggle').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const expanded = btn.getAttribute('aria-expanded') === 'true';
-                btn.setAttribute('aria-expanded', !expanded);
-            });
+        // Accessible dropdown toggle (keyboard + touch friendly)
+        const dropdownToggle = document.getElementById('dropdown-toggle');
+        const dropdown = dropdownToggle.closest('.dropdown');
+
+        dropdownToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = dropdown.classList.toggle('open');
+            dropdownToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close dropdown on outside click or Escape
+        document.addEventListener('click', () => {
+            dropdown.classList.remove('open');
+            dropdownToggle.setAttribute('aria-expanded', 'false');
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                dropdown.classList.remove('open');
+                dropdownToggle.setAttribute('aria-expanded', 'false');
+            }
         });
 
         // Smooth scrolling
