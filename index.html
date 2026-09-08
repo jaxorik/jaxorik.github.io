@@ -577,6 +577,176 @@
             box-shadow: 0 5px 15px rgba(255,255,255,0.3);
         }
 
+        /* Contact Section */
+        .contact-section {
+            background: #f8f9fa;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Courier New', monospace;
+            color: #333;
+        }
+
+        .contact-form .form-intro {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .contact-download {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .contact-download h3 {
+            font-family: 'Courier New', monospace;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-download p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.4rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 0.95rem;
+            color: #333;
+            transition: border-color 0.3s;
+            background: #fafafa;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2E7D32;
+            background: white;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-submit {
+            background: #000;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-family: Arial, sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            width: 100%;
+            margin-top: 0.5rem;
+        }
+
+        .form-submit:hover { background: #333; transform: translateY(-1px); }
+        .form-submit:disabled { background: #999; cursor: not-allowed; transform: none; }
+
+        .form-note {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .form-status {
+            padding: 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .form-status.error {
+            display: block;
+            background: #fdecea;
+            color: #b71c1c;
+            border: 1px solid #f5c6cb;
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .form-success h3 {
+            color: #2E7D32;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .form-success p { color: #555; font-size: 1.05rem; }
+
+        .form-success .checkmark {
+            font-size: 3rem;
+            color: #2E7D32;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .hp-field {
+            position: absolute;
+            left: -9999px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            opacity: 0;
+        }
+
         /* Press Section */
         .press-section {
             background: #E8F5E9;
@@ -642,7 +812,7 @@
         
         /* Services Grid */
         .services-section {
-            background: #f8f9fa;
+            background: #E8F5E9;
         }
         
         .services-section h2 {
@@ -764,9 +934,14 @@
             
             .section-content,
             .about-content,
-            .location-content {
+            .location-content,
+            .contact-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
             }
             
             .location-content {
@@ -820,7 +995,7 @@
             <p class="tagline">Auditable models for government and defense, built for austere environments and compliant by design</p>
             <div class="hero-ctas">
                 <a href="jaxorik_capabilities_statement.pdf" download class="hero-cta">Download Capabilities Statement</a>
-                <a href="mailto:rachipe+web@jaxorik.com?subject=Technical%20Package%20Request" class="hero-cta-secondary">Request Technical Package →</a>
+                <a href="#contact" class="hero-cta-secondary">Request Technical Package →</a>
             </div>
         </div>
     </section>
@@ -849,6 +1024,37 @@
     <section class="veteran-section">
         <h2>Our business is proudly</h2>
         <div class="highlight">Female Veteran-Owned</div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services-section">
+        <h2>We Help With</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>DISASTER RESPONSE</h3>
+                <h4>Get Deployable, Auditable AI That Works Anywhere</h4>
+                <p>When resources are limited and infrastructure is damaged, our AI still delivers actionable insights.</p>
+                <ul>
+                    <li>Satellite & drone image analysis for damage assessment or SAR</li>
+                    <li>Resource allocation modeling under crisis conditions</li>
+                    <li>Predictive analytics for floods, fires, and severe weather</li>
+                    <li>Field-ready tools that run offline when networks fail</li>
+                </ul>
+                <a href="disasters.html" class="cta-button">LEARN MORE →</a>
+            </div>
+            <div class="service-card">
+                <h3>DEFENSE & ENERGY</h3>
+                <h4>Mission-Focused AI for Federal Agencies</h4>
+                <p>We support U.S. government agencies and prime contractors, operating within DOE guidelines. We would consider DOD projects, but <strong>never autonomous weapons systems.</strong></p>
+                <ul>
+                    <li>Secure, auditable AI pipelines</li>
+                    <li>Modeling and simulation for energy management projects</li>
+                    <li>Data mining and anomaly detection for energy research</li>
+                    <li>Deployable AI tools for mission-critical operations</li>
+                </ul>
+                <a href="government.html" class="cta-button">LEARN MORE →</a>
+            </div>
+        </div>
     </section>
 
     <!-- Strategic Location Section -->
@@ -906,7 +1112,7 @@
                 </ul>
             </div>
             <div class="about-image">
-                <img src="Rae Chipera.png" alt="Rae Chipera, CEO and Founder of Jaxorik AI Research Group" style="width: 100%; max-width: 400px; border-radius: 8px;">
+                <img src="Rae Chipera.jpg" alt="Rae Chipera, CEO and Founder of Jaxorik AI Research Group" style="width: 100%; max-width: 400px; border-radius: 8px;">
             </div>
             <div class="team-button-container">
                 <a href="about.html" class="team-cta-button">LEARN MORE</a>
@@ -930,33 +1136,50 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="section services-section">
-        <h2>We Help With</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>DISASTER RESPONSE</h3>
-                <h4>Get Deployable, Auditable AI That Works Anywhere</h4>
-                <p>When resources are limited and infrastructure is damaged, our AI still delivers actionable insights.</p>
-                <ul>
-                    <li>Satellite & drone image analysis for damage assessment or SAR</li>
-                    <li>Resource allocation modeling under crisis conditions</li>
-                    <li>Predictive analytics for floods, fires, and severe weather</li>
-                    <li>Field-ready tools that run offline when networks fail</li>
-                </ul>
-                <a href="disasters.html" class="cta-button">LEARN MORE →</a>
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="contact-content">
+            <div class="contact-form">
+                <h2>Get In Touch</h2>
+                <p class="form-intro">Currently booking new engagements for Q1 2027 — reach out now to get on the calendar. We'll get back to you within a week.</p>
+                <form id="contact-form" action="https://formspree.io/f/xrpgyvve" method="POST">
+                    <div class="hp-field" aria-hidden="true">
+                        <label for="_gotcha">Leave this field empty</label>
+                        <input type="text" id="_gotcha" name="_gotcha" tabindex="-1" autocomplete="off">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="organization">Organization</label>
+                            <input type="text" id="organization" name="organization" placeholder="Optional" autocomplete="organization">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="your@email.com" autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required placeholder="Tell us a bit about what you're looking for..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">SEND MESSAGE</button>
+                    <div class="form-status error" id="form-error"></div>
+                    <p class="form-note">Your contact information will only be used to respond to your inquiry. We never sell or share your data.</p>
+                    <p class="form-note">For urgent matters call <a href="tel:+15055066884" style="color: #2E7D32;">505-506-6884</a>.</p>
+                </form>
+                <div class="form-success" id="form-success">
+                    <span class="checkmark">✓</span>
+                    <h3>Message Received</h3>
+                    <p>Thanks for reaching out. We'll get back to you within a week. For urgent matters, call <a href="tel:+15055066884" style="color: #2E7D32;">505-506-6884</a>.</p>
+                </div>
             </div>
-            <div class="service-card">
-                <h3>DEFENSE & ENERGY</h3>
-                <h4>Mission-Focused AI for Federal Agencies</h4>
-                <p>We support U.S. government agencies and prime contractors, operating within DOE guidelines. We would consider DOD projects, but <strong>never autonomous weapons systems.</strong></p>
-                <ul>
-                    <li>Secure, auditable AI pipelines</li>
-                    <li>Modeling and simulation for energy management projects</li>
-                    <li>Data mining and anomaly detection for energy research</li>
-                    <li>Deployable AI tools for mission-critical operations</li>
-                </ul>
-                <a href="government.html" class="cta-button">LEARN MORE →</a>
+            <div class="contact-download">
+                <h3>Prefer to skip the form?</h3>
+                <p>Download our capabilities statement directly.</p>
+                <a href="jaxorik_capabilities_statement.pdf" download class="cta-button">Download Capabilities Statement</a>
             </div>
         </div>
     </section>
@@ -1027,6 +1250,47 @@
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
+        });
+
+        // AJAX form submission — keeps the user on-site and shows an inline confirmation
+        const contactForm = document.getElementById('contact-form');
+        const contactFormError = document.getElementById('form-error');
+        const contactFormSuccess = document.getElementById('form-success');
+        const contactSubmitBtn = contactForm.querySelector('.form-submit');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            contactFormError.style.display = 'none';
+            contactSubmitBtn.disabled = true;
+            contactSubmitBtn.textContent = 'SENDING...';
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: new FormData(contactForm),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    contactForm.style.display = 'none';
+                    contactFormSuccess.style.display = 'block';
+                    contactFormSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    const data = await response.json().catch(() => ({}));
+                    const msg = data.errors
+                        ? data.errors.map(err => err.message).join(', ')
+                        : 'Something went wrong sending your message. Please email contracts@jaxorik.com directly.';
+                    contactFormError.textContent = msg;
+                    contactFormError.style.display = 'block';
+                    contactSubmitBtn.disabled = false;
+                    contactSubmitBtn.textContent = 'SEND MESSAGE';
+                }
+            } catch (err) {
+                contactFormError.textContent = 'Network error — please check your connection, or email contracts@jaxorik.com directly.';
+                contactFormError.style.display = 'block';
+                contactSubmitBtn.disabled = false;
+                contactSubmitBtn.textContent = 'SEND MESSAGE';
+            }
         });
     </script>
 </body>
