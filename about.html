@@ -15,6 +15,10 @@
     <meta property="og:url" content="https://jaxorik.com/about.html">
     <meta name="twitter:card" content="summary_large_image">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+
     <style>
         * {
             margin: 0;
@@ -664,6 +668,66 @@
                 font-size: 2rem;
             }
         }
+        /* Jaxorik / archival topo visual layer — matches index.html */
+        :root { --ink: #171d1a; }
+        html { scroll-padding-top: 92px; }
+        body {
+            font-family: 'IBM Plex Sans', Arial, sans-serif;
+            background-color: #e8ddc4;
+            background-image: url('jemez-1943.jpg');
+            background-size: 125% auto;
+            background-position: center top;
+            background-repeat: repeat-y;
+            color: var(--ink);
+        }
+        h1, h2, h3, h4, .nav-links, .dropdown-menu, button { font-family: 'Courier New', Courier, monospace; }
+        header { background: rgba(250, 248, 241, .93); border-bottom: 1px solid rgba(43, 55, 41, .25); }
+
+        /* Every top-level block becomes a centered panel with map showing between */
+        .top-banner, .pipeline-section, .section-full, .founder-section, body > .section, footer {
+            width: min(1400px, 95%);
+            max-width: none;
+            margin: 0 auto 160px;
+            border-radius: 12px;
+            border: 1px solid rgba(20, 34, 25, .18);
+            box-shadow: 0 10px 40px rgba(29, 25, 15, .13);
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+        }
+        .top-banner { margin-top: 110px; }
+        .section-full > .section { padding: 0; max-width: none; }
+
+        /* Dark (coyote brown) panels */
+        .top-banner, .philosophy-section, .company-section, footer {
+            background: rgba(91, 70, 45, .88);
+            color: #f8f6ee;
+        }
+        /* Light (frosted paper) panels */
+        .pipeline-section, .noisy-data-section, .founder-section,
+        .military-section, .education-section, .ghost-section {
+            background: rgba(251, 249, 242, .74);
+        }
+        .data-example-item, .gravity-spy-block, .education-card { background: rgba(255, 255, 255, .83); }
+        .service-highlights { background: rgba(255, 255, 255, .6); }
+        .compliance-item { background: rgba(0, 0, 0, .22); }
+        .graceful-degradation { background: rgba(61, 47, 31, .92); }
+        .section h2, .founder-text h2, .noisy-data-section h2 { color: var(--ink); }
+        .philosophy-section h2, .company-section h2 { color: #f8f6ee; }
+
+        footer { margin-bottom: 24px; }
+        footer .footer-info { color: #fffaf1; border-top-color: rgba(255,255,255,.5); }
+        footer .footer-info .map-credit { color: #f2e8d7; font-size: .85rem; margin-top: 1.5rem; }
+        footer .footer-info .map-credit a { color: inherit; text-underline-offset: 3px; }
+
+        @media (max-width: 768px) {
+            body { background-size: auto 1400px; }
+            .top-banner, .pipeline-section, .section-full, .founder-section, body > .section, footer {
+                width: calc(100% - 24px);
+                margin: 0 auto 72px;
+                border-radius: 9px;
+            }
+            .top-banner { margin-top: 94px; }
+        }
     </style>
 </head>
 <body>
@@ -714,7 +778,7 @@
     </section>
 
     <!-- Pipeline Infographic -->
-    <div style="background: #f8f9fa; padding: 4rem 5%;">
+    <div class="pipeline-section" style="padding: 4rem 5%;">
         <div style="max-width: 1400px; margin: 0 auto;">
             <h2 style="font-family: 'Courier New', monospace; font-size: 2.5rem; margin-bottom: 0.5rem; color: #333;">How It Works</h2>
             <p style="color: #666; margin-bottom: 2rem; font-size: 1.1rem;">From raw, messy field data to a deployed model on tactical hardware — four stages, fully auditable.</p>
@@ -858,7 +922,9 @@
                 <div class="name">Rae Chipera</div>
                 <div class="subtitle">PhD Candidate, MBA | Founder & CEO</div>
                 <p>Data scientist with extensive military and industry experience building novel AI solutions for national defense applications.</p>
-                <p>PhD candidate in Data Science at National University, with an MBA in Quantitative Finance. Former Marine SIGINT Analyst and firsthand understanding of the operational constraints faced by defense and intelligence organizations.</p>
+                <p>PhD candidate in Data Science at National University, with an MBA in Finance.</p>
+                <p>Former Marine SIGINT Analyst with firsthand understanding of the operational constraints faced by defense and intelligence organizations.</p>
+                <p>Field training in orienteering and land navigation with Cibola Search and Rescue.</p>
             </div>
             <figure class="founder-image">
                 <img src="Rae Chipera.png" alt="Rae Chipera, Founder & CEO of Jaxorik AI Research Group">
@@ -900,7 +966,7 @@
                 <h3>Academic Background</h3>
                 <ul>
                     <li>PhD Candidate, Data Science — National University</li>
-                    <li>MBA in Quantitative Finance</li>
+                    <li>MBA in Finance</li>
                     <li>MIT & CMU professional ML/Deep Learning programs</li>
                     <li>Los Alamos, NM native</li>
                 </ul>
@@ -929,7 +995,7 @@
     </section>
 
     <!-- Ghost Rider Section -->
-    <section class="section" style="background: #f8f9fa; text-align: center;">
+    <section class="section ghost-section" style="text-align: center;">
         <h3 style="color: #2E7D32; font-family: 'Courier New', monospace; margin-bottom: 2rem; font-size: 2rem;">Head of Document Shredding</h3>
         <div style="max-width: 600px; margin: 0 auto;">
             <img src="ghost-rider.jpg" alt="Ghost Rider, Jaxorik Head of Document Shredding, a Carolina Dog" style="width: 300px; height: 300px; object-fit: cover; border-radius: 50%; box-shadow: 0 10px 30px rgba(0,0,0,0.1); margin-bottom: 2rem;">
@@ -945,10 +1011,11 @@
                 <a href="https://www.linkedin.com/company/jaxorik" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
             <div class="footer-info">
-                <p><strong><a href="tel:+15055066884" style="color: inherit; text-decoration: none;">505-506-6884</a></strong></p>
+                <p><strong><a href="tel:+15052738411" style="color: inherit; text-decoration: none;">505-273-8411</a></strong></p>
                 <p>Copyright © <script>document.write(new Date().getFullYear())</script> JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
                 <p>SAM.gov registered | UEI: K8ENCCGZ2M13 | CAGE: 11X70</p>
                 <p>Listed in the SAM.gov Disaster Response Registry</p>
+                <p class="map-credit">With thanks to the U.S. Geological Survey for the historical Jemez Springs topographic map. Digital scan via the <a href="https://maps.lib.utexas.edu/maps/topo/new_mexico/" target="_blank" rel="noopener noreferrer">Perry-Castañeda Library Map Collection, UT Austin</a>.</p>
             </div>
         </div>
     </footer>
