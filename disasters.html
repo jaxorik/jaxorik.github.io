@@ -15,6 +15,10 @@
     <meta property="og:url" content="https://jaxorik.com/disasters.html">
     <meta name="twitter:card" content="summary_large_image">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
@@ -190,7 +194,7 @@
 
         /* Form status messages */
         .form-status { padding: 1rem; border-radius: 4px; margin-top: 1rem; font-size: 0.95rem; display: none; }
-        .form-status.error { display: block; background: #fdecea; color: #b71c1c; border: 1px solid #f5c6cb; }
+        .form-status.error { background: #fdecea; color: #b71c1c; border: 1px solid #f5c6cb; }
         .form-success { display: none; text-align: center; padding: 2rem 1rem; }
         .form-success h3 { color: #9b1c1c; font-family: 'Courier New', monospace; margin-bottom: 1rem; font-size: 1.5rem; }
         .form-success p { color: #555; font-size: 1.05rem; }
@@ -231,6 +235,58 @@
             .form-container, .story-grid, .form-row { grid-template-columns: 1fr; }
             .credentials-grid { grid-template-columns: 1fr; }
         }
+        /* Jaxorik / archival topo visual layer — matches index.html, red kept as this page's alert accent */
+        :root {
+            --ink: #171d1a;
+            --brown-panel: rgba(91, 70, 45, .86);
+            --alert-panel: var(--brown-panel);   /* swap to rgba(155, 28, 28, .86) for red hero + call panel */
+        }
+        html { scroll-padding-top: 92px; }
+        body {
+            font-family: 'IBM Plex Sans', Arial, sans-serif;
+            background-color: #e8ddc4;
+            background-image: url('jemez-1943.jpg');
+            background-size: 125% auto;
+            background-position: center top;
+            background-repeat: repeat-y;
+            color: var(--ink);
+        }
+        h1, h2, h3, h4, .nav-links, .dropdown-menu, button, .hero-cta, .hero-cta-secondary { font-family: 'Courier New', Courier, monospace; }
+        header { background: rgba(250, 248, 241, .93); border-bottom: 1px solid rgba(43, 55, 41, .25); }
+
+        body > section, footer {
+            width: min(1400px, 95%);
+            margin: 0 auto 160px;
+            border-radius: 12px;
+            border: 1px solid rgba(20, 34, 25, .18);
+            box-shadow: 0 10px 40px rgba(29, 25, 15, .13);
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+        }
+        .hero { margin-top: 110px; }
+
+        .hero, .emergency-section { background: var(--alert-panel); color: #f8f6ee; }
+        footer { background: var(--brown-panel); color: #f8f6ee; }
+        .story-section, .problems-section, .features-section, .contact-section { background: rgba(251, 249, 242, .74); }
+        .story-text, .problem-item, .feature-card, .form-section, .info-section { background: rgba(255, 255, 255, .83); }
+
+        /* Swap the orange/yellow callouts for desert tones with a red edge */
+        .problem-quote { background: rgba(232, 221, 196, .55); border-bottom: 1px solid rgba(155, 28, 28, .25); }
+        .problem-quote p { color: #7b1212; }
+        .emergency-contact-box { background: rgba(232, 221, 196, .6); border-left-color: #9b1c1c; }
+        .emergency-contact-box h3 { color: #7b1212; }
+        .problems-section h2, .features-section h2, .contact-container h2 { color: var(--ink); }
+
+        footer { margin-bottom: 24px; }
+        footer .footer-info { color: #fffaf1; border-top-color: rgba(255,255,255,.5); }
+        footer .footer-info .map-credit { color: #f2e8d7; font-size: .85rem; margin-top: 1.5rem; }
+        footer .footer-info .map-credit a { color: inherit; text-underline-offset: 3px; }
+
+        @media (max-width: 768px) {
+            body { background-size: auto 1400px; }
+            body > section, footer { width: calc(100% - 24px); margin: 0 auto 72px; border-radius: 9px; }
+            .hero { margin-top: 94px; }
+        }
     </style>
 </head>
 <body>
@@ -241,6 +297,7 @@
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
+                <li><a href="https://raechipera.substack.com" target="_blank" rel="noopener noreferrer">SUBSTACK</a></li>
                 <li class="dropdown">
                     <button class="dropdown-toggle" id="dropdown-toggle" aria-expanded="false" aria-haspopup="true">GET CUSTOM AI ▾</button>
                     <div class="dropdown-menu" id="dropdown-menu">
@@ -259,6 +316,7 @@
         <a href="index.html">HOME</a>
         <a href="about.html">ABOUT</a>
         <a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GITHUB</a>
+        <a href="https://raechipera.substack.com" target="_blank" rel="noopener noreferrer">SUBSTACK</a>
         <div class="mobile-submenu">
             <a href="government.html">DEFENSE & ENERGY</a>
             <a href="disasters.html">DISASTER RESPONSE</a>
@@ -363,7 +421,7 @@
     <section class="emergency-section">
         <h2>Active Disaster? Call Us Now.</h2>
         <div class="emergency-phone">
-            <a href="tel:+15055066884" style="color: white; text-decoration: none;">505-506-6884</a>
+            <a href="tel:+15052738411" style="color: white; text-decoration: none;">505-273-8411</a>
         </div>
     </section>
 
@@ -445,13 +503,13 @@
                         </div>
                         <button type="submit" class="submit-btn">Send Message</button>
                         <div class="form-status error" id="form-error"></div>
-                        <p class="form-note">Your contact information will only be used to respond to your inquiry. Rae's Substack is kept separate, and we never sell or share your data.</p>
-                        <p class="form-note">For active disasters, call <a href="tel:+15055066884" style="color: #9b1c1c;">505-506-6884</a> directly.</p>
+                        <p class="form-note">Your contact information will only be used to respond to your inquiry. We never sell or share your data.</p>
+                        <p class="form-note">For active disasters, call <a href="tel:+15052738411" style="color: #9b1c1c;">505-273-8411</a> directly.</p>
                     </form>
                     <div class="form-success" id="form-success">
                         <span class="checkmark">✓</span>
                         <h3>Message Received</h3>
-                        <p>Thanks for reaching out. We'll get back to you within 1 business day. For an active disaster, call <a href="tel:+15055066884" style="color: #9b1c1c;">505-506-6884</a> directly — don't wait on this form.</p>
+                        <p>Thanks for reaching out. We'll get back to you within 1 business day. For an active disaster, call <a href="tel:+15052738411" style="color: #9b1c1c;">505-273-8411</a> directly — don't wait on this form.</p>
                     </div>
                 </div>
 
@@ -459,7 +517,7 @@
                     <div class="emergency-contact-box">
                         <h3>Active Disaster Support</h3>
                         <div class="emergency-phone-big">
-                            <a href="tel:+15055066884" style="color: #9b1c1c; text-decoration: none;">505-506-6884</a>
+                            <a href="tel:+15052738411" style="color: #9b1c1c; text-decoration: none;">505-273-8411</a>
                         </div>
                         <p class="emergency-details">Customers have a direct line to our founder during active disasters.</p>
                     </div>
@@ -494,10 +552,11 @@
                 <a href="https://www.linkedin.com/company/jaxorik" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
             <div class="footer-info">
-                <p><strong><a href="tel:+15055066884" style="color: inherit; text-decoration: none;">505-506-6884</a></strong></p>
+                <p><strong><a href="tel:+15052738411" style="color: inherit; text-decoration: none;">505-273-8411</a></strong></p>
                 <p>Copyright © <script>document.write(new Date().getFullYear())</script> JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
                 <p>SAM.gov registered | UEI: K8ENCCGZ2M13 | CAGE: 11X70</p>
                 <p>Listed in the SAM.gov Disaster Response Registry</p>
+                <p class="map-credit">With thanks to the U.S. Geological Survey for the historical Jemez Springs topographic map. Digital scan via the <a href="https://maps.lib.utexas.edu/maps/topo/new_mexico/" target="_blank" rel="noopener noreferrer">Perry-Castañeda Library Map Collection, UT Austin</a>.</p>
             </div>
         </div>
     </footer>
@@ -573,14 +632,14 @@
                     const data = await response.json().catch(() => ({}));
                     const msg = data.errors
                         ? data.errors.map(err => err.message).join(', ')
-                        : 'Something went wrong sending your message. Please call 505-506-6884 or email us directly.';
+                        : 'Something went wrong sending your message. Please call 505-273-8411 or email us directly.';
                     formError.textContent = msg;
                     formError.style.display = 'block';
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Send Message';
                 }
             } catch (err) {
-                formError.textContent = 'Network error — please call 505-506-6884 directly, especially for an active disaster.';
+                formError.textContent = 'Network error — please call 505-273-8411 directly, especially for an active disaster.';
                 formError.style.display = 'block';
                 submitBtn.disabled = false;
                 submitBtn.textContent = 'Send Message';
