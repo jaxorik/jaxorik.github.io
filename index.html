@@ -15,6 +15,10 @@
     <meta property="og:url" content="https://jaxorik.com/">
     <meta name="twitter:card" content="summary_large_image">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+
     <style>
         * {
             margin: 0;
@@ -397,7 +401,6 @@
         
         /* Veteran Owned Section */
         .veteran-section {
-            background: url('desert-camo.jpg') center/cover;
             color: white;
             text-align: center;
             padding: 3rem 5%;
@@ -948,6 +951,68 @@
                 text-align: center;
             }
         }
+        /* Jaxorik / archival topo visual layer — original page structure retained */
+        :root { --field-green: #2e7d32; --ink: #171d1a; --paper: #f8f5ec; }
+        html { scroll-padding-top: 92px; }
+        body {
+            font-family: 'IBM Plex Sans', Arial, sans-serif;
+            background-color: #e8ddc4;
+            background-image: url('jemez-1943.jpg');
+            background-size: 125% auto;
+            background-position: center top;
+            background-repeat: repeat-y;
+            color: var(--ink);
+        }
+        h1, h2, h3, h4, .highlight, .hero-cta, .hero-cta-secondary,
+        .nav-links, .dropdown-menu, .form-submit, button {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h1, h2, h3, h4 { font-weight: 700; }
+        header { background: rgba(250, 248, 241, .93); border-bottom: 1px solid rgba(43, 55, 41, .25); }
+        .hero {
+            background: rgba(91, 70, 45, .84);
+            min-height: 76vh;
+            margin: 110px 2.5% 160px;
+            border: 1px solid rgba(240, 238, 223, .25);
+            border-radius: 12px;
+            box-shadow: 0 18px 70px rgba(0,0,0,.20);
+        }
+        .hero::before { background: linear-gradient(115deg, rgba(0,0,0,.12), rgba(44,84,50,.12)); border-radius: inherit; }
+        .hero-content { position: relative; z-index: 1; }
+        .section, .location-section, .veteran-section, footer {
+            margin: 0 2.5% 160px;
+            border-radius: 12px;
+            border: 1px solid rgba(20, 34, 25, .18);
+            box-shadow: 0 10px 40px rgba(29, 25, 15, .13);
+        }
+        .gov-section, .services-section, .location-section, .press-section, .contact-section {
+            background: rgba(251, 249, 242, .74);
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+        }
+        .veteran-section, .about-section, footer {
+            background: rgba(91, 70, 45, .88);
+            color: #f8f6ee;
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+        }
+        .about-section { background: rgba(91, 70, 45, .88); }
+        .veteran-section::before { background: none; }
+        .location-section h2 { color: var(--ink); }
+        .credential-card, .service-card, .press-card, .contact-form-container, .location-map,
+        .location-info, .gov-card {
+            background-color: rgba(255, 255, 255, .83);
+        }
+        .hero-cta, .form-submit { transition: background .2s, transform .2s; }
+        footer { margin-bottom: 24px; }
+        footer .footer-info { color: #fffaf1; border-top-color: rgba(255,255,255,.5); }
+        footer .footer-info .map-credit { color: #f2e8d7; font-size: .85rem; margin-top: 1.5rem; }
+        footer .footer-info .map-credit a { color: inherit; text-underline-offset: 3px; }
+        @media (max-width: 768px) {
+            body { background-size: auto 1400px; background-position: center top; }
+            .hero { margin: 94px 12px 72px; min-height: 65vh; }
+            .section, .location-section, .veteran-section, footer { margin: 0 12px 72px; border-radius: 9px; }
+        }
     </style>
 </head>
 <body>
@@ -957,14 +1022,14 @@
             <a href="index.html" class="logo"><img src="Jaxorik logo black.png" alt="Jaxorik AI Research Group"></a>
             <ul class="nav-links">
                 <li><a href="#home">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="https://jaxorik.com/about.html">ABOUT</a></li>
                 <li><a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
                 <li><a href="https://raechipera.substack.com" target="_blank" rel="noopener noreferrer">SUBSTACK</a></li>
                 <li class="dropdown">
                     <button class="dropdown-toggle" id="dropdown-toggle" aria-expanded="false" aria-haspopup="true">GET CUSTOM AI ▾</button>
                     <div class="dropdown-menu" id="dropdown-menu">
-                        <a href="government.html">DEFENSE & ENERGY</a>
-                        <a href="disasters.html">DISASTER RESPONSE</a>
+                        <a href="https://jaxorik.com/government.html">DEFENSE & ENERGY</a>
+                        <a href="https://jaxorik.com/disasters.html">DISASTER RESPONSE</a>
                     </div>
                 </li>
             </ul>
@@ -979,12 +1044,12 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobile-menu">
         <a href="#home">HOME</a>
-        <a href="about.html">ABOUT</a>
+        <a href="https://jaxorik.com/about.html">ABOUT</a>
         <a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GITHUB</a>
         <a href="https://raechipera.substack.com" target="_blank" rel="noopener noreferrer">SUBSTACK</a>
         <div class="mobile-submenu">
-            <a href="government.html">DEFENSE & ENERGY</a>
-            <a href="disasters.html">DISASTER RESPONSE</a>
+            <a href="https://jaxorik.com/government.html">DEFENSE & ENERGY</a>
+            <a href="https://jaxorik.com/disasters.html">DISASTER RESPONSE</a>
         </div>
     </div>
 
@@ -1006,7 +1071,7 @@
             <div class="section-text">
                 <h2>We Work With US Government Prime Contractors</h2>
                 <p>We're former government & military employees and work within established DOD compliance protocols.</p>
-                <a href="about.html" class="cta-button">FIND OUT MORE</a>
+                <a href="https://jaxorik.com/about.html" class="cta-button">FIND OUT MORE</a>
             </div>
             <div class="credentials">
                 <h3>Find us on SAM.gov:</h3>
@@ -1040,7 +1105,7 @@
                     <li>Predictive analytics for floods, fires, and severe weather</li>
                     <li>Field-ready tools that run offline when networks fail</li>
                 </ul>
-                <a href="disasters.html" class="cta-button">LEARN MORE →</a>
+                <a href="https://jaxorik.com/disasters.html" class="cta-button">LEARN MORE →</a>
             </div>
             <div class="service-card">
                 <h3>DEFENSE & ENERGY</h3>
@@ -1052,7 +1117,7 @@
                     <li>Data mining and anomaly detection for energy research</li>
                     <li>Deployable AI tools for mission-critical operations</li>
                 </ul>
-                <a href="government.html" class="cta-button">LEARN MORE →</a>
+                <a href="https://jaxorik.com/government.html" class="cta-button">LEARN MORE →</a>
             </div>
         </div>
     </section>
@@ -1104,8 +1169,9 @@
                 <p>Rae Chipera is a data scientist with extensive military and industry experience building novel AI solutions. Her background includes:</p>
                 <ul>
                     <li>Data science PhD candidate — National University</li>
-                    <li>MBA in Quantitative Finance</li>
+                    <li>MBA in Finance</li>
                     <li>Former USMC SIGINT analyst — Iraq deployment, DLI-trained</li>
+                    <li>Field training in orienteering and land navigation with Cibola Search and Rescue</li>
                     <li>Prior TS/SCI security clearance holder</li>
                     <li>Completed MIT Machine Learning and CMU Deep Learning programs</li>
                     <li>Los Alamos, NM native</li>
@@ -1115,7 +1181,7 @@
                 <img src="Rae Chipera.png" alt="Rae Chipera, CEO and Founder of Jaxorik AI Research Group" style="width: 100%; max-width: 400px; border-radius: 8px;">
             </div>
             <div class="team-button-container">
-                <a href="about.html" class="team-cta-button">LEARN MORE</a>
+                <a href="https://jaxorik.com/about.html" class="team-cta-button">LEARN MORE</a>
             </div>
         </div>
     </section>
@@ -1196,6 +1262,7 @@
                 <p>Copyright © <script>document.write(new Date().getFullYear())</script> JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
                 <p>SAM.gov registered | UEI: K8ENCCGZ2M13 | CAGE: 11X70</p>
                 <p>Listed in the SAM.gov Disaster Response Registry</p>
+                <p class="map-credit">With thanks to the U.S. Geological Survey for the historical Jemez Springs topographic map. Digital scan via the <a href="https://maps.lib.utexas.edu/maps/topo/new_mexico/" target="_blank" rel="noopener noreferrer">Perry-Castañeda Library Map Collection, UT Austin</a>.</p>
             </div>
         </div>
     </footer>
