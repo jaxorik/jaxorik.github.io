@@ -969,7 +969,7 @@
         h1, h2, h3, h4 { font-weight: 700; }
         header { background: rgba(250, 248, 241, .93); border-bottom: 1px solid rgba(43, 55, 41, .25); }
         .hero {
-            background: rgba(91, 70, 45, .84);
+            background: rgba(91, 70, 45, .86);
             min-height: 76vh;
             width: min(1400px, 95%);
             margin: 110px auto 160px;
@@ -977,7 +977,7 @@
             border-radius: 12px;
             box-shadow: 0 18px 70px rgba(0,0,0,.20);
         }
-        .hero::before { background: linear-gradient(115deg, rgba(0,0,0,.12), rgba(44,84,50,.12)); border-radius: inherit; }
+        .hero::before { background: none; }
         .hero-content { position: relative; z-index: 1; }
         .section, .location-section, .veteran-section, footer {
             width: min(1400px, 95%);
@@ -993,12 +993,12 @@
             backdrop-filter: blur(2px);
         }
         .veteran-section, .about-section, footer {
-            background: rgba(91, 70, 45, .88);
+            background: rgba(91, 70, 45, .86);
             color: #f8f6ee;
             -webkit-backdrop-filter: blur(2px);
             backdrop-filter: blur(2px);
         }
-        .about-section { background: rgba(91, 70, 45, .88); }
+        .about-section { background: rgba(91, 70, 45, .86); }
         .veteran-section::before { background: none; }
         .location-section h2 { color: var(--ink); }
         .credential-card, .service-card, .press-card, .contact-form-container, .location-map,
@@ -1006,6 +1006,9 @@
             background-color: rgba(255, 255, 255, .83);
         }
         .hero-cta, .form-submit { transition: background .2s, transform .2s; }
+        .location-content { max-width: 1250px; grid-template-columns: 1.7fr 1fr; }
+        .nm-map { width: 100%; height: auto; display: block; margin-bottom: 1rem; }
+        @media (max-width: 768px) { .location-content { grid-template-columns: 1fr; } }
         .map-411 {
             margin-top: 1rem;
             font-family: 'Courier New', Courier, monospace;
@@ -1033,8 +1036,7 @@
             <ul class="nav-links">
                 <li><a href="#home">HOME</a></li>
                 <li><a href="https://jaxorik.com/about.html">ABOUT</a></li>
-                <li><a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
-                <li><a href="https://raechipera.substack.com" target="_blank" rel="noopener noreferrer">SUBSTACK</a></li>
+                <li><a href="https://raechipera.substack.com" target="_blank" rel="noopener noreferrer">INSIGHTS</a></li>
                 <li class="dropdown">
                     <button class="dropdown-toggle" id="dropdown-toggle" aria-expanded="false" aria-haspopup="true">GET CUSTOM AI ▾</button>
                     <div class="dropdown-menu" id="dropdown-menu">
@@ -1055,8 +1057,7 @@
     <div class="mobile-menu" id="mobile-menu">
         <a href="#home">HOME</a>
         <a href="https://jaxorik.com/about.html">ABOUT</a>
-        <a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GITHUB</a>
-        <a href="https://raechipera.substack.com" target="_blank" rel="noopener noreferrer">SUBSTACK</a>
+        <a href="https://raechipera.substack.com" target="_blank" rel="noopener noreferrer">INSIGHTS</a>
         <div class="mobile-submenu">
             <a href="https://jaxorik.com/government.html">DEFENSE & ENERGY</a>
             <a href="https://jaxorik.com/disasters.html">DISASTER RESPONSE</a>
@@ -1134,17 +1135,51 @@
 
     <!-- Strategic Location Section -->
     <section class="location-section">
-        <h2>Strategic Location for Defense R&D</h2>
+        <h2>In the Heart of New Mexico’s Research Corridor</h2>
         <div class="location-content">
             <div class="location-map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d73853.96317359745!2d-106.69161044960343!3d35.10883615751392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8722724b9a3a202b%3A0xe75ebc28cfba8890!2s6300%20Riverside%20Plaza%20Ln%2C%20Albuquerque%2C%20NM%2087120!5e0!3m2!1sen!2sus!4v1758439992932!5m2!1sen!2sus" 
-                        width="100%" height="300" 
-                        style="border:0; border-radius: 8px;" 
-                        allowfullscreen="" loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Map showing Jaxorik AI Research Group location in Albuquerque, NM">
-                </iframe>
-                <p><em><b>By appointment only.</b> For security and privacy, we don't maintain public signage.</em></p>
+                <svg class="nm-map" viewBox="130 25 680 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="nmTitle nmDesc">
+<title id="nmTitle">Jaxorik AI Research Group location in New Mexico</title>
+<desc id="nmDesc">Map of New Mexico showing Albuquerque, home of Jaxorik AI Research Group, home of the University of New Mexico and near Sandia National Laboratories, with Los Alamos National Laboratory, New Mexico Tech and White Sands Missile Range. Rings mark 50 and 100 miles from Albuquerque. Geographic context only; no affiliation implied.</desc>
+<defs><clipPath id="nmClip"><polygon points="150.0,40.0 650.4,40.0 650.4,90.0 645.1,90.0 645.1,540.0 351.0,540.0 358.4,562.0 219.5,562.0 219.5,607.0 150.0,607.0"/></clipPath></defs>
+<polygon points="150.0,40.0 650.4,40.0 650.4,90.0 645.1,90.0 645.1,540.0 351.0,540.0 358.4,562.0 219.5,562.0 219.5,607.0 150.0,607.0" fill="rgba(251,249,242,.55)" stroke="#5B462D" stroke-width="2.5" stroke-linejoin="round"/>
+<g clip-path="url(#nmClip)" fill="none" stroke="#5B462D" stroke-dasharray="4 6" stroke-width="1.2" opacity=".55">
+<circle cx="347.7" cy="224.0" r="72.5"/>
+<circle cx="347.7" cy="224.0" r="144.9"/>
+</g>
+<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="14" opacity=".75" text-anchor="middle" stroke="#fbf9f2" stroke-width="5" paint-order="stroke" x="275.2" y="229.0">50 mi</text>
+<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="14" opacity=".75" text-anchor="middle" stroke="#fbf9f2" stroke-width="5" paint-order="stroke" x="202.7" y="229.0">100 mi</text>
+<polyline points="424.6,40.0 427.1,85.0 406.4,122.0 395.6,141.0 375.0,178.0 356.8,208.0 346.0,232.0 338.6,275.0 329.5,334.0 319.6,380.0 303.0,420.0 303.0,450.0 327.8,490.0 336.1,510.0 351.0,540.0" fill="none" stroke="#4f7f95" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>
+<text x="284.8" y="385.0" font-family="Georgia, serif" font-style="italic" font-size="14" fill="#4f7f95" transform="rotate(-78 284.8 385.0)">Rio Grande</text>
+<polyline points="377.4,152.0 441.4,119.0" fill="none" stroke="#5B462D" stroke-width="1"/>
+<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="start" x="447.4471579255045" y="123.99999999999974">LOS ALAMOS</text>
+<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="start" x="447.4471579255045" y="145.99999999999974">National Laboratory</text>
+<polyline points="357.6,235.0 431.6,282.0" fill="none" stroke="#5B462D" stroke-width="1"/>
+<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="start" x="437.59722414291423" y="287.0000000000003">SANDIA</text>
+<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="start" x="437.59722414291423" y="309.0000000000003">National Labs</text>
+<polyline points="347.7,224.0 331.7,163.0" fill="none" stroke="#5B462D" stroke-width="1"/>
+<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="end" x="325.6722572516203" y="168.00000000000034">JAXORIK</text>
+<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="end" x="325.6722572516203" y="190.00000000000034">Albuquerque</text>
+<polyline points="351.0,231.6 436.7,221.0" fill="none" stroke="#5B462D" stroke-width="1"/>
+<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="start" x="442.6722572516203" y="226.00000000000034">UNM</text>
+<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="start" x="442.6722572516203" y="248.00000000000034">Univ. of New Mexico</text>
+<polyline points="327.0,333.0 253.0,334.0" fill="none" stroke="#5B462D" stroke-width="1"/>
+<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="end" x="246.9952428947563" y="339.0">NM TECH</text>
+<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="end" x="246.9952428947563" y="361.0">Socorro</text>
+<polyline points="362.6,502.0 426.6,487.0" fill="none" stroke="#5B462D" stroke-width="1"/>
+<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="start" x="432.5597075885618" y="491.9999999999998">WHITE SANDS</text>
+<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="start" x="432.5597075885618" y="513.9999999999998">Missile Range</text>
+<circle cx="377.4" cy="152.0" r="5" fill="#9b1c1c" stroke="#fffaf1" stroke-width="2"/>
+<circle cx="327.0" cy="333.0" r="5" fill="#9b1c1c" stroke="#fffaf1" stroke-width="2"/>
+<circle cx="362.6" cy="502.0" r="5" fill="#9b1c1c" stroke="#fffaf1" stroke-width="2"/>
+<circle cx="357.6" cy="235.0" r="5" fill="#9b1c1c" stroke="#fffaf1" stroke-width="2"/>
+<circle cx="351.0" cy="231.6" r="5" fill="#9b1c1c" stroke="#fffaf1" stroke-width="2"/>
+<polygon points="347.7,212.0 344.7,220.0 336.3,220.3 342.9,225.5 340.6,233.7 347.7,229.0 354.7,233.7 352.4,225.5 359.1,220.3 350.6,220.0" fill="#5B462D" stroke="#fffaf1" stroke-width="1.5"/>
+<g stroke="#5B462D" fill="#5B462D"><polygon points="735,56 742,90 735,124 728,90" opacity=".85"/><polygon points="709,90 735,84 761,90 735,96" opacity=".4"/></g>
+<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="15" font-weight="700" text-anchor="middle" x="735" y="48">N</text>
+<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="13" text-anchor="middle" opacity=".75" x="470" y="652">GEOGRAPHIC CONTEXT ONLY — NO AFFILIATION IMPLIED</text>
+</svg>
+                <p><em><b>Meetings by appointment.</b></em></p>
                 <p class="map-411">Call <a href="tel:+15052738411">(505) 273-8411</a> for the 411</p>
             </div>
             <div class="distance-grid">
@@ -1153,20 +1188,20 @@
                     <div class="distance-time">20 minutes • 15 miles</div>
                 </div>
                 <div class="distance-item">
-                    <h4>Kirtland Air Force Base</h4>
+                    <h4>Kirtland AFB / AFRL</h4>
                     <div class="distance-time">20 minutes • 16 miles</div>
+                </div>
+                <div class="distance-item">
+                    <h4>University of New Mexico</h4>
+                    <div class="distance-time">20 minutes • 11 miles</div>
                 </div>
                 <div class="distance-item">
                     <h4>Los Alamos National Lab</h4>
                     <div class="distance-time">90 minutes • 90 miles</div>
                 </div>
                 <div class="distance-item">
-                    <h4>White Sands Missile Range</h4>
-                    <div class="distance-time">3 hours • 187 miles</div>
-                </div>
-                <div class="distance-item">
-                    <h4>Colorado Springs</h4>
-                    <div class="distance-time">5.5 hours • 380 miles</div>
+                    <h4>New Mexico Tech</h4>
+                    <div class="distance-time">80 minutes • 80 miles</div>
                 </div>
             </div>
         </div>
