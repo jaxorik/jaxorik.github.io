@@ -15,6 +15,10 @@
     <meta property="og:url" content="https://jaxorik.com/government.html">
     <meta name="twitter:card" content="summary_large_image">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
@@ -130,7 +134,6 @@
         .credential-item strong { color: #333; }
 
         .veteran-section {
-            background: url('desert-camo.jpg') center/cover;
             color: white; text-align: center; padding: 4rem 5%; position: relative;
         }
         .veteran-section::before {
@@ -217,7 +220,7 @@
 
         /* Form status messages */
         .form-status { padding: 1rem; border-radius: 4px; margin-top: 1rem; font-size: 0.95rem; display: none; }
-        .form-status.error { display: block; background: #fdecea; color: #b71c1c; border: 1px solid #f5c6cb; }
+        .form-status.error { background: #fdecea; color: #b71c1c; border: 1px solid #f5c6cb; }
         .form-success {
             display: none; text-align: center; padding: 2rem 1rem;
         }
@@ -257,6 +260,67 @@
             .main-content h2 { font-size: 2rem; }
             .problem-card:nth-child(even), .problem-card:nth-child(odd) { margin: 0 auto; }
         }
+        /* Jaxorik / archival topo visual layer — matches index.html */
+        :root { --ink: #171d1a; }
+        html { scroll-padding-top: 92px; }
+        body {
+            font-family: 'IBM Plex Sans', Arial, sans-serif;
+            background-color: #e8ddc4;
+            background-image: url('jemez-1943.jpg');
+            background-size: 125% auto;
+            background-position: center top;
+            background-repeat: repeat-y;
+            color: var(--ink);
+        }
+        h1, h2, h3, h4, .nav-links, .dropdown-menu, button, .banner-cta-button { font-family: 'Courier New', Courier, monospace; }
+        header { background: rgba(250, 248, 241, .93); border-bottom: 1px solid rgba(43, 55, 41, .25); }
+
+        /* Every section becomes a centered panel with map showing between */
+        body > section, footer {
+            width: min(1400px, 95%);
+            margin: 0 auto 160px;
+            border-radius: 12px;
+            border: 1px solid rgba(20, 34, 25, .18);
+            box-shadow: 0 10px 40px rgba(29, 25, 15, .13);
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+        }
+        .top-banner { margin-top: 110px; }
+
+        /* Dark (coyote brown) panels */
+        .top-banner, .veteran-section, .philosophy-section, .downloads-section, footer {
+            background: rgba(91, 70, 45, .88);
+            color: #f8f6ee;
+        }
+        .veteran-section::before { background: none; }
+        /* Light (frosted paper) panels */
+        .hero, .problems-section, .services-section, .contact-section {
+            background: rgba(251, 249, 242, .74);
+        }
+        .credentials-sidebar, .problem-card, .service-card, .contact-form, .company-info { background: rgba(255, 255, 255, .83); }
+        .distance-list { background: rgba(232, 221, 196, .45); }
+        .download-item { background: rgba(0, 0, 0, .22); border-color: rgba(255, 255, 255, .2); }
+        .main-content h2, .problems-section h2, .services-section h2, .contact-form h2, .company-info h2 { color: var(--ink); }
+
+        .map-411 {
+            margin-top: .75rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 700;
+            font-size: 1.15rem;
+            letter-spacing: .5px;
+        }
+        .map-411 a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
+        footer { margin-bottom: 24px; }
+        footer .footer-info { color: #fffaf1; border-top-color: rgba(255,255,255,.5); }
+        footer .footer-info .map-credit { color: #f2e8d7; font-size: .85rem; margin-top: 1.5rem; }
+        footer .footer-info .map-credit a { color: inherit; text-underline-offset: 3px; }
+
+        @media (max-width: 768px) {
+            body { background-size: auto 1400px; }
+            body > section, footer { width: calc(100% - 24px); margin: 0 auto 72px; border-radius: 9px; }
+            .top-banner { margin-top: 94px; }
+        }
     </style>
 </head>
 <body>
@@ -267,6 +331,7 @@
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
                 <li><a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
+                <li><a href="https://raechipera.substack.com" target="_blank" rel="noopener noreferrer">SUBSTACK</a></li>
                 <li class="dropdown">
                     <button class="dropdown-toggle" id="dropdown-toggle" aria-expanded="false" aria-haspopup="true">GET CUSTOM AI ▾</button>
                     <div class="dropdown-menu" id="dropdown-menu">
@@ -285,6 +350,7 @@
         <a href="index.html">HOME</a>
         <a href="about.html">ABOUT</a>
         <a href="https://github.com/jaxorik" target="_blank" rel="noopener noreferrer">GITHUB</a>
+        <a href="https://raechipera.substack.com" target="_blank" rel="noopener noreferrer">SUBSTACK</a>
         <div class="mobile-submenu">
             <a href="government.html">DEFENSE & ENERGY</a>
             <a href="disasters.html">DISASTER RESPONSE</a>
@@ -462,13 +528,13 @@
                     </div>
                     <button type="submit" class="form-submit">SEND MESSAGE</button>
                     <div class="form-status error" id="form-error"></div>
-                    <p class="form-note">Your contact information will only be used to respond to your inquiry. Rae's Substack is kept separate, and we never sell or share your data.</p>
-                    <p class="form-note">For urgent matters call <a href="tel:+15055066884" style="color: #2E7D32;">505-506-6884</a> or email <a href="mailto:contracts@jaxorik.com" style="color: #2E7D32;">contracts@jaxorik.com</a>.</p>
+                    <p class="form-note">Your contact information will only be used to respond to your inquiry. We never sell or share your data.</p>
+                    <p class="form-note">For urgent matters call <a href="tel:+15052738411" style="color: #2E7D32;">505-273-8411</a> or email <a href="mailto:contracts@jaxorik.com" style="color: #2E7D32;">contracts@jaxorik.com</a>.</p>
                 </form>
                 <div class="form-success" id="form-success">
                     <span class="checkmark">✓</span>
                     <h3>Message Received</h3>
-                    <p>Thanks for reaching out. We'll get back to you within 1 business week. For urgent matters, call <a href="tel:+15055066884" style="color: #2E7D32;">505-506-6884</a>.</p>
+                    <p>Thanks for reaching out. We'll get back to you within 1 business week. For urgent matters, call <a href="tel:+15052738411" style="color: #2E7D32;">505-273-8411</a>.</p>
                 </div>
             </div>
             <div class="company-info">
@@ -493,7 +559,7 @@
                 </div>
                 <p style="color: #666; margin-bottom: 0.5rem;">6300 Riverside Plaza Lane NW<br>Albuquerque, New Mexico 87120</p>
                 <p style="margin-bottom: 0.5rem;"><em>By appointment only.</em></p>
-                <p><strong><a href="tel:+15055066884" style="color: inherit; text-decoration: none;">505-506-6884</a></strong></p>
+                <p class="map-411">Call <a href="tel:+15052738411">(505) 273-8411</a> for the 411</p>
                 <div class="project-exclusions">
                     <h3>Project Exclusions</h3>
                     <p>We maintain strict ethical standards and do not accept contracts for autonomous weapons systems, discriminatory algorithms, or projects that conflict with U.S. national security interests.</p>
@@ -509,10 +575,11 @@
                 <a href="https://www.linkedin.com/company/jaxorik" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
             <div class="footer-info">
-                <p><strong><a href="tel:+15055066884" style="color: inherit; text-decoration: none;">505-506-6884</a></strong></p>
+                <p><strong><a href="tel:+15052738411" style="color: inherit; text-decoration: none;">505-273-8411</a></strong></p>
                 <p>Copyright © <script>document.write(new Date().getFullYear())</script> JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
                 <p>SAM.gov registered | UEI: K8ENCCGZ2M13 | CAGE: 11X70</p>
                 <p>Listed in the SAM.gov Disaster Response Registry</p>
+                <p class="map-credit">With thanks to the U.S. Geological Survey for the historical Jemez Springs topographic map. Digital scan via the <a href="https://maps.lib.utexas.edu/maps/topo/new_mexico/" target="_blank" rel="noopener noreferrer">Perry-Castañeda Library Map Collection, UT Austin</a>.</p>
             </div>
         </div>
     </footer>
