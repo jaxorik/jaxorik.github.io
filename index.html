@@ -972,7 +972,8 @@
         .hero {
             background: rgba(91, 70, 45, .84);
             min-height: 76vh;
-            margin: 110px 2.5% 160px;
+            width: min(1400px, 95%);
+            margin: 110px auto 160px;
             border: 1px solid rgba(240, 238, 223, .25);
             border-radius: 12px;
             box-shadow: 0 18px 70px rgba(0,0,0,.20);
@@ -980,7 +981,9 @@
         .hero::before { background: linear-gradient(115deg, rgba(0,0,0,.12), rgba(44,84,50,.12)); border-radius: inherit; }
         .hero-content { position: relative; z-index: 1; }
         .section, .location-section, .veteran-section, footer {
-            margin: 0 2.5% 160px;
+            width: min(1400px, 95%);
+            max-width: none;
+            margin: 0 auto 160px;
             border-radius: 12px;
             border: 1px solid rgba(20, 34, 25, .18);
             box-shadow: 0 10px 40px rgba(29, 25, 15, .13);
@@ -1010,8 +1013,8 @@
         footer .footer-info .map-credit a { color: inherit; text-underline-offset: 3px; }
         @media (max-width: 768px) {
             body { background-size: auto 1400px; background-position: center top; }
-            .hero { margin: 94px 12px 72px; min-height: 65vh; }
-            .section, .location-section, .veteran-section, footer { margin: 0 12px 72px; border-radius: 9px; }
+            .hero { width: calc(100% - 24px); margin: 94px auto 72px; min-height: 65vh; }
+            .section, .location-section, .veteran-section, footer { width: calc(100% - 24px); margin: 0 auto 72px; border-radius: 9px; }
         }
     </style>
 </head>
