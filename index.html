@@ -1000,7 +1000,8 @@
         }
         .about-section { background: rgba(91, 70, 45, .86); }
         .veteran-section::before { background: none; }
-        .location-section h2 { color: var(--ink); }
+        .location-section h2 { color: var(--ink); margin-bottom: .75rem; }
+        .location-sub { font-size: 1.2rem; color: #4a4338; margin-bottom: 2rem; }
         .credential-card, .service-card, .press-card, .contact-form-container, .location-map,
         .location-info, .gov-card {
             background-color: rgba(255, 255, 255, .83);
@@ -1028,10 +1029,6 @@
             .hero { width: calc(100% - 24px); margin: 94px auto 72px; min-height: 65vh; }
             .section, .location-section, .veteran-section, footer { width: calc(100% - 24px); margin: 0 auto 72px; border-radius: 9px; }
         }
-        .dropdown-toggle.as-link { background: none; color: #333 !important; padding: 0; font-weight: 500; font-family: 'Courier New', Courier, monospace; font-size: 0.9rem; letter-spacing: 1px; }
-        .dropdown-toggle.as-link:hover { background: none; color: #2E7D32 !important; }
-        .nav-links a.nav-demo { background: #000; color: #fff !important; padding: .7rem 1.5rem; border-radius: 4px; transition: background .3s; }
-        .nav-links a.nav-demo:hover { background: #333; color: #fff !important; }
         .dropdown-menu a { white-space: nowrap; }
     </style>
 </head>
@@ -1045,13 +1042,12 @@
                 <li><a href="https://jaxorik.com/about.html">ABOUT</a></li>
                 <li><a href="https://raechipera.substack.com" target="_blank" rel="noopener noreferrer">INSIGHTS</a></li>
                 <li class="dropdown">
-                    <button class="dropdown-toggle as-link" id="dropdown-toggle" aria-expanded="false" aria-haspopup="true">SOLUTIONS ▾</button>
+                    <button class="dropdown-toggle" id="dropdown-toggle" aria-expanded="false" aria-haspopup="true">SOLUTIONS ▾</button>
                     <div class="dropdown-menu" id="dropdown-menu">
                         <a href="https://jaxorik.com/government.html">DEFENSE & ENERGY</a>
                         <a href="https://jaxorik.com/disasters.html">DISASTER RESPONSE</a>
                     </div>
                 </li>
-                <li><a href="#contact" class="nav-demo">REQUEST A DEMO</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
                 <span></span>
@@ -1070,7 +1066,6 @@
             <a href="https://jaxorik.com/government.html">DEFENSE & ENERGY</a>
             <a href="https://jaxorik.com/disasters.html">DISASTER RESPONSE</a>
         </div>
-        <a href="#contact">REQUEST A DEMO</a>
     </div>
 
     <!-- Hero Section -->
@@ -1146,7 +1141,8 @@
 
     <!-- Strategic Location Section -->
     <section class="location-section">
-        <h2>In the Heart of New Mexico’s Research Corridor</h2>
+        <h2>In the Heart of the Rio Grande Research Corridor</h2>
+        <p class="location-sub">We are based in Albuquerque. Let's meet in person.</p>
         <div class="location-content">
             <div class="location-map">
                 <svg class="nm-map" viewBox="130 25 680 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="nmTitle nmDesc">
@@ -1320,7 +1316,7 @@
                 <p>Copyright © <script>document.write(new Date().getFullYear())</script> JAXORIK AI RESEARCH GROUP - All Rights Reserved.</p>
                 <p>SAM.gov registered | UEI: K8ENCCGZ2M13 | CAGE: 11X70</p>
                 <p>Listed in the SAM.gov Disaster Response Registry</p>
-                <p class="map-credit">With thanks to the U.S. Geological Survey for the historical Jemez Springs topographic map. Digital scan via the <a href="https://maps.lib.utexas.edu/maps/topo/new_mexico/" target="_blank" rel="noopener noreferrer">Perry-Castañeda Library Map Collection, UT Austin</a>.</p>
+                <p class="map-credit">With thanks to the U.S. Geological Survey for the historical 1943 Jemez Springs topographic map. Digital scan via the <a href="https://maps.lib.utexas.edu/maps/topo/new_mexico/" target="_blank" rel="noopener noreferrer">Perry-Castañeda Library Map Collection, UT Austin</a>.</p>
             </div>
         </div>
     </footer>
