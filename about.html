@@ -196,7 +196,7 @@
             box-shadow: 0 10px 40px rgba(29, 25, 15, .13);
         }
 
-        .panel:first-of-type { margin-top: 110px; }
+        section.panel:first-of-type { margin-top: 110px; }
         .panel-dark { background: var(--panel-dark); color: var(--cream); }
         .panel-light { background: var(--paper); }
         .panel h2 { font-size: 2.5rem; margin-bottom: 2rem; line-height: 1.2; }
@@ -283,6 +283,23 @@
 
         .btn:hover { background: #333; }
 
+        .btn-outline {
+            background: transparent;
+            color: var(--ink);
+            border: 2px solid #000;
+            padding: calc(1rem - 2px) calc(2rem - 2px);
+        }
+
+        .btn-outline:hover { background: rgba(0, 0, 0, .08); }
+
+        .btn-row {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2.5rem;
+        }
+
         /* Ghost Rider */
         .ghost img {
             width: 300px;
@@ -317,7 +334,7 @@
                 border-radius: 9px;
             }
 
-            .panel:first-of-type { margin-top: 94px; }
+            section.panel:first-of-type { margin-top: 94px; }
             .panel h2 { font-size: 1.9rem; }
             .banner h1, .banner h2 { font-size: 2rem; }
             .split { grid-template-columns: 1fr; gap: 2rem; }
@@ -399,7 +416,7 @@
             </div>
         </div>
         <p class="after-grid">Decision support only, never autonomous weapons. Built in the United States, with export-control rules in mind from the start.</p>
-        <p class="after-grid">For the technical detail, see <a href="government.html">Defense &amp; Energy</a> and <a href="disasters.html">Disaster Response</a>.</p>
+        <p class="after-grid">For model documentation and validation results, including the gravitational wave tests, <a href="index.html#contact">request the technical package</a>. Solution details are on the <a href="government.html">Defense &amp; Energy</a> and <a href="disasters.html">Disaster Response</a> pages.</p>
     </section>
 
     <!-- Founder -->
@@ -476,13 +493,14 @@
                     <li>WOSB Certified</li>
                     <li>SDVOSB Certified</li>
                     <li>Listed in the SAM.gov Disaster Response Registry</li>
-                    <!-- Add your NAICS codes here, one <li> per code -->
+                    <li>NAICS: 541715, 541511, 541690, 541512</li>
                 </ul>
             </div>
         </div>
-        <p class="center" style="margin-top: 2.5rem;">
+        <div class="btn-row">
             <a class="btn" href="jaxorik_capabilities_statement.pdf" download>Download Capabilities Statement</a>
-        </p>
+            <a class="btn btn-outline" href="index.html#contact">Request Technical Package →</a>
+        </div>
     </section>
 
     <!-- Named by a Machine, Led by a Marine -->
