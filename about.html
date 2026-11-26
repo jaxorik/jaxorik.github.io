@@ -17,7 +17,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600;700&display=swap">
 
     <style>
         :root {
@@ -28,7 +28,7 @@
             --panel-dark: rgba(91, 70, 45, .93);
             --card: rgba(255, 255, 255, .85);
             --line: rgba(20, 34, 25, .18);
-            --mono: 'Courier New', Courier, monospace;
+            --mono: 'IBM Plex Mono', 'Courier New', monospace;
             --sans: 'IBM Plex Sans', Arial, sans-serif;
         }
 
@@ -46,7 +46,7 @@
             background-repeat: repeat-y;
         }
 
-        h1, h2, h3, h4 { font-family: var(--mono); }
+        h1, h2, h3, h4 { font-family: var(--headline-font); }
         img { max-width: 100%; }
 
         /* Header and navigation */
@@ -245,7 +245,7 @@
         }
 
         .split p { font-size: 1.1rem; margin-bottom: 1rem; }
-        .founder-name { font-family: var(--mono); font-size: 2rem; margin-bottom: .25rem; }
+        .founder-name { font-family: var(--headline-font); font-size: 2rem; margin-bottom: .25rem; }
         .founder-title { font-size: 1.1rem; margin-bottom: 1.5rem; opacity: .75; }
 
         figure { display: flex; flex-direction: column; align-items: center; gap: .75rem; }
@@ -339,12 +339,22 @@
             .banner h1, .banner h2 { font-size: 2rem; }
             .split { grid-template-columns: 1fr; gap: 2rem; }
         }
-    </style>
+
+        /* Typography pass: Plex Serif headlines, Plex Mono nav and labels (matches index.html).
+           To change the headline font, edit --headline-font only. */
+        :root { --headline-font: 'IBM Plex Serif', Georgia, 'Times New Roman', serif; }
+        h1, h2, h3, h4 { font-weight: 600; text-wrap: balance; }
+        h1 { letter-spacing: .03em; line-height: 1.2; }
+        h2 { letter-spacing: -.01em; }
+        .nav-links a, .dropdown-menu a, .mobile-menu a { font-weight: 400; letter-spacing: .08em; }
+        .dropdown-toggle { font-family: 'IBM Plex Mono', 'Courier New', monospace; font-weight: 600; letter-spacing: .08em; }
+        .mobile-menu .mobile-submenu-label { display: block; padding: 1rem 0 .25rem 1.5rem; font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: .75rem; letter-spacing: .12em; color: #777; }
+        </style>
 </head>
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo"><img src="Jaxorik%20logo%20black.png?v=2" alt="Jaxorik AI Research Group"></a>
+            <a href="index.html" class="logo"><img src="Jaxorik-black-vector.svg" alt="Jaxorik AI Research Group"></a>
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
@@ -352,7 +362,7 @@
                 <li class="dropdown">
                     <button class="dropdown-toggle" id="dropdown-toggle" aria-expanded="false" aria-haspopup="true">SOLUTIONS ▾</button>
                     <div class="dropdown-menu" id="dropdown-menu">
-                        <a href="government.html">DEFENSE &amp; ENERGY</a>
+                        <a href="government.html">ENERGY INFRASTRUCTURE</a>
                         <a href="disasters.html">DISASTER RESPONSE</a>
                     </div>
                 </li>
@@ -370,7 +380,8 @@
         <a href="about.html">ABOUT</a>
         <a href="https://raechipera.substack.com" target="_blank" rel="noopener noreferrer">INSIGHTS</a>
         <div class="mobile-submenu">
-            <a href="government.html">DEFENSE &amp; ENERGY</a>
+            <span class="mobile-submenu-label">SOLUTIONS</span>
+            <a href="government.html">ENERGY INFRASTRUCTURE</a>
             <a href="disasters.html">DISASTER RESPONSE</a>
         </div>
     </div>
@@ -416,7 +427,7 @@
             </div>
         </div>
         <p class="after-grid">Decision support only, never autonomous weapons. Built in the United States, with export-control rules in mind from the start.</p>
-        <p class="after-grid">For model documentation, white papers, and validation results, <a href="index.html#contact">request the technical package</a>. Solution details are on the <a href="government.html">Defense &amp; Energy</a> and <a href="disasters.html">Disaster Response</a> pages.</p>
+        <p class="after-grid">For model documentation, white papers, and validation results, <a href="index.html#contact">request the technical package</a>. Solution details are on the <a href="government.html">Energy Infrastructure</a> and <a href="disasters.html">Disaster Response</a> pages.</p>
     </section>
 
     <!-- Founder -->
