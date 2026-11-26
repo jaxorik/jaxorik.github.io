@@ -17,7 +17,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600;700&display=swap">
 
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -102,7 +102,7 @@
             color: white; text-align: center; padding: 4rem 5%;
         }
         .banner-content { max-width: 1000px; margin: 0 auto; }
-        .top-banner h1 { font-size: 3rem; font-family: 'Courier New', monospace; margin-bottom: 1rem; line-height: 1.2; }
+        .top-banner h1 { font-size: 3rem; font-family: var(--headline-font); margin-bottom: 1rem; line-height: 1.2; }
         .banner-subtitle { font-size: 1.3rem; margin-bottom: 2rem; opacity: 0.9; color: #E8DDC4; font-weight: 500; }
         .top-banner p { font-size: 1.2rem; margin-bottom: 2.5rem; opacity: 0.9; line-height: 1.6; }
         .banner-cta-button {
@@ -118,7 +118,7 @@
             max-width: 1200px; margin: 0 auto;
             display: grid; grid-template-columns: 2fr 1fr; gap: 3rem; align-items: center;
         }
-        .main-content h2 { font-size: 2.5rem; font-family: 'Courier New', monospace; color: #333; margin-bottom: 1rem; line-height: 1.2; }
+        .main-content h2 { font-size: 2.5rem; font-family: var(--headline-font); color: #333; margin-bottom: 1rem; line-height: 1.2; }
         .main-content p { font-size: 1.1rem; color: #666; margin-bottom: 1rem; line-height: 1.6; }
         .main-content .cta-button { margin-top: 1rem; }
         .cta-button {
@@ -128,7 +128,7 @@
         }
         .cta-button:hover { background: #333; }
         .credentials-sidebar { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .credentials-sidebar h3 { font-size: 1.2rem; color: #333; margin-bottom: 1.5rem; font-weight: 600; font-family: 'Courier New', monospace; }
+        .credentials-sidebar h3 { font-size: 1.2rem; color: #333; margin-bottom: 1.5rem; font-weight: 600; font-family: var(--headline-font); }
         .credential-item { padding: 0.8rem 0; border-bottom: 1px solid #eee; color: #666; font-size: 0.95rem; }
         .credential-item:last-child { border-bottom: none; }
         .credential-item strong { color: #333; }
@@ -143,14 +143,14 @@
         }
         .veteran-section h2 { font-size: 2rem; margin-bottom: 0.5rem; position: relative; z-index: 2; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
         .veteran-section .highlight {
-            font-size: 3rem; font-family: 'Courier New', monospace; color: white;
+            font-size: 3rem; font-family: var(--headline-font); color: white;
             margin: 1rem 0; position: relative; z-index: 2;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.7); font-weight: bold;
         }
 
         .problems-section { padding: 4rem 5%; background: white; }
         .section-container { max-width: 1200px; margin: 0 auto; }
-        .problems-section h2 { font-size: 2.5rem; margin-bottom: 3rem; font-family: 'Courier New', monospace; color: #333; text-align: center; }
+        .problems-section h2 { font-size: 2.5rem; margin-bottom: 3rem; font-family: var(--headline-font); color: #333; text-align: center; }
         .problems-grid { display: flex; flex-direction: column; gap: 3rem; }
         .problem-card {
             background: #f8f9fa; padding: 3rem; border-radius: 12px;
@@ -159,28 +159,28 @@
         }
         .problem-card:nth-child(even) { margin-left: 0; margin-right: auto; }
         .problem-card:nth-child(odd) { margin-left: auto; margin-right: 0; }
-        .problem-card h3 { color: #5B462D; margin-bottom: 1rem; font-family: 'Courier New', monospace; }
+        .problem-card h3 { color: #5B462D; margin-bottom: 1rem; font-family: var(--headline-font); }
         .problem-card .problem { color: #666; margin-bottom: 1rem; font-style: italic; }
         .problem-card .solution { color: #333; font-weight: 500; }
 
         .philosophy-section { background: #000; color: white; text-align: center; padding: 4rem 5%; }
-        .philosophy-section h2 { font-size: 2.5rem; margin-bottom: 2rem; font-family: 'Courier New', monospace; color: white; }
+        .philosophy-section h2 { font-size: 2.5rem; margin-bottom: 2rem; font-family: var(--headline-font); color: white; }
         .philosophy-content { max-width: 800px; margin: 0 auto; }
         .philosophy-content p { font-size: 1.2rem; margin-bottom: 2rem; opacity: 0.9; }
         .bad-science-image { margin: 3rem 0; }
         .bad-science-image img { max-width: 500px; width: 100%; border-radius: 8px; box-shadow: 0 10px 30px rgba(255,255,255,0.1); }
 
         .services-section { padding: 4rem 5%; background: #f8f9fa; }
-        .services-section h2 { font-size: 2.5rem; margin-bottom: 3rem; font-family: 'Courier New', monospace; color: #333; text-align: center; }
+        .services-section h2 { font-size: 2.5rem; margin-bottom: 3rem; font-family: var(--headline-font); color: #333; text-align: center; }
         .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; max-width: 1000px; margin: 0 auto; }
         .service-card { background: white; padding: 2.5rem; border-radius: 8px; border-top: 4px solid #5B462D; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .service-card h3 { color: #5B462D; margin-bottom: 1rem; font-family: 'Courier New', monospace; }
+        .service-card h3 { color: #5B462D; margin-bottom: 1rem; font-family: var(--headline-font); }
         .service-card ul { list-style: none; }
         .service-card li { padding: 0.3rem 0; padding-left: 1.5rem; position: relative; color: #555; }
         .service-card li:before { content: "✓"; position: absolute; left: 0; color: #5B462D; font-weight: bold; }
 
         .downloads-section { padding: 4rem 5%; background: #000; color: white; text-align: center; }
-        .downloads-section h2 { font-size: 2.5rem; margin-bottom: 3rem; font-family: 'Courier New', monospace; color: white; }
+        .downloads-section h2 { font-size: 2.5rem; margin-bottom: 3rem; font-family: var(--headline-font); color: white; }
         .download-items { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
         .download-item {
             display: flex; justify-content: space-between; align-items: center;
@@ -196,7 +196,7 @@
         .contact-section { padding: 4rem 5%; background: #f8f9fa; }
         .contact-content { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
         .contact-form { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .contact-form h2 { font-size: 2rem; margin-bottom: 0.5rem; font-family: 'Courier New', monospace; color: #333; }
+        .contact-form h2 { font-size: 2rem; margin-bottom: 0.5rem; font-family: var(--headline-font); color: #333; }
         .contact-form .form-intro { color: #666; margin-bottom: 2rem; font-size: 0.95rem; }
         .form-group { margin-bottom: 1.25rem; }
         .form-group label { display: block; font-size: 0.9rem; font-weight: 600; color: #333; margin-bottom: 0.4rem; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -216,7 +216,7 @@
         }
         .form-submit:hover { background: #333; transform: translateY(-1px); }
         .form-submit:disabled { background: #999; cursor: not-allowed; transform: none; }
-        .form-note { font-size: 0.8rem; color: #999; margin-top: 1rem; text-align: center; }
+        .form-note { font-size: 0.8rem; color: #666; margin-top: 1rem; text-align: center; }
 
         /* Form status messages */
         .form-status { padding: 1rem; border-radius: 4px; margin-top: 1rem; font-size: 0.95rem; display: none; }
@@ -224,7 +224,7 @@
         .form-success {
             display: none; text-align: center; padding: 2rem 1rem;
         }
-        .form-success h3 { color: #5B462D; font-family: 'Courier New', monospace; margin-bottom: 1rem; font-size: 1.5rem; }
+        .form-success h3 { color: #5B462D; font-family: var(--headline-font); margin-bottom: 1rem; font-size: 1.5rem; }
         .form-success p { color: #555; font-size: 1.05rem; }
         .form-success .checkmark { font-size: 3rem; color: #5B462D; display: block; margin-bottom: 0.5rem; }
 
@@ -235,15 +235,15 @@
         }
 
         .company-info { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .company-info h2 { font-size: 2rem; margin-bottom: 2rem; font-family: 'Courier New', monospace; color: #333; }
+        .company-info h2 { font-size: 2rem; margin-bottom: 2rem; font-family: var(--headline-font); color: #333; }
         .location-map { margin: 2rem 0; text-align: center; }
         .nm-map { width: 100%; height: auto; display: block; }
         .distance-list { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; }
-        .distance-list h4 { color: #5B462D; margin-bottom: 1rem; font-family: 'Courier New', monospace; }
+        .distance-list h4 { color: #5B462D; margin-bottom: 1rem; font-family: var(--headline-font); }
         .distance-list ul { list-style: none; }
         .distance-list li { padding: 0.3rem 0; color: #666; }
         .project-exclusions { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e9ecef; }
-        .project-exclusions h3 { color: #d32f2f; margin-bottom: 1rem; font-family: 'Courier New', monospace; }
+        .project-exclusions h3 { color: #d32f2f; margin-bottom: 1rem; font-family: var(--headline-font); }
 
         footer { background: #000; color: white; padding: 3rem 5%; text-align: center; }
         .footer-content { max-width: 1400px; margin: 0 auto; }
@@ -273,7 +273,8 @@
             background-repeat: repeat-y;
             color: var(--ink);
         }
-        h1, h2, h3, h4, .nav-links, .dropdown-menu, button, .banner-cta-button { font-family: 'Courier New', Courier, monospace; }
+        .nav-links, .dropdown-menu, button, .banner-cta-button { font-family: 'IBM Plex Mono', 'Courier New', monospace; }
+        h1, h2, h3, h4 { font-family: var(--headline-font); }
         header { background: rgba(250, 248, 241, .93); border-bottom: 1px solid rgba(43, 55, 41, .25); }
 
         /* Every section becomes a centered panel with map showing between */
@@ -305,7 +306,7 @@
 
         .map-411 {
             margin-top: .75rem;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'IBM Plex Mono', 'Courier New', monospace;
             font-weight: 700;
             font-size: 1.15rem;
             letter-spacing: .5px;
@@ -324,17 +325,27 @@
         }
 
         /* Menu parity with index.html */
-        .dropdown-toggle { font-family: 'IBM Plex Sans', Arial, sans-serif; font-weight: 700; }
         .dropdown-menu a { white-space: nowrap; }
 
         /* Status line under Government AI Capabilities */
         .services-section .section-lead { text-align: center; max-width: 800px; margin: -1.5rem auto 2.5rem; font-size: 1.1rem; }
-    </style>
+
+        /* Typography pass: Plex Serif headlines, Plex Mono nav and labels (matches index.html).
+           To change the headline font, edit --headline-font only. */
+        :root { --headline-font: 'IBM Plex Serif', Georgia, 'Times New Roman', serif; }
+        h1, h2, h3, h4 { font-weight: 600; text-wrap: balance; }
+        h1 { letter-spacing: .03em; line-height: 1.2; }
+        h2 { letter-spacing: -.01em; }
+        .veteran-section .ownership-note { position: relative; z-index: 2; font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: 1rem; letter-spacing: .06em; margin: .25rem auto 0; max-width: 40rem; color: #f8f6ee; }
+        .nav-links a, .dropdown-menu a, .mobile-menu a { font-weight: 400; letter-spacing: .08em; }
+        .dropdown-toggle { font-family: 'IBM Plex Mono', 'Courier New', monospace; font-weight: 600; letter-spacing: .08em; }
+        .mobile-menu .mobile-submenu-label { display: block; padding: 1rem 0 .25rem 1.5rem; font-family: 'IBM Plex Mono', 'Courier New', monospace; font-size: .75rem; letter-spacing: .12em; color: #777; }
+        </style>
 </head>
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo"><img src="Jaxorik%20logo%20black.png?v=2" alt="Jaxorik AI Research Group"></a>
+            <a href="index.html" class="logo"><img src="Jaxorik-black-vector.svg" alt="Jaxorik AI Research Group"></a>
             <ul class="nav-links">
                 <li><a href="index.html">HOME</a></li>
                 <li><a href="about.html">ABOUT</a></li>
@@ -342,7 +353,7 @@
                 <li class="dropdown">
                     <button class="dropdown-toggle" id="dropdown-toggle" aria-expanded="false" aria-haspopup="true">SOLUTIONS ▾</button>
                     <div class="dropdown-menu" id="dropdown-menu">
-                        <a href="government.html">DEFENSE &amp; ENERGY</a>
+                        <a href="government.html">ENERGY INFRASTRUCTURE</a>
                         <a href="disasters.html">DISASTER RESPONSE</a>
                     </div>
                 </li>
@@ -358,7 +369,8 @@
         <a href="about.html">ABOUT</a>
         <a href="https://raechipera.substack.com" target="_blank" rel="noopener noreferrer">INSIGHTS</a>
         <div class="mobile-submenu">
-            <a href="government.html">DEFENSE &amp; ENERGY</a>
+            <span class="mobile-submenu-label">SOLUTIONS</span>
+            <a href="government.html">ENERGY INFRASTRUCTURE</a>
             <a href="disasters.html">DISASTER RESPONSE</a>
         </div>
     </div>
@@ -389,7 +401,7 @@
                 <div class="credential-item"><strong>CAGE:</strong> 11X70</div>
                 <div class="credential-item"><strong>WOSB + SDVOSB</strong> Certified</div>
                 <div class="credential-item">Listed in <strong>SAM.gov Disaster Response Registry</strong></div>
-                <div class="credential-item"><strong>NAICS:</strong> 541715, 541511, 541690, 541512</div>
+                <div class="credential-item"><strong>NAICS:</strong> 541715 (R&amp;D in the physical, engineering, and life sciences)</div>
             </div>
         </div>
     </section>
@@ -397,6 +409,7 @@
     <section class="veteran-section">
         <h2>This business is proudly</h2>
         <div class="highlight">Female Veteran-Owned</div>
+        <p class="ownership-note">Wholly U.S.-owned. No foreign ownership, investment, or control.</p>
     </section>
 
     <section class="problems-section">
@@ -556,28 +569,28 @@
 <circle cx="347.7" cy="224.0" r="72.5"/>
 <circle cx="347.7" cy="224.0" r="144.9"/>
 </g>
-<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="14" opacity=".75" text-anchor="middle" stroke="#fbf9f2" stroke-width="5" paint-order="stroke" x="275.2" y="229.0">50 mi</text>
-<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="14" opacity=".75" text-anchor="middle" stroke="#fbf9f2" stroke-width="5" paint-order="stroke" x="202.7" y="229.0">100 mi</text>
+<text font-family="'IBM Plex Mono', 'Courier New', monospace" fill="#5B462D" font-size="14" opacity=".75" text-anchor="middle" stroke="#fbf9f2" stroke-width="5" paint-order="stroke" x="275.2" y="229.0">50 mi</text>
+<text font-family="'IBM Plex Mono', 'Courier New', monospace" fill="#5B462D" font-size="14" opacity=".75" text-anchor="middle" stroke="#fbf9f2" stroke-width="5" paint-order="stroke" x="202.7" y="229.0">100 mi</text>
 <polyline points="424.6,40.0 427.1,85.0 406.4,122.0 395.6,141.0 375.0,178.0 356.8,208.0 346.0,232.0 338.6,275.0 329.5,334.0 319.6,380.0 303.0,420.0 303.0,450.0 327.8,490.0 336.1,510.0 351.0,540.0" fill="none" stroke="#4f7f95" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>
-<text x="284.8" y="385.0" font-family="Georgia, serif" font-style="italic" font-size="14" fill="#4f7f95" transform="rotate(-78 284.8 385.0)">Rio Grande</text>
+<text x="291" y="458.0" font-family="Georgia, serif" font-style="italic" font-size="14" fill="#4f7f95" transform="rotate(-78 291 458.0)">Rio Grande</text>
 <polyline points="377.4,152.0 441.4,119.0" fill="none" stroke="#5B462D" stroke-width="1"/>
-<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="start" x="447.4471579255045" y="123.99999999999974">LOS ALAMOS</text>
-<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="start" x="447.4471579255045" y="145.99999999999974">National Laboratory</text>
+<text font-family="'IBM Plex Mono', 'Courier New', monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="start" stroke="#fbf9f2" stroke-width="5" stroke-linejoin="round" paint-order="stroke" x="447.4471579255045" y="123.99999999999974">LOS ALAMOS</text>
+<text font-family="'IBM Plex Mono', 'Courier New', monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="start" stroke="#fbf9f2" stroke-width="5" stroke-linejoin="round" paint-order="stroke" x="447.4471579255045" y="145.99999999999974">National Laboratory</text>
 <polyline points="357.6,235.0 431.6,282.0" fill="none" stroke="#5B462D" stroke-width="1"/>
-<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="start" x="437.59722414291423" y="287.0000000000003">SANDIA</text>
-<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="start" x="437.59722414291423" y="309.0000000000003">National Labs</text>
+<text font-family="'IBM Plex Mono', 'Courier New', monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="start" stroke="#fbf9f2" stroke-width="5" stroke-linejoin="round" paint-order="stroke" x="437.59722414291423" y="287.0000000000003">SANDIA</text>
+<text font-family="'IBM Plex Mono', 'Courier New', monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="start" stroke="#fbf9f2" stroke-width="5" stroke-linejoin="round" paint-order="stroke" x="437.59722414291423" y="309.0000000000003">National Labs</text>
 <polyline points="347.7,224.0 331.7,163.0" fill="none" stroke="#5B462D" stroke-width="1"/>
-<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="end" x="325.6722572516203" y="168.00000000000034">JAXORIK</text>
-<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="end" x="325.6722572516203" y="190.00000000000034">Albuquerque</text>
+<text font-family="'IBM Plex Mono', 'Courier New', monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="end" stroke="#fbf9f2" stroke-width="5" stroke-linejoin="round" paint-order="stroke" x="325.6722572516203" y="168.00000000000034">JAXORIK</text>
+<text font-family="'IBM Plex Mono', 'Courier New', monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="end" stroke="#fbf9f2" stroke-width="5" stroke-linejoin="round" paint-order="stroke" x="325.6722572516203" y="190.00000000000034">Albuquerque</text>
 <polyline points="351.0,231.6 436.7,221.0" fill="none" stroke="#5B462D" stroke-width="1"/>
-<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="start" x="442.6722572516203" y="226.00000000000034">UNM</text>
-<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="start" x="442.6722572516203" y="248.00000000000034">Univ. of New Mexico</text>
+<text font-family="'IBM Plex Mono', 'Courier New', monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="start" stroke="#fbf9f2" stroke-width="5" stroke-linejoin="round" paint-order="stroke" x="442.6722572516203" y="226.00000000000034">UNM</text>
+<text font-family="'IBM Plex Mono', 'Courier New', monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="start" stroke="#fbf9f2" stroke-width="5" stroke-linejoin="round" paint-order="stroke" x="442.6722572516203" y="248.00000000000034">Univ. of New Mexico</text>
 <polyline points="327.0,333.0 253.0,334.0" fill="none" stroke="#5B462D" stroke-width="1"/>
-<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="end" x="246.9952428947563" y="339.0">NM TECH</text>
-<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="end" x="246.9952428947563" y="361.0">Socorro</text>
+<text font-family="'IBM Plex Mono', 'Courier New', monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="end" stroke="#fbf9f2" stroke-width="5" stroke-linejoin="round" paint-order="stroke" x="246.9952428947563" y="339.0">NM TECH</text>
+<text font-family="'IBM Plex Mono', 'Courier New', monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="end" stroke="#fbf9f2" stroke-width="5" stroke-linejoin="round" paint-order="stroke" x="246.9952428947563" y="361.0">Socorro</text>
 <polyline points="362.6,502.0 426.6,487.0" fill="none" stroke="#5B462D" stroke-width="1"/>
-<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="start" x="432.5597075885618" y="491.9999999999998">WHITE SANDS</text>
-<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="start" x="432.5597075885618" y="513.9999999999998">Missile Range</text>
+<text font-family="'IBM Plex Mono', 'Courier New', monospace" fill="#5B462D" font-size="19" font-weight="700" text-anchor="start" stroke="#fbf9f2" stroke-width="5" stroke-linejoin="round" paint-order="stroke" x="432.5597075885618" y="491.9999999999998">WHITE SANDS</text>
+<text font-family="'IBM Plex Mono', 'Courier New', monospace" fill="#5B462D" font-size="16" font-weight="400" text-anchor="start" stroke="#fbf9f2" stroke-width="5" stroke-linejoin="round" paint-order="stroke" x="432.5597075885618" y="513.9999999999998">Missile Range</text>
 <circle cx="377.4" cy="152.0" r="5" fill="#9b1c1c" stroke="#fffaf1" stroke-width="2"/>
 <circle cx="327.0" cy="333.0" r="5" fill="#9b1c1c" stroke="#fffaf1" stroke-width="2"/>
 <circle cx="362.6" cy="502.0" r="5" fill="#9b1c1c" stroke="#fffaf1" stroke-width="2"/>
@@ -585,8 +598,8 @@
 <circle cx="351.0" cy="231.6" r="5" fill="#9b1c1c" stroke="#fffaf1" stroke-width="2"/>
 <polygon points="347.7,212.0 344.7,220.0 336.3,220.3 342.9,225.5 340.6,233.7 347.7,229.0 354.7,233.7 352.4,225.5 359.1,220.3 350.6,220.0" fill="#5B462D" stroke="#fffaf1" stroke-width="1.5"/>
 <g stroke="#5B462D" fill="#5B462D"><polygon points="735,56 742,90 735,124 728,90" opacity=".85"/><polygon points="709,90 735,84 761,90 735,96" opacity=".4"/></g>
-<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="15" font-weight="700" text-anchor="middle" x="735" y="48">N</text>
-<text font-family="'Courier New', Courier, monospace" fill="#5B462D" font-size="13" text-anchor="middle" opacity=".75" x="470" y="652">GEOGRAPHIC CONTEXT ONLY — NO AFFILIATION IMPLIED</text>
+<text font-family="'IBM Plex Mono', 'Courier New', monospace" fill="#5B462D" font-size="15" font-weight="700" text-anchor="middle" x="735" y="48">N</text>
+<text font-family="'IBM Plex Mono', 'Courier New', monospace" fill="#5B462D" font-size="14" text-anchor="middle" opacity=".9" x="470" y="652">GEOGRAPHIC CONTEXT ONLY — NO AFFILIATION IMPLIED</text>
 </svg>
                 </div>
                 <div class="distance-list">
