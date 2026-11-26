@@ -1144,7 +1144,14 @@
                     <source media="(max-width: 640px)" srcset="wildfire-esn-figure-stacked.png">
                     <img src="wildfire-esn-figure.png" width="2200" height="980" alt="Three maps of a toy wildfire scenario: terrain and wind around a ridge, the physics simulation's soonest fire-arrival times, and the echo state network's prediction of the same, on one shared color scale in hours.">
                 </picture>
-                <figcaption>Fig. 1. Prototype ESN emulating a physics-based wildfire spread model on a toy terrain, with a lee eddy behind the ridge. Color shows the soonest plausible arrival time (5th percentile of 128 simulated fires) at each grid square; grey means the fire plausibly can't reach it. The dashed square is a rock outcrop with no fuel.</figcaption>
+                <figcaption>Fig. 1. Control experiment. A prototype ESN emulating a physics-based wildfire model on a toy terrain, with the true wind given to both, so this tests whether the ESN can reproduce the physics at all. Color shows the soonest plausible arrival time (5th percentile of 128 simulated fires); grey means the fire plausibly can't reach it. Same color scale as Fig. 2, which shows what happens when an input is misleading.</figcaption>
+            </figure>
+            <figure class="audit-figure">
+                <picture>
+                    <source media="(max-width: 640px)" srcset="wildfire-esn-sensor-failure-stacked.png">
+                    <img src="wildfire-esn-sensor-failure.png" width="2200" height="980" alt="Three maps of the same toy wildfire: the physics simulation, the echo state network when it fully trusts a faulty wind sensor and wrongly rules out fire reaching large areas, and the network when it doubts the sensor and forecasts arrival much closer to the physics.">
+                </picture>
+                <figcaption>Fig. 2. When an input is misleading. The wind sensor sits in the ridge's wind shadow: it reports 1.8 m/s, accurately for its own spot, while the regional forecast says 8.7 and the wind over most of the map is about 10. The trust slider sets how much weight the ESN gives that reading. All the way up (middle), the ESN believes the calm: 7.4 hours to the home square, with large areas ruled out entirely. Turned down (right), it leans on the forecast and widens toward the soonest plausible case: 2.9 hours, against 2.0 for the physics. The system sets the slider itself, here to 0.05, because the reading is far below the forecast speed and 68° off its direction; a person in the field can move it. One toy scenario.</figcaption>
             </figure>
         </div>
     </section>
